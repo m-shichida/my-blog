@@ -5,7 +5,7 @@ const BannerContainer = styled.section`
   position: relative;
   font-family: Arial, Helvetica, ‘游ゴシック’, ‘Yu Gothic’, YuGothic, HiraKakuProN-W3, ‘メイリオ’, Meiryo, sans-serif;
   color: #FFFFFF;
-  height: 90vh;
+  height: 92.5vh;
   background-image: url(${ BannerImage });
   background-repeat: no-repeat;
   background-size: cover;
