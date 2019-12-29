@@ -1,42 +1,40 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled from 'styled-components';
+import home from '../images/home.png'
+import { Link } from "gatsby"
+import { colors } from '../helpers/styleHelper';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const HeaderContainer = styled.header`
+  font-family: Helvetica, Arial;
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #607D8B;
+  height: 60px;
+`
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const NavList = styled.ul`
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+`
+
+const Header = () => {
+  return (
+    <HeaderContainer>
+      <NavList>
+        <li style={ { marginRight: '32px' } }>
+          <Link to='/'>
+            <img style={ { height: '35px', width: '35px', paddingBottom: '5px' } } src={ home }/>
+          </Link>
+        </li>
+        <li><Link to='/blog/' style={{ textDecoration: 'none', marginRight: '24px', color: colors.white }}>Blog</Link></li>
+        <li style={{ textDecoration: 'none', marginRight: '24px' }}>About</li>
+        <li style={{ textDecoration: 'none', marginRight: '24px' }}>Contact</li>
+      </NavList>
+    </HeaderContainer>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;
