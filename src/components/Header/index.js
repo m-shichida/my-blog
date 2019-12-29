@@ -2,8 +2,9 @@ import React from "react"
 import home from './home.png'
 import styles from './styles';
 
+const { HeaderContainer, NavList, ListItem, TopImage, StyledLink } = styles;
+
 const Header = () => {
-  const { HeaderContainer, NavList, ListItem, TopImage, StyledLink } = styles;
 
   return (
     <HeaderContainer>
