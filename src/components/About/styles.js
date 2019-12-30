@@ -36,5 +36,16 @@ const ProfileContent = styled.div`
   margin: 24px 0;
 `
 
+const Links = styled.span`
+  padding-left: 24px;
+  margin-top: 16px;
+`
+
+const SnsImage = styled.img`
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+`
+
 export default { AboutContainer, Title, ProfileContainer, ProfileImage,
-                 ProfileContent };
+                 ProfileContent, SnsImage, Links };

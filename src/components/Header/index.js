@@ -16,7 +16,7 @@ const Header = () => {
         </ListItem>
         <ListItem><StyledLink to='/blog/'>Blog</StyledLink></ListItem>
         <ListItem><StyledLink to='#about'>About</StyledLink></ListItem>
-        <ListItem>Contact</ListItem>
+        <ListItem><StyledLink to='#products'>Products</StyledLink></ListItem>
       </NavList>
     </HeaderContainer>
   )

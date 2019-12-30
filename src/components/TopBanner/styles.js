@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import BannerImage from './top-banner.jpg';
+import { Link } from "gatsby"
 
 const BannerContainer = styled.section`
   position: relative;
@@ -45,4 +46,9 @@ const Image = styled.img`
   margin: 0 auto;
 `
 
-export default { BannerContainer, MessageContainer, Title, ScrollDownContainer, Message, Image };
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #FFFFFF;
+`
+
+export default { BannerContainer, MessageContainer, Title, ScrollDownContainer, Message, Image, StyledLink };
