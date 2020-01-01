@@ -10,7 +10,7 @@ import '../helpers/common.css'
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Top" />
       <TopBanner />
       <About />
       <Products />

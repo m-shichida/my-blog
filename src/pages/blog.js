@@ -10,7 +10,7 @@ const Blog = ({ data }) => {
   return (
     <>
       <Layout>
-        <SEO title="Page two" />
+        <SEO title="blog" />
         <BlogContents>
           <BlogPosts edges={ data.allContentfulPost.edges }/>
           <BlogSideBar />
