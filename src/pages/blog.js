@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import BlogContents from "../components/BlogContents"
 import BlogSideBar from '../components/BlogSideBar';
@@ -10,11 +10,11 @@ const Blog = ({ data }) => {
   return (
     <>
       <Layout>
-      <SEO title="Page two" />
-      <BlogContents>
-        <BlogPosts edges={ data.allContentfulPost.edges }/>
-        <BlogSideBar />
-      </BlogContents>
+        <SEO title="Page two" />
+        <BlogContents>
+          <BlogPosts edges={ data.allContentfulPost.edges }/>
+          <BlogSideBar />
+        </BlogContents>
       </Layout>
     </>
   )
