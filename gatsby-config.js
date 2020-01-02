@@ -6,7 +6,7 @@ if (process.env.ENVIRONMENT !== "production") {
 
 module.exports = {
   siteMetadata: {
-    title: `shicchi's portfolio&blog`,
+    title: `shicchi-blog`,
     description: `ポートフォリオ兼技術ブログ`,
     author: `Shichida Masatsugu`,
   },
@@ -40,8 +40,20 @@ module.exports = {
         accessToken: process.env.accessToken,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`
+          },
+          {
+            resolve: `gatsby-remark-code-titles`
+          }
+        ]
+      }
+    },
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-sass`
   ],
 }
