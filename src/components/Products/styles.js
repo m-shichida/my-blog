@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Container } from '@material-ui/core';
+import { colors } from '../../helpers/styleHelper';
 
 const ProductsContainer = styled(Container)`
-  color: #4B4B4B;
+  color: ${ colors.black };
   height: 100vh;
   padding-top: 32px;
 `

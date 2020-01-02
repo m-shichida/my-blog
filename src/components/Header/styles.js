@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Link } from "gatsby"
+import { colors } from '../../helpers/styleHelper';
 
 const HeaderContainer = styled.header`
   font-family: Helvetica, Arial;
   font-size: 28px;
   font-weight: bold;
-  color: #FFFFFF;
-  background-color: #607D8B;
+  color: ${ colors.white };
+  background-color: ${ colors.mainColor };
   height: 60px;
 `
 
@@ -23,7 +24,7 @@ const ListItem = styled.li`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #FFFFFF;
+  color: ${ colors.white };
 `
 
 const TopImage = styled.img`

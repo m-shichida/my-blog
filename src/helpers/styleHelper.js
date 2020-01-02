@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 export const colors = {
   mainColor: '#607D8B',
   white: '#FFFFFF',
@@ -6,3 +8,16 @@ export const colors = {
   lightGray: '#EEEEEE',
   blue: '#2D7BFF'
 }
+
+export const media = {
+  pc: (...args) => css`
+    @media (min-width: 1024px)) {
+      ${css(...args)};
+    }
+  `,
+  phone: (...args) => css`
+    @media (max-width: 767px) {
+      ${css(...args)};
+    }
+  `
+};

@@ -12,20 +12,18 @@ const PostCard = ({ edge }) => {
   const tags = edge.node.tags
 
   return(
-    <>
-      <Card to={ `/blog/${ slug }` }>
-        <CardImage
-          src={ Portfolio }
-        />
-        <CardContent>
-          <Title>{ title }</Title>
-          <PublishedAt>{ publishedAt }</PublishedAt>
-          <Tags>
-            { tags.map(tag => { return (<Tag>{ tag }</Tag>) }) }
-          </Tags>
-        </CardContent>
-      </Card>
-    </>
+    <Card to={ `/blog/${ slug }` }>
+      <CardImage
+        src={ Portfolio }
+      />
+      <CardContent>
+        <Title>{ title }</Title>
+        <PublishedAt>{ publishedAt }</PublishedAt>
+        <Tags>
+          { tags.map(tag => { return (<Tag>{ tag }</Tag>) }) }
+        </Tags>
+      </CardContent>
+    </Card>
   )
 }
 
