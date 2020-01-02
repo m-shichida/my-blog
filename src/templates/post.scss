@@ -19,8 +19,6 @@
 
   h1 {
     font-size: 3rem;
-    padding: 4px 0;
-    margin-bottom: 8px;
     @include breakpoint('phone') {
       font-size: 1.6rem;
     }
@@ -42,6 +40,8 @@
 
   h1, h2, h3 {
     border-bottom: 1px solid #999999;
+    padding: 4px 0;
+    margin-bottom: 8px;
   }
 
   h4, h5 {
