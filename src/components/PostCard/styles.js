@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const PublishedAt = styled.p`
   display: inline-block;
@@ -11,8 +12,28 @@ const PublishedAt = styled.p`
   background-color: #2D7BFF;
 `
 
+const Card = styled(Link)`
+  display: inline-block;
+  color: #4B4B4B;
+  background-color: #FFF;
+  width: 344px;
+  height: 365px;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.6)
+`
+
+const CardImage = styled.img`
+`
+
+const CardContent = styled.div`
+  padding: 8px;
+  padding-bottom: 16px;
+`
+
 const Title = styled.h1`
-  font-size: 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  overflow-wrap: break-word;
 `
 
 const Tags = styled.div`
@@ -20,7 +41,7 @@ const Tags = styled.div`
 `
 
 const Tag = styled.span`
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #4B4B4B;
   padding: 4px;
   background-color: #EEEEEE;
@@ -28,4 +49,4 @@ const Tag = styled.span`
   margin-right: 4px;
 `
 
-export default { PublishedAt, Title, Tags, Tag };
+export default { PublishedAt, Card, CardImage, CardContent, Title, Tags, Tag };
