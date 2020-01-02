@@ -1,18 +1,36 @@
 import React from "react"
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
-import About from '../components/About'
-import Products from '../components/Products';
+import BlogPosts from '../components/BlogPosts';
 import '../helpers/common.scss'
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <TopBanner />
-      <About />
-      <Products />
+      <BlogPosts edges={ data.allContentfulPost.edges }/>
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    allContentfulPost {
+      edges {
+        node {
+          slug
+          title
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
+          publishedAt(formatString:"YYYY/MM/DD")
+          tags
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
