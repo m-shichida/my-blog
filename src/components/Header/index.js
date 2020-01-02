@@ -1,5 +1,5 @@
 import React from "react"
-import home from './home.png'
+import home from '../../images/home.png'
 import styles from './styles';
 
 const { HeaderContainer, NavList, ListItem, TopImage, StyledLink } = styles;

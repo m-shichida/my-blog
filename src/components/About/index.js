@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './styles';
-import Image from './profile_image.jpg';
-import Twitter from './twitter.png';
-import Github from './github.png';
-import Qitta from './qiita.png';
+import Image from '../../images/profile_image.jpg';
+import Twitter from '../../images/twitter.png';
+import Github from '../../images/github.png';
+import Qitta from '../../images/qiita.png';
 
 const { AboutContainer, Title, ProfileContainer,
         ProfileImage, ProfileContent, SnsImage,

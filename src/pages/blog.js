@@ -32,6 +32,8 @@ export const query = graphql`
               html
             }
           }
+          publishedAt(formatString:"YYYY/MM/DD")
+          tags
         }
       }
     }
