@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Layout from '../components/Layout';
 import { graphql } from "gatsby"
 import { Container } from '@material-ui/core'
+import { media, colors } from '../helpers/styleHelper';
 import './post.scss'
 
 const Post = props => {
@@ -44,22 +45,25 @@ export const query = graphql`
 `
 
 const PostContainer = styled(Container)`
-  margin-top: 32px;
+  margin: 32px 0;
   min-height: 86vh;
 `
 
 const PostWrapper = styled.article`
-  background-color: #FFF;
+  background-color: ${ colors.white };
   padding: 24px;
 `
 
 const Title = styled.h1`
   font-size: 40px;
   margin-bottom: 8px;
+  ${ media.phone`
+    font-size: 26px;
+  `}
 `
 
 const PublishedAt = styled.p`
-  color: #999999;
+  color: ${ colors.gray };
   font-size: 20px;
   margin-bottom: 8px;
 `
@@ -73,15 +77,15 @@ const Tags = styled.ul`
   flex-wrap: wrap;
   list-style: none;
   padding-bottom: 8px;
-  border-bottom: 2px solid #999999;
+  border-bottom: 2px solid ${ colors.gray };
   margin-bottom: 32px;
 `
 
 const Tag = styled.li`
   font-size: 16px;
-  background-color: #EEEEEE;
+  background-color: ${ colors.lightGray };
   padding: 4px;
-  border: 1px solid #EEEEEE;
+  border: 1px solid ${ colors.lightGray };
   border-radius: 8px;
   margin-right: 4px;
 `
