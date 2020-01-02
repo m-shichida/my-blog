@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles';
-import Portfolio from './port-folio.png'
+import Portfolio from '../../images/port-folio.png'
 import { Card, CardActionArea,
          CardContent, Typography } from '@material-ui/core';
 

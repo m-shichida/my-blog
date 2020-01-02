@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BannerImage from './top-banner.jpg';
+import BannerImage from '../../images/top-banner.jpg';
 import { Link } from "gatsby"
 
 const BannerContainer = styled.section`

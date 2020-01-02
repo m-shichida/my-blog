@@ -5,7 +5,7 @@ import TopBanner from "../components/TopBanner"
 import About from '../components/About'
 import Products from '../components/Products';
 import 'minireset.css'
-import '../helpers/common.css'
+import '../helpers/common.scss'
 
 const IndexPage = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles';
-import ScrollDown from './scroll_down.svg';
+import ScrollDown from '../../images/scroll_down.svg';
 
 const { BannerContainer, MessageContainer, Title, ScrollDownContainer, Message, Image, StyledLink } = styles;
 
