@@ -3,4 +3,26 @@ body {
   font-size: 62.5%;
   font-family: Arial, Helvetica, ‘游ゴシック’, ‘Yu Gothic’, YuGothic, HiraKakuProN-W3, ‘メイリオ’, Meiryo, sans-serif;
   background-color: #F5F5F5;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
 }

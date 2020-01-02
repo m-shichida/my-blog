@@ -12,14 +12,16 @@ const Post = props => {
   return (
     <Layout>
       <PostContainer>
-        <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
-        <Title>{ post.title }</Title>
-        <Tags>
-          { post.tags.map(tag => {
-            return (<Tag>{ tag }</Tag>)
-          }) }
-        </Tags>
-        <Content dangerouslySetInnerHTML={ { __html: contentHtml  } } />
+        <PostWrapper>
+          <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
+          <Title>{ post.title }</Title>
+          <Tags>
+            { post.tags.map(tag => {
+              return (<Tag>{ tag }</Tag>)
+            }) }
+          </Tags>
+          <Content className='blog-content' dangerouslySetInnerHTML={ { __html: contentHtml  } } />
+        </PostWrapper>
       </PostContainer>
     </Layout>
   )
@@ -42,9 +44,13 @@ export const query = graphql`
 `
 
 const PostContainer = styled(Container)`
-  background-color: #FFF;
   margin-top: 32px;
-  padding-top: 8px;
+  min-height: 86vh;
+`
+
+const PostWrapper = styled.article`
+  background-color: #FFF;
+  padding: 24px;
 `
 
 const Title = styled.h1`
@@ -58,7 +64,7 @@ const PublishedAt = styled.p`
   margin-bottom: 8px;
 `
 
-const Content = styled.p`
+const Content = styled.div`
   font-size: 16px;
 `
 
@@ -68,7 +74,7 @@ const Tags = styled.ul`
   list-style: none;
   padding-bottom: 8px;
   border-bottom: 2px solid #999999;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
 `
 
 const Tag = styled.li`

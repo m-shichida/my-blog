@@ -1,11 +1,11 @@
 import React from 'react'
 import { Card, CardActionArea,
-         CardContent, Typography } from '@material-ui/core';
+         CardContent } from '@material-ui/core';
 import { Link } from 'gatsby';
 import Portfolio from '../../images/port-folio.png'
 import styles from './styles';
 
-const { PublishedAt, Tags, Tag } = styles
+const { PublishedAt, Title, Tags, Tag } = styles
 
 const PostCard = ({ edge }) => {
   const slug = edge.node.slug
@@ -21,7 +21,7 @@ const PostCard = ({ edge }) => {
             src={ Portfolio }
           />
           <CardContent>
-            <Typography>{ title }</Typography>
+            <Title>{ title }</Title>
             <PublishedAt>{ publishedAt }</PublishedAt>
             <Tags>
               { tags.map(tag => { return (<Tag>{ tag }</Tag>) }) }
