@@ -7,7 +7,7 @@ const Container = styled.article`
   margin-bottom: 24px;
   padding: 16px;
   border-radius: 8px;
-  background-color: ${ colors.white }
+  background-color: ${ colors.white };
   ${ media.phone`
     margin: 0 8px 24px 8px;
   `}
