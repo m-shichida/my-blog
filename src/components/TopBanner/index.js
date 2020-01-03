@@ -10,12 +10,12 @@ const TopBanner = () => {
   return (
     <BannerContainer>
       <MessageContainer>
-        <Title>Shicchi's Blog</Title>
+        <Title>Shicchi's Tech Blog</Title>
       </MessageContainer>
       <Links>
-        <a href='https://github.com/m-shichida' target='_blank'><SnsImage src={ Github } /></a>
-        <a href='https://qiita.com/shicchi7913' target='_blank'><SnsImage src={ Qitta } /></a>
-        <a href='https://twitter.com/shicchi7913' target='_blank'><SnsImage src={ Twitter } /></a>
+        <a href='https://github.com/m-shichida' target='_blank' rel="noopener noreferrer"><SnsImage src={ Github } /></a>
+        <a href='https://qiita.com/shicchi7913' target='_blank' rel="noopener noreferrer"><SnsImage src={ Qitta } /></a>
+        <a href='https://twitter.com/shicchi7913' target='_blank' rel="noopener noreferrer"><SnsImage src={ Twitter } /></a>
       </Links>
     </BannerContainer>
   )

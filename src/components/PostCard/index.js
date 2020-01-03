@@ -5,7 +5,7 @@ import styles from './styles';
 const { PublishedAt, Card, CardImage, CardContent, Title, Tags, Tag } = styles
 
 const PostCard = ({ edge }) => {
-  // const titleImage = edge.node.titleImage
+  const titleImage =  edge.node.titleImage ? edge.node.titleImage.file.url : Portfolio
   const slug = edge.node.slug
   const title = edge.node.title
   const publishedAt = edge.node.publishedAt
@@ -14,7 +14,7 @@ const PostCard = ({ edge }) => {
   return(
     <Card to={ `/blog/${ slug }` }>
       <CardImage
-        src={ Portfolio }
+        src={ titleImage }
       />
       <CardContent>
         <Title>{ title }</Title>

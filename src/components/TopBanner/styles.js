@@ -1,17 +1,16 @@
 import styled from 'styled-components';
-import BannerImage from '../../images/top-banner.jpg';
 import { media, colors } from '../../helpers/styleHelper';
 
 const BannerContainer = styled.section`
+  font-family: 'Fjalla One', 'Poppins';
   position: relative;
   color: ${ colors.white };
-  height: 60vh;
-  background-image: url(${ BannerImage });
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  height: 40vh;
+  background: #2992B9;
+  background: -webkit-linear-gradient(to right, #6994BF, #2992B9);
+  background: linear-gradient(to right, #6994BF, #2992B9);
   ${ media.phone`
-    height: 45vh;
+    height: 36vh;
   `}
 `
 
@@ -23,11 +22,12 @@ const MessageContainer = styled.div`
   left: 0;
   margin: auto;
   width: 80vw;
-  height: 60px;
+  height: 120px;
 `
 
 const Title = styled.h1`
   font-size: 5rem;
+  font-weight: bold;
   text-align: center;
   ${ media.phone`
     font-size: 4.5rem;
