@@ -33,6 +33,12 @@ const PublishedAt = styled.p`
 `
 
 const CardImage = styled.img`
+  width: 325px;
+  height: 210px;
+  object-fit: cover
+  ${ media.phone`
+    width: 90vw;
+  `}
 `
 
 const CardContent = styled.div`

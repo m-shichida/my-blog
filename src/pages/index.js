@@ -17,15 +17,20 @@ export const query = graphql`
     allContentfulPost {
       edges {
         node {
-          slug
-          title
           content {
             childMarkdownRemark {
               html
             }
           }
+          slug
           publishedAt(formatString:"YYYY/MM/DD")
           tags
+          title
+          titleImage {
+            file {
+              url
+            }
+          }
         }
       }
     }

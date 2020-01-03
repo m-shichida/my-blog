@@ -3,11 +3,13 @@ import { Link } from "gatsby"
 import { colors } from '../../helpers/styleHelper';
 
 const HeaderContainer = styled.header`
-  font-family: Helvetica, Arial;
   font-size: 28px;
+  font-family: 'Fjalla One', 'Poppins';
   font-weight: bold;
   color: ${ colors.white };
-  background-color: ${ colors.mainColor };
+  background: #2992B9;
+  background: -webkit-linear-gradient(to right, #6994BF, #2992B9);
+  background: linear-gradient(to right, #6994BF, #2992B9);
   height: 60px;
 `
 

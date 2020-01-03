@@ -5,8 +5,8 @@ const { GithubLink } = styles;
 
 const Github = () => {
   return (
-    <GithubLink href="https://github.com/m-shichida" target="_blank">
-      <img src="https://grass-graph.moshimo.works/images/m-shichida.png" />
+    <GithubLink href="https://github.com/m-shichida" target="_blank" rel="noopener noreferrer">
+      <img src="https://grass-graph.moshimo.works/images/m-shichida.png" alt='github Contribution Graph' />
     </GithubLink>
   )
 }
