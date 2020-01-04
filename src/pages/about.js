@@ -6,26 +6,73 @@ import Profile from '../components/Profile';
 import WorkExperience from "../components/WorkExperience";
 import styled from 'styled-components';
 import { media } from '../helpers/styleHelper';
+import { graphql } from 'gatsby'
 
-const Blog = () => {
+const Blog = ({ data }) => {
   return (
     <>
       <Layout>
         <Container>
           <Github />
-          <Content>
-            <CompanyExperience />
+          <Flex>
+            <CompanyExperience
+              companyExperienceEdges={ data.allContentfulCompanyExperience.edges }
+            />
             <Profile />
-          </Content>
-          <WorkExperience/>
+          </Flex>
+          <WorkExperience
+            workExperienceEdges={ data.allContentfulWorkExperience.edges }
+            learningLanguageEdges={ data.allContentfulLearningLanguage.edges }
+          />
         </Container>
       </Layout>
     </>
   )
 }
 
-export default Blog;
+export const query = graphql`
+  {
+    allContentfulWorkExperience {
+      edges {
+        node {
+          language
+          description {
+            childMarkdownRemark {
+              htmlAst
+            }
+          }
+        }
+      }
+    }
+    allContentfulLearningLanguage {
+      edges {
+        node {
+          language
+          description {
+            childMarkdownRemark {
+              htmlAst
+            }
+          }
+        }
+      }
+    }
+    allContentfulCompanyExperience {
+      edges {
+        node {
+          companyName
+          companyPeriod
+          companyDescription {
+            childMarkdownRemark {
+              htmlAst
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
+export default Blog;
 
 const Container = styled.section`
   color: #4B4B4B;
@@ -34,7 +81,7 @@ const Container = styled.section`
   background-color: #F5F5F5;
 `
 
-const Content = styled.section`
+const Flex = styled.section`
   display: flex;
   justify-content: space-around;
   max-width: 1024px;

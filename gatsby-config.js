@@ -49,6 +49,9 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-code-titles`
+          },
+          {
+            resolve: "gatsby-remark-component",
           }
         ]
       }

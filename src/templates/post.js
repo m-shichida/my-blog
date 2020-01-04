@@ -2,17 +2,17 @@ import React from "react"
 import styled from 'styled-components'
 import Layout from '../components/Layout';
 import { graphql } from "gatsby"
-import { Container } from '@material-ui/core'
 import { media, colors } from '../helpers/styleHelper';
+import rehypeReact from "rehype-react"
 import './post.scss'
 
 const Post = props => {
   const post = props.data.contentfulPost
-  const contentHtml = post.content.childMarkdownRemark.html
+  const contentHtml = post.content.childMarkdownRemark.htmlAst
 
   return (
     <Layout>
-      <PostContainer>
+      <Container>
         <PostWrapper>
           <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
           <Title>{ post.title }</Title>
@@ -21,9 +21,11 @@ const Post = props => {
               return (<Tag>{ tag }</Tag>)
             }) }
           </Tags>
-          <Content className='blog-content' dangerouslySetInnerHTML={ { __html: contentHtml  } } />
+          <Description className='blog-content'>
+            { renderAst(contentHtml) }
+          </Description>
         </PostWrapper>
-      </PostContainer>
+      </Container>
     </Layout>
   )
 }
@@ -36,26 +38,29 @@ export const query = graphql`
       title
       publishedAt(formatString:"YYYY/MM/DD")
       content {
-      childMarkdownRemark {
-        html }
+        childMarkdownRemark {
+          htmlAst
+        }
       }
       tags
     }
   }
 `
 
-const PostContainer = styled(Container)`
-  margin: 32px 0;
+const Container = styled.article`
+  margin: 32px auto;
   min-height: 86vh;
+  max-width: 1024px;
 `
 
-const PostWrapper = styled.article`
+const PostWrapper = styled.div`
   background-color: ${ colors.white };
   padding: 24px;
 `
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 8px;
   ${ media.phone`
     font-size: 26px;
@@ -68,8 +73,7 @@ const PublishedAt = styled.p`
   margin-bottom: 8px;
 `
 
-const Content = styled.div`
-  font-size: 16px;
+const Description = styled.div`
 `
 
 const Tags = styled.ul`
@@ -89,3 +93,14 @@ const Tag = styled.li`
   border-radius: 8px;
   margin-right: 4px;
 `
+
+const Content = styled.pre`
+  font-size: 1.6rem;
+`
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    'p': Content
+  },
+}).Compiler
