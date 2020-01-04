@@ -19,8 +19,8 @@ const Post = props => {
           <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
           <Title>{ post.title }</Title>
           <Tags>
-            { post.tags.map(tag => {
-              return (<Tag>{ tag }</Tag>)
+            { post.tags.map((tag, index) => {
+              return (<Tag key={ index }>{ tag }</Tag>)
             }) }
           </Tags>
           <Description className='blog-content'>

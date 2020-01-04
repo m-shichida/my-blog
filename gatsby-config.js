@@ -56,6 +56,12 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: process.env.googleAnalyticsID
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`
   ],
