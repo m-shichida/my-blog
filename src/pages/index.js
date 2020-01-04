@@ -3,10 +3,12 @@ import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
 import BlogPosts from '../components/BlogPosts';
 import { graphql } from 'gatsby'
+import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Top" />
       <TopBanner />
       <BlogPosts edges={ data.allContentfulPost.edges }/>
     </Layout>

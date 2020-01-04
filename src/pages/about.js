@@ -5,6 +5,7 @@ import CompanyExperience from '../components/CompanyExperience';
 import Profile from '../components/Profile';
 import WorkExperience from "../components/WorkExperience";
 import styled from 'styled-components';
+import SEO from "../components/seo"
 import { media } from '../helpers/styleHelper';
 import { graphql } from 'gatsby'
 
@@ -13,6 +14,7 @@ const Blog = ({ data }) => {
     <>
       <Layout>
         <Container>
+          <SEO title="About" />
           <Github />
           <Flex>
             <CompanyExperience
