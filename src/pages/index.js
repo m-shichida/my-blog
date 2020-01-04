@@ -1,14 +1,23 @@
 import React from "react"
+import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
 import BlogPosts from '../components/BlogPosts';
 import { graphql } from 'gatsby'
-import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Top" />
+      <Helmet
+        title="shicchi-blog"
+        meta={[
+          {
+            name: 'google-site-verification',
+            content:
+              'vvTlrJs8zHJEg-ds-CVe6SaIEKGSUwen3tEuOFmJxVs',
+          },
+        ]}
+      />
       <TopBanner />
       <BlogPosts edges={ data.allContentfulPost.edges }/>
     </Layout>
