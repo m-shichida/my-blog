@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { graphql } from "gatsby"
 import { media, colors } from '../helpers/styleHelper';
 import rehypeReact from "rehype-react"
+import SEO from "../components/seo"
 import './post.scss'
 
 const Post = props => {
@@ -13,6 +14,7 @@ const Post = props => {
   return (
     <Layout>
       <Container>
+        <SEO title={ post.title } />
         <PostWrapper>
           <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
           <Title>{ post.title }</Title>
