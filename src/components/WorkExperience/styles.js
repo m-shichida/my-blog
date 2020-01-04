@@ -28,8 +28,13 @@ const ExperienceTitle = styled.h1`
 `
 
 const ExperienceDescription = styled.p`
+`
+
+const Content = styled.pre`
+  color: ${ colors.gray };
   font-size: 1.4rem;
+  line-height: 2.4rem;
 `
 
 export default { Container, Title, ExperienceTitle,
-                 ExperienceDescription };
+                 ExperienceDescription, Content };

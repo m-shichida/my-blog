@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
 import BlogPosts from '../components/BlogPosts';
+import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => {
   return (

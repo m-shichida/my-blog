@@ -46,10 +46,13 @@ const CompanyPeriod = styled.span`
 `
 
 const CompanyDescription = styled.p`
+`
+
+const Content = styled.pre`
   color: ${ colors.gray };
   font-size: 1.4rem;
   line-height: 2.4rem;
 `
 
 export default { Container, Title, Company, CompanyHeader,
-                 CompanyName, CompanyPeriod, CompanyDescription }
+                 CompanyName, CompanyPeriod, CompanyDescription, Content }
