@@ -10,7 +10,7 @@ const BannerContainer = styled.section`
   background: -webkit-linear-gradient(to right, #6994BF, #2992B9);
   background: linear-gradient(to right, #6994BF, #2992B9);
   ${ media.phone`
-    height: 36vh;
+    height: 45vh;
   `}
   ${ media.tablet`
     height: 30vh;
@@ -25,7 +25,7 @@ const MessageContainer = styled.div`
   left: 0;
   margin: auto;
   width: 80vw;
-  height: 120px;
+  height: 140px;
 `
 
 const Title = styled.h1`
@@ -41,13 +41,18 @@ const SnsImage = styled.img`
   width: 40px;
   height: 40px;
   margin-left: 8px;
+  margin-bottom: 16px;
 `
 
-const Links = styled.span`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 0 4px 4px 0;
+const IconImage = styled.img`
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
 `
 
-export default { BannerContainer, MessageContainer, Title, SnsImage, Links };
+const Links = styled.section`
+  width: 208px;
+  margin: 0 auto;
+`
+
+export default { BannerContainer, MessageContainer, Title, SnsImage, IconImage, Links };
