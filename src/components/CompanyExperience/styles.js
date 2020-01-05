@@ -2,16 +2,17 @@ import styled from 'styled-components';
 import { colors, media } from '../../helpers/styleHelper'
 
 const Container = styled.article`
-  width: 628px;
   padding: 16px;
   background-color: ${ colors.white };
   border-radius: 8px;
   ${ media.phone`
-    margin-bottom: 8px;
+    margin: 0 8px 8px 8px;
   `}
   ${ media.tablet`
-    width: 728px;
     margin-bottom: 8px;
+  `}
+  ${ media.pc`
+    max-width: 628px;
   `}
 `
 
@@ -58,6 +59,9 @@ const Content = styled.pre`
   line-height: 2.4rem;
   ${ media.tablet`
     font-size: 1.6rem;
+  `}
+  ${ media.phone`
+    font-size: 1.4rem;
   `}
 `
 

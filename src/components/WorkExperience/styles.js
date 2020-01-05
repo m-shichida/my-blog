@@ -13,8 +13,6 @@ const Container = styled.article`
   `}
   ${ media.tablet`
     width: 728px;
-    margin-right: auto;
-    margin-left: auto;
   `}
 `
 
