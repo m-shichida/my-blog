@@ -11,13 +11,18 @@ export const colors = {
 
 export const media = {
   pc: (...args) => css`
-    @media (min-width: 1024px)) {
-      ${css(...args)};
+    @media only screen and (min-width: 1025px) {
+      ${ css(...args) };
+    }
+  `,
+  tablet: (...args) => css`
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      ${ css(...args) }
     }
   `,
   phone: (...args) => css`
-    @media (max-width: 767px) {
-      ${css(...args)};
+    @media only screen and (min-width: 120px) and (max-width: 767px) {
+      ${ css(...args) };
     }
   `
 };

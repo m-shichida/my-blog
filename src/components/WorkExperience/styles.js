@@ -11,6 +11,11 @@ const Container = styled.article`
   ${ media.phone`
     margin: 0 8px 24px 8px;
   `}
+  ${ media.tablet`
+    width: 728px;
+    margin-right: auto;
+    margin-left: auto;
+  `}
 `
 
 const Title = styled.h1`
@@ -34,6 +39,9 @@ const Content = styled.pre`
   color: ${ colors.gray };
   font-size: 1.4rem;
   line-height: 2.4rem;
+  ${ media.tablet`
+    font-size: 1.6rem;
+  `}
 `
 
 export default { Container, Title, ExperienceTitle,

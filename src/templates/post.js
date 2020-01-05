@@ -64,7 +64,6 @@ export const query = graphql`
 const Container = styled.article`
   display: flex;
   justify-content: center;
-  overflow: visible;
   margin: 32px 0;
   min-height: 86vh;
 `
@@ -73,7 +72,11 @@ const PostWrapper = styled.div`
   background-color: ${ colors.white };
   padding: 32px;
   margin-right: 16px;
-  max-width: 800px;
+  width: 800px;
+  ${ media.phone`
+    width: 78%;
+    margin: 0 auto;
+  `}
 `
 
 const Title = styled.h1`
@@ -81,17 +84,23 @@ const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 8px;
   ${ media.phone`
-    font-size: 26px;
+    font-size: 2rem;
   `}
 `
 
 const PublishedAt = styled.p`
   color: ${ colors.gray };
-  font-size: 20px;
+  font-size: 2rem;
   margin-bottom: 8px;
+  ${ media.phone`
+    font-size: 1.6rem;
+  `}
 `
 
 const Description = styled.div`
+  ${ media.phone`
+    font-size: 1.2rem;
+  `}
 `
 
 const Tags = styled.ul`
@@ -113,7 +122,7 @@ const Tag = styled.li`
 `
 
 const Content = styled.pre`
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 `
 
 const renderAst = new rehypeReact({

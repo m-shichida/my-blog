@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { colors } from '../../helpers/styleHelper';
+import { colors, media } from '../../helpers/styleHelper';
 
 const Container = styled.article`
-
 `
 
 const TocList = styled.section`
@@ -27,6 +26,12 @@ const TocList = styled.section`
     background-color: ${ colors.lightGray };
     text-decoration: underline;
   }
+  ${ media.phone`
+    display: none;
+  `}
+  ${ media.tablet`
+    display: none;
+  `}
 `
 
 export default { Container, TocList };

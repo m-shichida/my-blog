@@ -9,6 +9,10 @@ const Container = styled.article`
   ${ media.phone`
     margin: 16px auto;
   `}
+  ${ media.tablet`
+    margin-bottom: 16px;
+    width: 728px;
+  `}
 `
 
 const Title = styled.h1`
@@ -39,6 +43,9 @@ const ProfileContent = styled.div`
 
 const Message = styled.p`
   font-size: 1.4rem;
+  ${ media.tablet`
+    font-size: 1.6rem;
+  `}
 `
 
 export default { Container, Title, ProfileImage,
