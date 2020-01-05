@@ -7,7 +7,7 @@ const { Container } = styles;
 const BlogPosts = props => {
   return(
     <Container>
-      { props.edges.map(edge => { return (<PostCard edge={ edge }/>) }) }
+      { props.edges.map((edge, index) => { return (<PostCard key={ index } edge={ edge }/>) }) }
     </Container>
   )
 }
