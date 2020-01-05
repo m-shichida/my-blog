@@ -20,7 +20,7 @@ const PostCard = ({ edge }) => {
         <Title>{ title }</Title>
         <PublishedAt>{ publishedAt }</PublishedAt>
         <Tags>
-          { tags.map(tag => { return (<Tag>{ tag }</Tag>) }) }
+          { tags.map((tag, index) => { return (<Tag key={ index }>{ tag }</Tag>) }) }
         </Tags>
       </CardContent>
     </Card>

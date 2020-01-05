@@ -5,11 +5,13 @@ import { graphql } from "gatsby"
 import { media, colors } from '../helpers/styleHelper';
 import rehypeReact from "rehype-react"
 import SEO from "../components/seo"
+import Toc from '../components/Toc';
 import './post.scss'
 
 const Post = props => {
   const post = props.data.contentfulPost
   const contentHtml = post.content.childMarkdownRemark.htmlAst
+  const toc = props.data.allMarkdownRemark.edges[0].node.tableOfContents
 
   return (
     <Layout>
@@ -27,6 +29,9 @@ const Post = props => {
             { renderAst(contentHtml) }
           </Description>
         </PostWrapper>
+        <Toc
+          toc={ toc }
+        />
       </Container>
     </Layout>
   )
@@ -46,18 +51,29 @@ export const query = graphql`
       }
       tags
     }
+    allMarkdownRemark {
+      edges {
+        node {
+          tableOfContents(absolute: false)
+        }
+      }
+    }
   }
 `
 
 const Container = styled.article`
-  margin: 32px auto;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  margin: 32px 0;
   min-height: 86vh;
-  max-width: 1024px;
 `
 
 const PostWrapper = styled.div`
   background-color: ${ colors.white };
-  padding: 24px;
+  padding: 32px;
+  margin-right: 16px;
+  max-width: 800px;
 `
 
 const Title = styled.h1`
