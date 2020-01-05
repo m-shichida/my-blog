@@ -1,11 +1,10 @@
 import React from 'react'
-import Portfolio from '../../images/port-folio.png'
 import styles from './styles';
 
 const { PublishedAt, Card, CardImage, CardContent, Title, Tags, Tag } = styles
 
 const PostCard = ({ edge }) => {
-  const titleImage =  edge.node.titleImage ? edge.node.titleImage.file.url : Portfolio
+  const titleImage =  edge.node.titleImage.file.url
   const slug = edge.node.slug
   const title = edge.node.title
   const publishedAt = edge.node.publishedAt
