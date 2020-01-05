@@ -16,6 +16,10 @@ const IndexPage = ({ data }) => {
             content:
               'vvTlrJs8zHJEg-ds-CVe6SaIEKGSUwen3tEuOFmJxVs',
           },
+          {
+            name: 'description',
+            content: '技術的な投稿のほか、学んだことや経験したことをまとめるブログ兼ポートフォリオサイトです。'
+          }
         ]}
       />
       <TopBanner />
