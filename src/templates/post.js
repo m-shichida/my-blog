@@ -11,7 +11,7 @@ import './post.scss'
 const Post = props => {
   const post = props.data.contentfulPost
   const contentHtml = post.content.childMarkdownRemark.htmlAst
-  const toc = props.data.allMarkdownRemark.edges[0].node.tableOfContents
+  const toc = post.content.childMarkdownRemark.tableOfContents
 
   return (
     <Layout>
@@ -47,16 +47,10 @@ export const query = graphql`
       content {
         childMarkdownRemark {
           htmlAst
-        }
-      }
-      tags
-    }
-    allMarkdownRemark {
-      edges {
-        node {
           tableOfContents(absolute: false)
         }
       }
+      tags
     }
   }
 `
