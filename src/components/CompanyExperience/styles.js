@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import { colors, media } from '../../helpers/styleHelper'
 
 const Container = styled.article`
-  max-width: 628px;
+  width: 628px;
   padding: 16px;
   background-color: ${ colors.white };
   border-radius: 8px;
   ${ media.phone`
-    margin: 0 8px;
+    margin-bottom: 8px;
+  `}
+  ${ media.tablet`
+    width: 728px;
+    margin-bottom: 8px;
   `}
 `
 
@@ -52,6 +56,9 @@ const Content = styled.pre`
   color: ${ colors.gray };
   font-size: 1.4rem;
   line-height: 2.4rem;
+  ${ media.tablet`
+    font-size: 1.6rem;
+  `}
 `
 
 export default { Container, Title, Company, CompanyHeader,

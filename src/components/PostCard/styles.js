@@ -10,11 +10,17 @@ const Card = styled(Link)`
   height: 365px;
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  margin: 0 8px 8px 0;
+  margin: 0 8px 8px 8px;
   ${ media.phone`
     min-height: 50vh;
     width: 90vw;
     margin: 8px auto;
+  `}
+  ${ media.tablet`
+    width: 364px;
+    &:nth-child(even) {
+      margin: 0 0 8px 0;
+    }
   `}
 `
 
@@ -33,12 +39,9 @@ const PublishedAt = styled.p`
 `
 
 const CardImage = styled.img`
-  width: 325px;
-  height: 210px;
+  width: 100%;
+  height: 200px;
   object-fit: cover
-  ${ media.phone`
-    width: 90vw;
-  `}
 `
 
 const CardContent = styled.div`

@@ -92,4 +92,8 @@ const Flex = styled.section`
   ${ media.phone`
     flex-direction: column-reverse;
   `}
+  ${ media.tablet`
+    flex-direction: column-reverse;
+    width: 760px;
+  `}
 `

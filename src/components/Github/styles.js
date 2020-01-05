@@ -8,6 +8,10 @@ const GithubLink = styled.a`
   ${ media.phone`
     display: none;
   `}
+  ${ media.tablet`
+    width: 760px;
+    margin 24px auto;
+  `}
 `
 
 export default { GithubLink };

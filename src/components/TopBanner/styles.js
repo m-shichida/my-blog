@@ -12,6 +12,9 @@ const BannerContainer = styled.section`
   ${ media.phone`
     height: 36vh;
   `}
+  ${ media.tablet`
+    height: 30vh;
+  `}
 `
 
 const MessageContainer = styled.div`
