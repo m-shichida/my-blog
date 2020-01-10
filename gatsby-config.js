@@ -6,6 +6,7 @@ if (process.env.ENVIRONMENT !== "production") {
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://shicchi-blog.com`,
     title: `shicchi-blog`,
     description: `技術ブログ`,
     author: `Shichida Masatsugu`,
@@ -66,6 +67,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`
   ],
 }

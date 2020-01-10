@@ -14,7 +14,7 @@ const Blog = ({ data }) => {
     <>
       <Layout>
         <Container>
-          <SEO title="About" />
+          <SEO title="About" description='Railsエンジニアの技術ブログです。実務のテクニック垂れ流していきます。'/>
           <Github />
           <Flex>
             <CompanyExperience
