@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import ProfileImage from '../images/profile_image.jpg';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -53,7 +54,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: ProfileImage,
         },
         {
           name: `twitter:creator`,
