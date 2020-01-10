@@ -10,7 +10,7 @@ const Card = styled(Link)`
   height: 365px;
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  margin: 0 8px 8px 8px;
+  margin: 0 8px 16px 8px;
   ${ media.phone`
     min-height: 50vh;
     width: 90vw;
