@@ -78,6 +78,7 @@
 
   pre.line-numbers {
     font-size: 1.3rem;
+    line-height: 1.3rem;
     @include breakpoint('pc') {
       font-size: 1.6rem;
     }
@@ -86,7 +87,7 @@
   .gatsby-code-title {
     background: #272822;
     color: #ccc;
-    margin-bottom: -0.6em;
+    margin-bottom: -1rem;
     padding: 1rem 1rem;
     font-size: 1.3rem;
     line-height: 0.2;
