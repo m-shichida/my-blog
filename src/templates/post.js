@@ -12,11 +12,12 @@ const Post = props => {
   const post = props.data.contentfulPost
   const contentHtml = post.content.childMarkdownRemark.htmlAst
   const toc = post.content.childMarkdownRemark.tableOfContents
+  const description = post.description
 
   return (
     <Layout>
       <Container>
-        <SEO title={ post.title } />
+        <SEO title={ post.title } description={ description } />
         <PostWrapper>
           <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
           <Title>{ post.title }</Title>
@@ -50,6 +51,7 @@ export const query = graphql`
           tableOfContents(absolute: false)
         }
       }
+      description
       tags
     }
   }
