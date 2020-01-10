@@ -7,7 +7,7 @@ const Card = styled(Link)`
   color: ${ colors.black };
   background-color: ${ colors.white };
   width: 325px;
-  height: 365px;
+  height: 420px;
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   margin: 0 8px 16px 8px;
@@ -50,7 +50,7 @@ const CardContent = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
   overflow-wrap: break-word;
   ${ media.phone`
@@ -58,12 +58,18 @@ const Title = styled.h1`
   `}
 `
 
+const Description = styled.p`
+  font-size: 1.2rem;
+  padding: 4px 0;
+  color: ${ colors.gray }
+`
+
 const Tags = styled.div`
   margin-top: 12px;
 `
 
 const Tag = styled.span`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${ colors.black };
   padding: 4px;
   background-color: ${ colors.lightGray };
@@ -74,4 +80,4 @@ const Tag = styled.span`
   `}
 `
 
-export default { PublishedAt, Card, CardImage, CardContent, Title, Tags, Tag };
+export default { PublishedAt, Card, CardImage, CardContent, Title, Description, Tags, Tag };

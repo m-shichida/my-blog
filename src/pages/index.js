@@ -38,6 +38,7 @@ export const query = graphql`
               html
             }
           }
+          description
           slug
           publishedAt(formatString:"YYYY/MM/DD")
           tags
