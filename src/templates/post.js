@@ -57,46 +57,48 @@ export const query = graphql`
   }
 `
 
+//TODO: 一旦全て消してスマホ=>タブレット=>PCで作り直す。
 const Container = styled.article`
-  display: flex;
-  justify-content: center;
-  margin: 32px 0;
   min-height: 86vh;
+  ${ media.pc`
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  `}
 `
 
 const PostWrapper = styled.div`
   background-color: ${ colors.white };
-  padding: 32px;
-  margin-right: 16px;
-  width: 800px;
-  ${ media.phone`
-    width: 78%;
-    margin: 0 auto;
+  padding: 16px;
+  ${ media.pc`
+    width: 800px;
+    padding: 32px;
   `}
 `
 
 const Title = styled.h1`
-  font-size: 3rem;
   font-weight: bold;
+  font-size: 2rem;
   margin-bottom: 8px;
-  ${ media.phone`
-    font-size: 2rem;
+  ${ media.tablet`
+    font-size: 3rem;
+  `}
+  ${ media.pc`
+    font-size: 3rem;
   `}
 `
 
 const PublishedAt = styled.p`
   color: ${ colors.gray };
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 8px;
-  ${ media.phone`
-    font-size: 1.6rem;
+  ${ media.pc`
+    font-size: 2rem;
   `}
 `
 
 const Description = styled.div`
-  ${ media.phone`
-    font-size: 1.2rem;
-  `}
+  font-size: 1rem;
 `
 
 const Tags = styled.ul`
@@ -105,20 +107,19 @@ const Tags = styled.ul`
   list-style: none;
   padding-bottom: 8px;
   border-bottom: 2px solid ${ colors.gray };
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 `
 
 const Tag = styled.li`
-  font-size: 16px;
+  font-size: 1.8rem;
   background-color: ${ colors.lightGray };
-  padding: 4px;
+  padding: 8px;
   border: 1px solid ${ colors.lightGray };
   border-radius: 8px;
-  margin-right: 4px;
+  margin-right: 8px;
 `
 
 const Content = styled.pre`
-  font-size: 1.2rem;
 `
 
 const renderAst = new rehypeReact({
