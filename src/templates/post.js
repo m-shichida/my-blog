@@ -59,9 +59,12 @@ export const query = graphql`
 
 //TODO: 一旦全て消してスマホ=>タブレット=>PCで作り直す。
 const Container = styled.article`
-  //display: flex;
-  //justify-content: center;
   min-height: 86vh;
+  ${ media.pc`
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  `}
 `
 
 const PostWrapper = styled.div`
@@ -77,6 +80,9 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 8px;
+  ${ media.tablet`
+    font-size: 3rem;
+  `}
   ${ media.pc`
     font-size: 3rem;
   `}
