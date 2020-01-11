@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import { media } from '../helpers/styleHelper';
 import { graphql } from 'gatsby'
 
+// FIXME: マークダウン記述箇所？かどこかに指摘されてる<div> cannot appear as a descendant of <p>.
 const Blog = ({ data }) => {
   return (
     <>

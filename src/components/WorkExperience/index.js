@@ -11,7 +11,7 @@ const WorkExperience = props => {
   return (
     <Container>
       <div style={ { marginBottom: '16px' } }>
-      <Title>実務で経験したこと</Title>
+      <Title>スキル</Title>
       { workExperienceEdges.map((edge, index) => {
         return (
           <div key={ index }>

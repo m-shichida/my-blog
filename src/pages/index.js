@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
 import BlogPosts from '../components/BlogPosts';
+import { default as TotalTags } from '../components/Tags';
 import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => {
@@ -23,7 +24,8 @@ const IndexPage = ({ data }) => {
         ]}
       />
       <TopBanner />
-      <BlogPosts edges={ data.allContentfulPost.edges }/>
+      <TotalTags tags={ data.allContentfulPost.group }/>
+      <BlogPosts posts={ data.allContentfulPost.edges }/>
     </Layout>
   )
 }
@@ -31,6 +33,10 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     allContentfulPost {
+      group(field: tags) {
+        fieldValue
+        totalCount
+      }
       edges {
         node {
           content {

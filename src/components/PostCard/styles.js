@@ -11,6 +11,7 @@ const Card = styled(Link)`
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   margin: 0 8px 16px 8px;
+
   ${ media.phone`
     min-height: 50vh;
     width: 90vw;
@@ -45,8 +46,7 @@ const CardImage = styled.img`
 `
 
 const CardContent = styled.div`
-  padding: 8px;
-  padding-bottom: 16px;
+  padding: 5px;
 `
 
 const Title = styled.h1`
@@ -65,16 +65,22 @@ const Description = styled.p`
 `
 
 const Tags = styled.div`
-  margin-top: 12px;
+  margin: 8px 0 0 8px;
 `
 
-const Tag = styled.span`
+const Tag = styled(Link)`
   font-size: 1.4rem;
   color: ${ colors.black };
+  text-decoration: none;
   padding: 4px;
   background-color: ${ colors.lightGray };
   border-radius: 4px;
   margin-right: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
   ${ media.phone`
     font-size: 1.6rem;
   `}

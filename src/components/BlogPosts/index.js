@@ -4,10 +4,10 @@ import styles from './styles';
 
 const { Container } = styles;
 
-const BlogPosts = props => {
+const BlogPosts = ({ posts }) => {
   return(
     <Container>
-      { props.edges.map((edge, index) => { return (<PostCard key={ index } edge={ edge }/>) }) }
+      { posts.map((post, index) => { return (<PostCard key={ index } post={ post }/>) }) }
     </Container>
   )
 }
