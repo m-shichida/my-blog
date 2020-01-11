@@ -2,13 +2,12 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { media, colors } from '../../helpers/styleHelper';
 
-const Card = styled(Link)`
-  display: inline-block;
-  color: ${ colors.black };
+const Card = styled.article`
+  display: flex;
+  flex-direction: column;
   background-color: ${ colors.white };
   width: 325px;
   height: 420px;
-  text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   margin: 0 8px 16px 8px;
 
@@ -23,6 +22,15 @@ const Card = styled(Link)`
       margin: 0 0 8px 0;
     }
   `}
+`
+
+const CardActionArea = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${ colors.lightGray };
+  }
 `
 
 const PublishedAt = styled.p`
@@ -50,6 +58,7 @@ const CardContent = styled.div`
 `
 
 const Title = styled.h1`
+  color: ${ colors.black };
   font-size: 1.6rem;
   font-weight: bold;
   overflow-wrap: break-word;
@@ -59,12 +68,12 @@ const Title = styled.h1`
 `
 
 const Description = styled.p`
+  color: ${ colors.gray };
   font-size: 1.2rem;
   padding: 4px 0;
-  color: ${ colors.gray }
 `
 
-const Tags = styled.div`
+const Tags = styled.section`
   margin: 8px 0 0 8px;
 `
 
@@ -86,4 +95,5 @@ const Tag = styled(Link)`
   `}
 `
 
-export default { PublishedAt, Card, CardImage, CardContent, Title, Description, Tags, Tag };
+export default { PublishedAt, Card, CardActionArea, CardImage, CardContent,
+                 Title, Description, Tags, Tag };

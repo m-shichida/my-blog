@@ -42,7 +42,6 @@ const Post = ({ data }) => {
 
 export default Post;
 
-// TODO: 投稿順にしたい
 export const query = graphql`
   query($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {

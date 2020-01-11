@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './styles';
 
-const { PublishedAt, Card, CardImage, CardContent, Title, Description, Tags, Tag } = styles
+const { PublishedAt, Card, CardImage, CardActionArea, CardContent,
+        Title, Description, Tags, Tag } = styles
 
 const PostCard = ({ post }) => {
   // タグから検索するとnodeなしになる
@@ -12,17 +13,18 @@ const PostCard = ({ post }) => {
   const publishedAt = post.node ? post.node.publishedAt : post.publishedAt
   const tags = post.node ? post.node.tags : post.tags
 
-  // FIXME: aタグの中にaタグあるから指摘されてる
   return(
-    <Card to={ `/blog/${ slug }` }>
-      <CardImage
-        src={ titleImage }
-      />
-      <CardContent>
-        <Title>{ title }</Title>
-        <Description>{ description }</Description>
-        <PublishedAt>{ publishedAt }</PublishedAt>
-      </CardContent>
+    <Card>
+      <CardActionArea to={ `/blog/${ slug }` }>
+        <CardImage
+          src={ titleImage }
+        />
+        <CardContent>
+          <Title>{ title }</Title>
+          <Description>{ description }</Description>
+          <PublishedAt>{ publishedAt }</PublishedAt>
+        </CardContent>
+      </CardActionArea>
       <Tags>
         { tags.map((tag, index) => { return (<Tag key={ index } to={ `/tags/${ tag }` }>{ tag }</Tag>) }) }
       </Tags>

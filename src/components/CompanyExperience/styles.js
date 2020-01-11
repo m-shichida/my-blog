@@ -50,7 +50,7 @@ const CompanyPeriod = styled.span`
   font-size: 1.6rem;
 `
 
-const CompanyDescription = styled.p`
+const CompanyDescription = styled.div`
 `
 
 const Content = styled.pre`

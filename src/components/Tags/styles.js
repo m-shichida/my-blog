@@ -6,6 +6,9 @@ const Container = styled.article`
   width: 90vw;
   margin: 0 auto;
   margin-top: 24px;
+  ${ media.tablet`
+    width: 752px;
+  `}
   ${ media.pc`
     width: 1024px;
   `}

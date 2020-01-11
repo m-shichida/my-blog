@@ -9,7 +9,7 @@ import { graphql } from "gatsby";
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const posts = data.allContentfulPost.group.filter((post) => {
-                  return post.fieldValue == tag
+                  return post.fieldValue === tag
                 })
 
   return (
@@ -23,9 +23,6 @@ const Tags = ({ pageContext, data }) => {
 }
 
 export default Tags;
-
-// TODO: 並び替えたい(タグ多い順に)
-// TODO: かつ投稿順にしたい
 
 export const pageQuery = graphql`
   query {
