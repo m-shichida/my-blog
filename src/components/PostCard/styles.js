@@ -12,7 +12,7 @@ const Card = styled.article`
   margin: 0 8px 16px 8px;
 
   ${ media.phone`
-    min-height: 50vh;
+    height: 65vh;
     width: 90vw;
     margin: 8px auto;
   `}
