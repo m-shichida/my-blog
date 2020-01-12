@@ -10,9 +10,17 @@ const Card = styled.article`
   height: 420px;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   margin: 0 8px 16px 8px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  &:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
 
   ${ media.phone`
-    height: 65vh;
+    min-height: 65vh;
     width: 90vw;
     margin: 8px auto;
   `}
@@ -27,10 +35,6 @@ const Card = styled.article`
 const CardActionArea = styled(Link)`
   display: inline-block;
   text-decoration: none;
-
-  &:hover {
-    background-color: ${ colors.lightGray };
-  }
 `
 
 const PublishedAt = styled.p`
@@ -62,6 +66,12 @@ const Title = styled.h1`
   font-size: 1.6rem;
   font-weight: bold;
   overflow-wrap: break-word;
+  padding: 5px 5px 0 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
   ${ media.phone`
     font-size: 2rem;
   `}
@@ -70,11 +80,11 @@ const Title = styled.h1`
 const Description = styled.p`
   color: ${ colors.gray };
   font-size: 1.2rem;
-  padding: 4px 0;
+  padding-bottom: 4px;
 `
 
 const Tags = styled.section`
-  margin: 8px 0 0 8px;
+  margin: 8px 0 16px 8px;
 `
 
 const Tag = styled(Link)`

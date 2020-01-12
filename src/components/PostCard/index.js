@@ -19,12 +19,12 @@ const PostCard = ({ post }) => {
         <CardImage
           src={ titleImage }
         />
+        <Title>{ title }</Title>
+      </CardActionArea>
         <CardContent>
-          <Title>{ title }</Title>
           <Description>{ description }</Description>
           <PublishedAt>{ publishedAt }</PublishedAt>
         </CardContent>
-      </CardActionArea>
       <Tags>
         { tags.map((tag, index) => { return (<Tag key={ index } to={ `/tags/${ tag }` }>{ tag }</Tag>) }) }
       </Tags>

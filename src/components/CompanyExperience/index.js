@@ -5,13 +5,11 @@ import rehypeReact from "rehype-react"
 const { Container, Title, Company, CompanyHeader, CompanyName, CompanyPeriod,
         CompanyDescription, Content } = styles;
 
-const CompanyExperience = props => {
-  const edges = props.companyExperienceEdges
-
+const CompanyExperience = ({ companyExperienceEdges }) => {
   return (
     <Container>
       <Title>職歴</Title>
-      { edges.map((edge, index) => {
+      { companyExperienceEdges.map((edge, index) => {
         return(
           <Company key={ index }>
             <CompanyHeader>
