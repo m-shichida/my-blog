@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ProfileImage from '../images/profile_image.jpg';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ lang, meta, title, description, url }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,6 +26,7 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  const metaUrl = url || 'https://shicchi-blog.com/'
   const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
 
@@ -44,6 +45,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:url`,
+          content: metaUrl,
         },
         {
           property: `og:image`,

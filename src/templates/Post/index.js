@@ -19,7 +19,7 @@ const Post = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={ post.title } description={ post.description } />
+      <SEO title={ post.title } description={ post.description } url={ url } />
       <Container>
         <PostWrapper>
           <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
