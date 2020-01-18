@@ -7,7 +7,7 @@ const Tags = ({ tags }) => {
   return (
     <>
       <Container>
-        <Title>タグ一覧</Title>
+        <Title>記事を探す</Title>
         <TagList>
           { tags.map((tag, index) => {
           return (<Tag key={ index }>

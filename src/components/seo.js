@@ -26,6 +26,7 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -33,48 +34,52 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={ metaTitle }
       titleTemplate={ `%s` }
       meta={[
         {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: ProfileImage
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: ProfileImage,
+          name: `twitter:site`,
+          content: '@shicchi7913'
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: `twitter:card`,
+          content: `summary`
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        }
       ].concat(meta)}
     />
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ja`,
   meta: [],
   description: ``,
 }

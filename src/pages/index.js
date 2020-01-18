@@ -1,5 +1,5 @@
 import React from "react"
-import Helmet from "react-helmet"
+import SEO from '../components/seo'
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
 import BlogPosts from '../components/BlogPosts';
@@ -8,25 +8,14 @@ import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
-      <Helmet
-        title="shicchi-blog"
-        meta={[
-          {
-            name: 'google-site-verification',
-            content:
-              'vvTlrJs8zHJEg-ds-CVe6SaIEKGSUwen3tEuOFmJxVs',
-          },
-          {
-            name: 'description',
-            content: '技術的な投稿のほか、学んだことや経験したことをまとめるブログ兼ポートフォリオサイトです。'
-          }
-        ]}
-      />
-      <TopBanner />
-      <TotalTags tags={ data.allContentfulPost.group }/>
-      <BlogPosts posts={ data.allContentfulPost.edges }/>
-    </Layout>
+    <>
+      <SEO />
+      <Layout>
+        <TopBanner />
+        <TotalTags tags={ data.allContentfulPost.group }/>
+        <BlogPosts posts={ data.allContentfulPost.edges }/>
+      </Layout>
+    </>
   )
 }
 
