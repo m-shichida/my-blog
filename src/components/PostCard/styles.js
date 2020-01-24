@@ -2,17 +2,25 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { media, colors } from '../../helpers/styleHelper';
 
-const Card = styled(Link)`
-  display: inline-block;
-  color: ${ colors.black };
+const Card = styled.article`
+  display: flex;
+  flex-direction: column;
   background-color: ${ colors.white };
   width: 325px;
-  height: 365px;
-  text-decoration: none;
+  height: 420px;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   margin: 0 8px 16px 8px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  &:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
   ${ media.phone`
-    min-height: 50vh;
+    min-height: 65vh;
     width: 90vw;
     margin: 8px auto;
   `}
@@ -22,6 +30,11 @@ const Card = styled(Link)`
       margin: 0 0 8px 0;
     }
   `}
+`
+
+const CardActionArea = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
 `
 
 const PublishedAt = styled.p`
@@ -45,33 +58,52 @@ const CardImage = styled.img`
 `
 
 const CardContent = styled.div`
-  padding: 8px;
-  padding-bottom: 16px;
+  padding: 5px;
 `
 
 const Title = styled.h1`
-  font-size: 1.8rem;
+  color: ${ colors.black };
+  font-size: 1.6rem;
   font-weight: bold;
   overflow-wrap: break-word;
+  padding: 5px 5px 0 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
   ${ media.phone`
     font-size: 2rem;
   `}
 `
 
-const Tags = styled.div`
-  margin-top: 12px;
+const Description = styled.p`
+  color: ${ colors.gray };
+  font-size: 1.2rem;
+  padding-bottom: 4px;
 `
 
-const Tag = styled.span`
-  font-size: 1.2rem;
+const Tags = styled.section`
+  margin: 8px 0 16px 8px;
+`
+
+const Tag = styled(Link)`
+  font-size: 1.4rem;
   color: ${ colors.black };
+  text-decoration: none;
   padding: 4px;
   background-color: ${ colors.lightGray };
   border-radius: 4px;
   margin-right: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
   ${ media.phone`
     font-size: 1.6rem;
   `}
 `
 
-export default { PublishedAt, Card, CardImage, CardContent, Title, Tags, Tag };
+export default { PublishedAt, Card, CardActionArea, CardImage, CardContent,
+                 Title, Description, Tags, Tag };

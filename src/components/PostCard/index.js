@@ -1,27 +1,33 @@
 import React from 'react'
 import styles from './styles';
 
-const { PublishedAt, Card, CardImage, CardContent, Title, Tags, Tag } = styles
+const { PublishedAt, Card, CardImage, CardActionArea, CardContent,
+        Title, Description, Tags, Tag } = styles
 
-const PostCard = ({ edge }) => {
-  const titleImage =  edge.node.titleImage.file.url
-  const slug = edge.node.slug
-  const title = edge.node.title
-  const publishedAt = edge.node.publishedAt
-  const tags = edge.node.tags
+const PostCard = ({ post }) => {
+  // タグから検索するとnodeなしになる
+  const slug = post.node ? post.node.slug : post.slug;
+  const titleImage = post.node ? post.node.titleImage.file.url : post.titleImage.file.url;
+  const title = post.node ? post.node.title : post.title
+  const description = post.node ? post.node.description : post.description
+  const publishedAt = post.node ? post.node.publishedAt : post.publishedAt
+  const tags = post.node ? post.node.tags : post.tags
 
   return(
-    <Card to={ `/blog/${ slug }` }>
-      <CardImage
-        src={ titleImage }
-      />
-      <CardContent>
+    <Card>
+      <CardActionArea to={ `/blog/${ slug }` }>
+        <CardImage
+          src={ titleImage }
+        />
         <Title>{ title }</Title>
-        <PublishedAt>{ publishedAt }</PublishedAt>
-        <Tags>
-          { tags.map((tag, index) => { return (<Tag key={ index }>{ tag }</Tag>) }) }
-        </Tags>
-      </CardContent>
+      </CardActionArea>
+        <CardContent>
+          <Description>{ description }</Description>
+          <PublishedAt>{ publishedAt }</PublishedAt>
+        </CardContent>
+      <Tags>
+        { tags.map((tag, index) => { return (<Tag key={ index } to={ `/tags/${ tag }` }>{ tag }</Tag>) }) }
+      </Tags>
     </Card>
   )
 }

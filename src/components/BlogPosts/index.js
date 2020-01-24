@@ -1,14 +1,21 @@
 import React from 'react';
+import AdSense from 'react-adsense'
 import PostCard from '../PostCard';
 import styles from './styles';
 
 const { Container } = styles;
 
-const BlogPosts = props => {
+const BlogPosts = ({ posts }) => {
   return(
-    <Container>
-      { props.edges.map((edge, index) => { return (<PostCard key={ index } edge={ edge }/>) }) }
-    </Container>
+    <>
+      <Container>
+        { posts.map((post, index) => { return (<PostCard key={ index } post={ post }/>) }) }
+      </Container>
+      <AdSense.Google
+        client={ process.env.GOOGLE_ADSENSE_ID }
+        slot=''
+      />
+    </>
   )
 }
 

@@ -7,8 +7,8 @@ if (process.env.ENVIRONMENT !== "production") {
 module.exports = {
   siteMetadata: {
     siteUrl: `https://shicchi-blog.com`,
-    title: `shicchi-blog`,
-    description: `技術ブログ`,
+    title: `shicchi-techblog`,
+    description: `技術や業務についてなどをまとめたサイトです。`,
     author: `Shichida Masatsugu`,
   },
   plugins: [

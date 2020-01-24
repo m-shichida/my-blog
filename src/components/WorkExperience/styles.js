@@ -30,7 +30,7 @@ const ExperienceTitle = styled.h1`
   margin-bottom: 8px;
 `
 
-const ExperienceDescription = styled.p`
+const ExperienceDescription = styled.div`
 `
 
 const Content = styled.pre`

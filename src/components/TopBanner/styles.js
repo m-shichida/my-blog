@@ -5,7 +5,7 @@ const BannerContainer = styled.section`
   font-family: 'Fjalla One', 'Poppins';
   position: relative;
   color: ${ colors.white };
-  height: 40vh;
+  height: 30vh;
   background: #2992B9;
   background: -webkit-linear-gradient(to right, #6994BF, #2992B9);
   background: linear-gradient(to right, #6994BF, #2992B9);
