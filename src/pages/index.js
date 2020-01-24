@@ -1,4 +1,5 @@
 import React from "react"
+import AdSense from 'react-adsense'
 import SEO from '../components/seo'
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
@@ -10,6 +11,10 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <SEO />
+      <AdSense.Google
+            client={ process.env.GOOGLE_ADSENSE_ID }
+            slot=''
+      />
       <Layout>
         <TopBanner />
         <TotalTags tags={ data.allContentfulPost.group }/>
