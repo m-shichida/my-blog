@@ -1,5 +1,4 @@
 import React from 'react';
-import AdSense from 'react-adsense'
 import PostCard from '../PostCard';
 import styles from './styles';
 
@@ -11,10 +10,6 @@ const BlogPosts = ({ posts }) => {
       <Container>
         { posts.map((post, index) => { return (<PostCard key={ index } post={ post }/>) }) }
       </Container>
-      <AdSense.Google
-        client={ process.env.GOOGLE_ADSENSE_ID }
-        slot=''
-      />
     </>
   )
 }

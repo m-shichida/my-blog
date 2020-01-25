@@ -3,6 +3,7 @@ import SEO from '../components/seo'
 import Layout from "../components/Layout"
 import TopBanner from "../components/TopBanner"
 import BlogPosts from '../components/BlogPosts';
+import AdSense from 'react-adsense'
 import { default as TotalTags } from '../components/Tags';
 import { graphql } from 'gatsby'
 
@@ -14,6 +15,11 @@ const IndexPage = ({ data }) => {
         <TopBanner />
         <TotalTags tags={ data.allContentfulPost.group }/>
         <BlogPosts posts={ data.allContentfulPost.edges }/>
+        <AdSense.Google
+          style={{ display: 'block', 'text-align': 'center' }}
+          client={ process.env.GOOGLE_ADSENSE_ID }
+          slot=''
+        />
       </Layout>
     </>
   )
