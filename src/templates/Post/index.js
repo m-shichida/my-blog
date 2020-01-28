@@ -16,10 +16,11 @@ const Post = ({ data }) => {
   const contentHtml = post.content.childMarkdownRemark.htmlAst
   const toc = post.content.childMarkdownRemark.tableOfContents
   const url = `https://shicchi-blog.com/blog/${ post.slug }`
+  const image = `https:${ post.titleImage.file.url }`
 
   return (
     <Layout>
-      <SEO title={ post.title } description={ post.description } url={ url } />
+      <SEO title={ post.title } description={ post.description } url={ url } image={ image } />
       <Container>
         <PostWrapper>
           <PublishedAt>{ post.publishedAt }に投稿</PublishedAt>
@@ -53,6 +54,11 @@ export const query = graphql`
   query($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {
       title
+      titleImage {
+        file {
+          url
+        }
+      }
       publishedAt(formatString:"YYYY/MM/DD")
       content {
         childMarkdownRemark {
