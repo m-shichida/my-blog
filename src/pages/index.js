@@ -6,6 +6,8 @@ import BlogPosts from '../components/BlogPosts';
 import AdSense from 'react-adsense'
 import { default as TotalTags } from '../components/Tags';
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import { media } from '../helpers/styleHelper';
 
 const IndexPage = ({ data }) => {
   return (
@@ -15,11 +17,13 @@ const IndexPage = ({ data }) => {
         <TopBanner />
         <TotalTags tags={ data.allContentfulPost.group }/>
         <BlogPosts posts={ data.allContentfulPost.edges }/>
-        <AdSense.Google
-          client={ process.env.GOOGLE_ADSENSE_ID }
-          data-ad-format='auto'
-          data-full-width-responsive='true'
-        />
+        <adsenseContainer>
+          <AdSense.Google
+            client={ process.env.GOOGLE_ADSENSE_ID }
+            data-ad-format='auto'
+            data-full-width-responsive='true'
+          />
+        </adsenseContainer>
       </Layout>
     </>
   )
@@ -53,6 +57,17 @@ export const query = graphql`
       }
     }
   }
+`
+
+const adsenseContainer = styled.div`
+  width: 300px;
+  margin: 0 auto;
+  ${ media.tablet`
+    width: 760px;
+  `}
+  ${ media.pc`
+    width: 1040px;
+  `}
 `
 
 export default IndexPage
