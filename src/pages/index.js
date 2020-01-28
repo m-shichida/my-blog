@@ -19,6 +19,7 @@ const IndexPage = ({ data }) => {
         <BlogPosts posts={ data.allContentfulPost.edges }/>
         <adsenseContainer>
           <AdSense.Google
+            style={ { textAlign: 'center' } }
             client={ process.env.GOOGLE_ADSENSE_ID }
             data-ad-format='auto'
             data-full-width-responsive='true'
