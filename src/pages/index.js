@@ -16,9 +16,9 @@ const IndexPage = ({ data }) => {
         <TotalTags tags={ data.allContentfulPost.group }/>
         <BlogPosts posts={ data.allContentfulPost.edges }/>
         <AdSense.Google
-          style={{ display: 'block', 'text-align': 'center' }}
           client={ process.env.GOOGLE_ADSENSE_ID }
-          slot=''
+          data-ad-format='auto'
+          data-full-width-responsive='true'
         />
       </Layout>
     </>
