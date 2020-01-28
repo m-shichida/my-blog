@@ -34,6 +34,7 @@ const TagList = styled.ul`
 
 const Tag = styled.li`
   background-color: ${ colors.black };
+  line-height: 2.4rem;
   padding: 5px;
   border: 1px solid ${ colors.black };
   border-radius: 4px;
