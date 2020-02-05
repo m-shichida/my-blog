@@ -28,8 +28,8 @@ const ProfileHeader = styled.div`
 `
 
 const ProfileImage = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 110px;
   border-radius: 50%;
   box-shadow: 0 0 25px 0 #d9d9d9;
   margin-right: 24px;
@@ -37,7 +37,8 @@ const ProfileImage = styled.img`
 
 const ProfileContent = styled.div`
   font-size: 1.6rem;
-  border-radius: 8px;
+  padding-top: 8px;
+  border-radius: 16px;
   line-height: 2.6rem;
 `
 

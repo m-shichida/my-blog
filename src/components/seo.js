@@ -60,12 +60,12 @@ function SEO({ lang, meta, title, description, url, image }) {
           content: `website`,
         },
         {
-          name: `twitter:site`,
-          content: '@shicchi7913'
-        },
-        {
           name: `twitter:card`,
           content: `summary`
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage
         },
         {
           name: `twitter:title`,

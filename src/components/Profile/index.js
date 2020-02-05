@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles';
-import Image from '../../images/profile_image.jpg';
+import Image from '../../images/profile_transparent_image.png';
 
 const { Container, ProfileImage, ProfileContent, ProfileHeader,
         Title, Message } = styles
