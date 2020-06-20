@@ -41,7 +41,7 @@ const PostCard = (props: Props) => {
 const SCCard = styled(Card)`
   background-color: ${colors.white};
   width: 240px;
-  height: 340px;
+  height: 330px;
 
   ${media.phone`
     min-height: 65vh;
