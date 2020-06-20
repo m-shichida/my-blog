@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 
 import Header from "../components/Header";
 import Github from "../components/GithubGlasses";
+import Profile from "../components/Profile";
 import CompanyExperience from "../components/CompanyExperience";
 import Skills from "../components/Skills";
 import Learnings from "../components/Learnings";
@@ -35,6 +36,7 @@ const Blog = ({ data }: { data: any }) => {
     <>
       <Header />
       <Github />
+      <Profile />
       <CompanyExperience companies={companies} />
       <Skills skills={skills} />
       <Learnings learnings={learnings} />
