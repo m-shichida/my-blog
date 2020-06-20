@@ -14,7 +14,7 @@ const Header = () => {
             <SCTitle as="h1">Shicchi's Tech Blog</SCTitle>
           </Link>
         </List.Item>
-        <List.Item verticalAlign="bottom">
+        <List.Item>
           <Link to="/about">
             <SCTitle as="h2" color="green">
               About

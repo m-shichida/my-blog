@@ -9,8 +9,6 @@ import TopTags from "../components/TopTags";
 import PostCard from "../components/PostCard";
 
 const IndexPage = ({ data }: { data: any }) => {
-  console.log(data);
-
   return (
     <>
       <Header />
