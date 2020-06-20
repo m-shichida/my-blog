@@ -20,6 +20,7 @@ const GithubGlasses = () => {
 const SCGithubLink = styled.a`
   display: block;
   margin: 16px 0;
+  padding-left: 40px;
   text-align: center;
   ${media.phone`
     display: none;

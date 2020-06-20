@@ -4,12 +4,23 @@ import { graphql } from "gatsby";
 
 import Header from "../components/Header";
 import Github from "../components/GithubGlasses";
+import CompanyExperience from "../components/CompanyExperience";
 
 const Blog = ({ data }: { data: any }) => {
+  const companies = data.allContentfulCompanyExperience.edges.map(
+    (company: any, _i: number) => ({
+      companyName: company.node.companyName,
+      companyPeriod: company.node.companyPeriod,
+      companyDescription:
+        company.node.companyDescription.childMarkdownRemark.htmlAst,
+    })
+  );
+
   return (
     <>
       <Header />
       <Github />
+      <CompanyExperience companies={companies} />
     </>
   );
 };

@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import ProfileImage from '../images/profile_image.jpg';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import ProfileImage from "../images/profile_image.jpg";
 
 function SEO({ lang, meta, title, description, url, image }) {
   const { site } = useStaticQuery(
@@ -24,20 +24,20 @@ function SEO({ lang, meta, title, description, url, image }) {
         }
       }
     `
-  )
+  );
 
-  const metaUrl = url || 'https://shicchi-blog.com/'
-  const metaTitle = title || site.siteMetadata.title
-  const metaDescription = description || site.siteMetadata.description
-  const metaImage = image || ProfileImage
+  const metaUrl = url || "https://shicchi-blog.com/";
+  const metaTitle = title || site.siteMetadata.title;
+  const metaDescription = description || site.siteMetadata.description;
+  const metaImage = image || ProfileImage;
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={ metaTitle }
-      titleTemplate={ `%s` }
+      title={metaTitle}
+      titleTemplate={`%s`}
       meta={[
         {
           property: `og:title`,
@@ -53,7 +53,7 @@ function SEO({ lang, meta, title, description, url, image }) {
         },
         {
           property: `og:image`,
-          content: metaImage
+          content: metaImage,
         },
         {
           property: `og:type`,
@@ -61,11 +61,11 @@ function SEO({ lang, meta, title, description, url, image }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary`,
         },
         {
           name: `twitter:image`,
-          content: metaImage
+          content: metaImage,
         },
         {
           name: `twitter:title`,
@@ -78,23 +78,23 @@ function SEO({ lang, meta, title, description, url, image }) {
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
-        }
+        },
       ].concat(meta)}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `ja`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;
