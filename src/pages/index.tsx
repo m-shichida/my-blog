@@ -7,6 +7,7 @@ import SEO from "../components/seo"; // <SEO />
 import Header from "../components/Header";
 import TopTags from "../components/TopTags";
 import PostCard from "../components/PostCard";
+import Footer from "../components/Footer";
 
 const IndexPage = ({ data }: { data: any }) => {
   return (
@@ -27,6 +28,7 @@ const IndexPage = ({ data }: { data: any }) => {
       <SCTagsContainer>
         <TopTags tags={data.allContentfulPost.group} />
       </SCTagsContainer>
+      <Footer />
     </>
   );
 };
@@ -71,7 +73,7 @@ const SCPostContainer = styled.div`
 
 const SCTagsContainer = styled.div`
   max-width: 1200px;
-  margin: 16px auto;
+  margin: 24px auto;
 `;
 
 export default IndexPage;

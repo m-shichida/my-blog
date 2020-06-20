@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 
 import NotFound from "../images/not_found.svg";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const NotFoundPage = () => (
   <>
@@ -15,6 +16,7 @@ const NotFoundPage = () => (
       <SCContent>お探しのページは見つかりませんでした。</SCContent>
       <Image src={NotFound} size="large" />
     </SCContainer>
+    <Footer />
   </>
 );
 
@@ -24,6 +26,7 @@ const NotFoundPage = () => (
 
 const SCContainer = styled.div`
   width: 400px;
+  height: 42.5vw;
   margin: 40px auto;
 `;
 

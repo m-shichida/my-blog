@@ -7,6 +7,7 @@ import Github from "../components/GithubGlasses";
 import CompanyExperience from "../components/CompanyExperience";
 import Skills from "../components/Skills";
 import Learnings from "../components/Learnings";
+import Footer from "../components/Footer";
 
 const Blog = ({ data }: { data: any }) => {
   const companies = data.allContentfulCompanyExperience.edges.map(
@@ -37,6 +38,7 @@ const Blog = ({ data }: { data: any }) => {
       <CompanyExperience companies={companies} />
       <Skills skills={skills} />
       <Learnings learnings={learnings} />
+      <Footer />
     </>
   );
 };
