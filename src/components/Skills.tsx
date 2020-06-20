@@ -6,30 +6,26 @@ import { Segment, Header as Title } from "semantic-ui-react";
 import { colors, media } from "../helpers/styleHelper";
 
 type Props = {
-  companies: {
-    companyName: string;
-    companyPeriod: string;
-    companyDescription: string;
+  skills: {
+    language: string;
+    description: string;
   }[];
 };
 
-const CompanyExperience = (props: Props) => {
-  const { companies } = props;
+const Skills = (props: Props) => {
+  const { skills } = props;
 
   return (
     <SCContainer>
       <Segment>
-        <Title as="h2">職歴</Title>
-        {companies.map((company, i) => (
-          <SCCompany key={i}>
+        <Title as="h2">スキル</Title>
+        {skills.map((skill, i) => (
+          <SCSkill key={i}>
             <SCHeader>
-              <SCName>{company.companyName}</SCName>
-              <SCPeriod>{company.companyPeriod}</SCPeriod>
+              <SCName>{skill.language}</SCName>
             </SCHeader>
-            <SCDescription>
-              {renderAst(company.companyDescription)}
-            </SCDescription>
-          </SCCompany>
+            <SCDescription>{renderAst(skill.description)}</SCDescription>
+          </SCSkill>
         ))}
       </Segment>
     </SCContainer>
@@ -42,7 +38,7 @@ const SCContainer = styled.div`
   margin-top: 8px;
 `;
 
-const SCCompany = styled.div`
+const SCSkill = styled.div`
   margin-top: 16px;
 `;
 
@@ -52,10 +48,6 @@ const SCHeader = styled.div`
 `;
 
 const SCName = styled.h3`
-  margin: 0;
-`;
-
-const SCPeriod = styled.h3`
   margin: 0;
 `;
 
@@ -82,4 +74,4 @@ const renderAst = new rehypeReact({
   },
 }).Compiler;
 
-export default CompanyExperience;
+export default Skills;

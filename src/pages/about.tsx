@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import Header from "../components/Header";
 import Github from "../components/GithubGlasses";
 import CompanyExperience from "../components/CompanyExperience";
+import Skills from "../components/Skills";
 
 const Blog = ({ data }: { data: any }) => {
   const companies = data.allContentfulCompanyExperience.edges.map(
@@ -15,12 +16,25 @@ const Blog = ({ data }: { data: any }) => {
         company.node.companyDescription.childMarkdownRemark.htmlAst,
     })
   );
+  const skills = data.allContentfulWorkExperience.edges.map(
+    (skill: any, _i: number) => ({
+      language: skill.node.language,
+      description: skill.node.description.childMarkdownRemark.htmlAst,
+    })
+  );
+  const learnings = data.allContentfulLearningLanguage.edges.map(
+    (learn: any, _i: number) => ({
+      language: learn.node.language,
+      description: learn.node.description.childMarkdownRemark.htmlAst,
+    })
+  );
 
   return (
     <>
       <Header />
       <Github />
       <CompanyExperience companies={companies} />
+      <Skills skills={skills} />
     </>
   );
 };
@@ -66,28 +80,5 @@ export const query = graphql`
     }
   }
 `;
-
-// const Container = styled.section`
-//   color: #4b4b4b;
-//   font-family: Arial, Helvetica, ‘游ゴシック’, ‘Yu Gothic’, YuGothic,
-//     HiraKakuProN-W3, ‘メイリオ’, Meiryo, sans-serif;
-//   min-height: 85.5vh;
-//   background-color: #f5f5f5;
-// `;
-
-// const Flex = styled.section`
-//   display: flex;
-//   justify-content: space-around;
-//   max-width: 1024px;
-//   margin: 0 auto;
-//   margin-bottom: 16px;
-//   ${media.phone`
-//     flex-direction: column-reverse;
-//   `}
-//   ${media.tablet`
-//     flex-direction: column-reverse;
-//     width: 760px;
-//   `}
-// `;
 
 export default Blog;
