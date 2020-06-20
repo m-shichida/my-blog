@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Segment, Label, Header as Title } from "semantic-ui-react";
 
-import { colors } from "../helpers/styleHelper";
-
 type Props = {
   tags: {
     fieldValue: string;
@@ -32,7 +30,6 @@ const TopTags = (props: Props) => {
 const SCTitle = styled(Title)`
   text-align: center;
   padding-bottom: 4px;
-  border-bottom: 2px solid ${colors.gray};
 `;
 
 export default TopTags;

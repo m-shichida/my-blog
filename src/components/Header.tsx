@@ -8,20 +8,22 @@ import { colors } from "../helpers/styleHelper";
 const Header = () => {
   return (
     <SCHeader>
-      <List horizontal>
-        <List.Item>
-          <Link to="/">
-            <SCTitle as="h1">Shicchi's Tech Blog</SCTitle>
-          </Link>
-        </List.Item>
-        <List.Item>
-          <Link to="/about">
-            <SCTitle as="h2" color="green">
-              About
-            </SCTitle>
-          </Link>
-        </List.Item>
-      </List>
+      <SCContainer>
+        <List horizontal>
+          <List.Item>
+            <Link to="/">
+              <SCTitle as="h1">Shicchi's Tech Blog</SCTitle>
+            </Link>
+          </List.Item>
+          <List.Item>
+            <Link to="/about">
+              <SCTitle as="h2" color="green" style={{ marginLeft: "8px" }}>
+                About
+              </SCTitle>
+            </Link>
+          </List.Item>
+        </List>
+      </SCContainer>
     </SCHeader>
   );
 };
@@ -31,9 +33,13 @@ const SCHeader = styled.header`
   padding: 8px;
 `;
 
+const SCContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
 const SCTitle = styled(Title)`
   margin: 0;
-  margin-left: 8px;
   color: ${colors.white};
 `;
 

@@ -13,6 +13,9 @@ const IndexPage = ({ data }: { data: any }) => {
   return (
     <>
       <Header />
+      <SCTagsContainer>
+        <TopTags tags={data.allContentfulPost.group} />
+      </SCTagsContainer>
       <SCPostContainer>
         {data.allContentfulPost.edges.map((data: any, i: number) => (
           <PostCard
@@ -25,9 +28,6 @@ const IndexPage = ({ data }: { data: any }) => {
           />
         ))}
       </SCPostContainer>
-      <SCTagsContainer>
-        <TopTags tags={data.allContentfulPost.group} />
-      </SCTagsContainer>
       <Footer />
     </>
   );
@@ -63,17 +63,18 @@ export const query = graphql`
   }
 `;
 
+const SCTagsContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+`;
+
 const SCPostContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   max-width: 1230px;
   margin: 0 auto;
   margin-top: 8px;
-`;
-
-const SCTagsContainer = styled.div`
-  max-width: 1200px;
-  margin: 24px auto;
 `;
 
 export default IndexPage;
