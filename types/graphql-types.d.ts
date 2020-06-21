@@ -6012,3 +6012,13 @@ export type Unnamed_2_Query = { allContentfulPost: { group: Array<Pick<Contentfu
           & { childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }
         )> }
       ) }> } };
+
+export type Unnamed_3_QueryVariables = {
+  slug: Scalars['String']
+};
+
+
+export type Unnamed_3_Query = { contentfulPost: Maybe<(
+    Pick<ContentfulPost, 'title' | 'publishedAt' | 'description' | 'tags' | 'slug'>
+    & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst' | 'tableOfContents'>> }> }
+  )> };
