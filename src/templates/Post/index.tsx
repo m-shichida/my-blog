@@ -1,10 +1,12 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
 import rehypeReact from "rehype-react";
+import styled from "styled-components";
+import { graphql, Link } from "gatsby";
+import { Label, Header as Title } from "semantic-ui-react";
+
+import PostToc from "../../components/PostToc";
 import SEO from "../../components/seo";
 import Share from "../../components/Share";
-import PostToc from "../../components/PostToc";
-import styled from "styled-components";
 import { media, colors } from "../../helpers/styleHelper";
 import "./post.scss";
 
@@ -27,28 +29,30 @@ const Post = ({ data }: { data: any }) => {
       />
       <Header />
       <Container>
-        <PostWrapper>
-          <PublishedAt>{post.publishedAt}に投稿</PublishedAt>
-          <Title>{post.title}</Title>
-          <Tags>
-            {post.tags.map((tag: any, index: number) => {
+        <PostContainer>
+          <Title as="h1">{post.title}</Title>
+          <SCTags>
+            {post.tags.map((tag: string, i: number) => {
               return (
-                <Tag key={index}>
+                <Label as="a" tag key={i}>
                   <Link to={`/tags/${tag}`}>{tag}</Link>
-                </Tag>
+                </Label>
               );
             })}
-          </Tags>
-          <Description className="blog-content">
+          </SCTags>
+          <SCCreatedAt color="blue" style={{ marginTop: "8px" }}>
+            {post.publishedAt}
+          </SCCreatedAt>
+          <SCContent className="blog-content">
             {renderAst(contentHtml)}
-          </Description>
+          </SCContent>
           <Share
             title={post.title}
             tags={post.tags}
             url={url}
             description={post.description}
           />
-        </PostWrapper>
+        </PostContainer>
         <PostToc toc={toc} />
       </Container>
     </>
@@ -78,74 +82,26 @@ export const query = graphql`
   }
 `;
 
-const Container = styled.article`
-  min-height: 86vh;
+const Container = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
 
   ${media.pc`
     display: flex;
     justify-content: center;
-    margin: 16px 0;
+    margin: 0 auto;
   `}
 `;
 
-const PostWrapper = styled.div`
-  background-color: ${colors.white};
-  padding: 16px;
-  ${media.pc`
-    width: 800px;
-    padding: 32px;
-  `}
+const PostContainer = styled.div`
+  max-width: 800px;
+  padding-top: 24px;
 `;
 
-const Title = styled.h1`
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 8px;
-  ${media.tablet`
-    font-size: 3rem;
-  `}
-  ${media.pc`
-    font-size: 3rem;
-  `}
-`;
+const SCCreatedAt = styled(Label)``;
 
-const PublishedAt = styled.p`
-  color: ${colors.gray};
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-  ${media.pc`
-    font-size: 2rem;
-  `}
-`;
+const SCContent = styled.div``;
 
-const Description = styled.div`
-  font-size: 1rem;
-`;
-
-const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding-bottom: 8px;
-  border-bottom: 2px solid ${colors.gray};
-  margin-bottom: 16px;
-`;
-
-const Tag = styled.li`
-  font-size: 1.8rem;
-  background-color: ${colors.lightGray};
-  padding: 8px;
-  border: 1px solid ${colors.lightGray};
-  border-radius: 8px;
-  margin-right: 8px;
-
-  a {
-    color: ${colors.black};
-    text-decoration: none;
-  }
-`;
+const SCTags = styled.ul``;
 
 const Content = styled.pre``;
 

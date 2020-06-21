@@ -27,7 +27,7 @@ const TocList = styled.section`
   top: 0;
   position: sticky;
   position: -webkit-sticky;
-  padding-top: 8px;
+  padding: 24px 0 0 24px;
 
   p {
     margin: 0;
