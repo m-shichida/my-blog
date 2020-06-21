@@ -1,7 +1,7 @@
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 
 if (process.env.ENVIRONMENT !== "production") {
-  dotenv.config()
+  dotenv.config();
 }
 
 module.exports = {
@@ -58,16 +58,23 @@ module.exports = {
             },
           },
         ],
-      }
+      },
     },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: process.env.googleAnalyticsID
-      }
+        trackingId: process.env.googleAnalyticsID,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-graphql-codegen",
+      options: {
+        fileName: `types/graphql-types.d.ts`,
+      },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-typescript`,
   ],
-}
+};
