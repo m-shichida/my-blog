@@ -6,11 +6,12 @@ import { Label, Header as Title } from "semantic-ui-react";
 
 import PostToc from "../../components/PostToc";
 import SEO from "../../components/seo";
-import Share from "../../components/Share";
-import { media, colors } from "../../helpers/styleHelper";
+import PostShare from "../../components/PostShare";
+import { media } from "../../helpers/styleHelper";
 import "./post.scss";
 
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Post = ({ data }: { data: any }) => {
   const post = data.contentfulPost;
@@ -46,15 +47,11 @@ const Post = ({ data }: { data: any }) => {
           <SCContent className="blog-content">
             {renderAst(contentHtml)}
           </SCContent>
-          <Share
-            title={post.title}
-            tags={post.tags}
-            url={url}
-            description={post.description}
-          />
+          <PostShare title={post.title} url={url} />
         </PostContainer>
         <PostToc toc={toc} />
       </Container>
+      <Footer />
     </>
   );
 };
