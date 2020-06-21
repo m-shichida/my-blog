@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Segment, Label, Header as Title } from "semantic-ui-react";
+import { Link } from "gatsby";
 
 type Props = {
   tags: {
@@ -17,7 +18,13 @@ const TopTags = (props: Props) => {
       <SCTitle as="h3">記事を探す</SCTitle>
       <div style={{ marginTop: "16px" }}>
         {tags.map((tag, i) => (
-          <Label as="a" tag key={i} style={{ marginLeft: "20px" }}>
+          <Label
+            as={Link}
+            tag
+            key={i}
+            style={{ marginLeft: "20px" }}
+            to={`/tags/${tag.fieldValue}`}
+          >
             {tag.fieldValue}
             <Label.Detail>{tag.totalCount}</Label.Detail>
           </Label>

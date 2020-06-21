@@ -35,8 +35,8 @@ const Post = ({ data }: { data: any }) => {
           <SCTags>
             {post.tags.map((tag: string, i: number) => {
               return (
-                <Label as="a" tag key={i}>
-                  <Link to={`/tags/${tag}`}>{tag}</Link>
+                <Label as={Link} tag key={i} to={`/tags/${tag}`}>
+                  {tag}
                 </Label>
               );
             })}

@@ -6022,3 +6022,14 @@ export type Unnamed_3_Query = { contentfulPost: Maybe<(
     Pick<ContentfulPost, 'title' | 'publishedAt' | 'description' | 'tags' | 'slug'>
     & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst' | 'tableOfContents'>> }> }
   )> };
+
+export type Unnamed_4_QueryVariables = {};
+
+
+export type Unnamed_4_Query = { allContentfulPost: { group: Array<(
+      Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>
+      & { nodes: Array<(
+        Pick<ContentfulPost, 'description' | 'slug' | 'publishedAt' | 'tags' | 'title'>
+        & { content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }> }
+      )> }
+    )> } };

@@ -1,10 +1,9 @@
 const path = require("path");
-const _ = require("lodash");
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`./src/templates/Post/index.tsx`);
-  const tagTemplate = path.resolve("./src/templates/Tags/index.js");
+  const tagTemplate = path.resolve("./src/templates/Tags/index.tsx");
   const result = await graphql(`
     {
       allContentfulPost {

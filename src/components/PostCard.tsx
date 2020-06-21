@@ -28,7 +28,7 @@ const PostCard = (props: Props) => {
         </Card.Content>
         <Card.Content extra>
           {tags.map((tag, i) => (
-            <Label key={i} horizontal>
+            <Label as={Link} key={i} horizontal to={`/tags/${tag}`}>
               {tag}
             </Label>
           ))}
