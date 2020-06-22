@@ -11,14 +11,13 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import ProfileImage from "../images/profile_image.jpg";
 
-function SEO({ lang, meta, title, description, url, image }) {
+function SEO({ lang, meta, title, url, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
-            description
             author
           }
         }
@@ -28,7 +27,7 @@ function SEO({ lang, meta, title, description, url, image }) {
 
   const metaUrl = url || "https://shicchi-blog.com/";
   const metaTitle = title || site.siteMetadata.title;
-  const metaDescription = description || site.siteMetadata.description;
+  // const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || ProfileImage;
 
   return (
@@ -43,10 +42,10 @@ function SEO({ lang, meta, title, description, url, image }) {
           property: `og:title`,
           content: metaTitle,
         },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
+        // {
+        //   property: `og:description`,
+        //   content: metaDescription,
+        // },
         {
           property: `og:url`,
           content: metaUrl,
@@ -71,10 +70,10 @@ function SEO({ lang, meta, title, description, url, image }) {
           name: `twitter:title`,
           content: metaTitle,
         },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+        // {
+        //   name: `twitter:description`,
+        //   content: metaDescription,
+        // },
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
@@ -87,11 +86,11 @@ function SEO({ lang, meta, title, description, url, image }) {
 SEO.defaultProps = {
   lang: `ja`,
   meta: [],
-  description: ``,
+  // description: ``,
 };
 
 SEO.propTypes = {
-  description: PropTypes.string,
+  // description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
