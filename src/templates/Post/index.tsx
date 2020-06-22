@@ -22,12 +22,7 @@ const Post = ({ data }: { data: any }) => {
 
   return (
     <>
-      <SEO
-        title={post.title}
-        description={post.description}
-        url={url}
-        image={image}
-      />
+      <SEO title={post.title} url={url} image={image} />
       <Header />
       <Container>
         <PostContainer>
@@ -42,7 +37,7 @@ const Post = ({ data }: { data: any }) => {
             })}
           </SCTags>
           <SCCreatedAt color="blue" style={{ marginTop: "8px" }}>
-            {post.publishedAt}
+            {post.createdAt}
           </SCCreatedAt>
           <SCContent className="blog-content">
             {renderAst(contentHtml)}
@@ -65,14 +60,13 @@ export const query = graphql`
           url
         }
       }
-      publishedAt(formatString: "YYYY/MM/DD")
+      createdAt(formatString: "YYYY/MM/DD")
       content {
         childMarkdownRemark {
           htmlAst
           tableOfContents(absolute: false)
         }
       }
-      description
       tags
       slug
     }

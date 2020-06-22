@@ -1672,9 +1672,7 @@ export type ContentfulPost = Node & {
   internal: Internal,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   title?: Maybe<Scalars['String']>,
-  description?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
-  publishedAt?: Maybe<Scalars['Date']>,
   titleImage?: Maybe<ContentfulAsset>,
   content?: Maybe<ContentfulPostContentTextNode>,
   spaceId?: Maybe<Scalars['String']>,
@@ -1684,14 +1682,6 @@ export type ContentfulPost = Node & {
   sys?: Maybe<ContentfulPostSys>,
   node_locale?: Maybe<Scalars['String']>,
   childContentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
-};
-
-
-export type ContentfulPostPublishedAtArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
 };
 
 
@@ -2026,9 +2016,7 @@ export type ContentfulPostFieldsEnum =
   'internal___type' |
   'tags' |
   'title' |
-  'description' |
   'slug' |
-  'publishedAt' |
   'titleImage___id' |
   'titleImage___parent___id' |
   'titleImage___parent___parent___id' |
@@ -2267,9 +2255,7 @@ export type ContentfulPostFilterInput = {
   internal?: Maybe<InternalFilterInput>,
   tags?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
-  description?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
-  publishedAt?: Maybe<DateQueryOperatorInput>,
   titleImage?: Maybe<ContentfulAssetFilterInput>,
   content?: Maybe<ContentfulPostContentTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
@@ -4934,9 +4920,7 @@ export type QueryContentfulPostArgs = {
   internal?: Maybe<InternalFilterInput>,
   tags?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
-  description?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
-  publishedAt?: Maybe<DateQueryOperatorInput>,
   titleImage?: Maybe<ContentfulAssetFilterInput>,
   content?: Maybe<ContentfulPostContentTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
@@ -6019,7 +6003,7 @@ export type Unnamed_3_QueryVariables = {
 
 
 export type Unnamed_3_Query = { contentfulPost: Maybe<(
-    Pick<ContentfulPost, 'title' | 'publishedAt' | 'description' | 'tags' | 'slug'>
+    Pick<ContentfulPost, 'title' | 'createdAt' | 'tags' | 'slug'>
     & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst' | 'tableOfContents'>> }> }
   )> };
 
@@ -6029,7 +6013,7 @@ export type Unnamed_4_QueryVariables = {};
 export type Unnamed_4_Query = { allContentfulPost: { group: Array<(
       Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>
       & { nodes: Array<(
-        Pick<ContentfulPost, 'description' | 'slug' | 'publishedAt' | 'tags' | 'title'>
+        Pick<ContentfulPost, 'slug' | 'createdAt' | 'tags' | 'title'>
         & { content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }> }
       )> }
     )> } };

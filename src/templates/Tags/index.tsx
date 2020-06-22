@@ -53,7 +53,7 @@ export const pageQuery = graphql`
             }
           }
           slug
-          publishedAt(formatString: "YYYY/MM/DD")
+          createdAt(formatString: "YYYY/MM/DD")
           tags
           title
           titleImage {
