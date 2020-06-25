@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { colors } from "../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 type Props = {
   toc: string;
@@ -11,17 +12,24 @@ const PostToc = (props: Props) => {
   const { toc } = props;
 
   return (
-    <Container>
+    <SCContainer>
       <TocList
         dangerouslySetInnerHTML={{
           __html: toc,
         }}
       />
-    </Container>
+    </SCContainer>
   );
 };
 
-const Container = styled.article``;
+const SCContainer = styled.article`
+  ${mediaTablet`
+    display: none;
+  `}
+  ${mediaPhone`
+    display: none;
+  `}
+`;
 
 const TocList = styled.section`
   top: 0;

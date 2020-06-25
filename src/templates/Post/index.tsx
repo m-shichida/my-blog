@@ -11,6 +11,7 @@ import "./post.scss";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Post = ({ data }: { data: any }) => {
   const post = data.contentfulPost;
@@ -25,7 +26,7 @@ const Post = ({ data }: { data: any }) => {
       <Header />
       <Container>
         <PostContainer>
-          <Title as="h1">{post.title}</Title>
+          <SCTitle as="h1">{post.title}</SCTitle>
           <SCTags>
             {post.tags.map((tag: string, i: number) => {
               return (
@@ -77,11 +78,32 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  ${mediaTablet`
+    max-width: 752px;
+  `}
+  ${mediaPhone`
+    max-width: 304px;
+  `}
 `;
 
 const PostContainer = styled.div`
   max-width: 800px;
   padding-top: 24px;
+  ${mediaTablet`
+    max-width: 752px;
+  `}
+  ${mediaPhone`
+    max-width: 304px;
+  `}
+`;
+
+const SCTitle = styled(Title)`
+  ${mediaTablet`
+    font-size: 1.4rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.2rem;
+  `}
 `;
 
 const SCCreatedAt = styled(Label)``;
