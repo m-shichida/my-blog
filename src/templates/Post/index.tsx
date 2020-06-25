@@ -7,7 +7,6 @@ import { Label, Header as Title } from "semantic-ui-react";
 import PostToc from "../../components/PostToc";
 import SEO from "../../components/seo";
 import PostShare from "../../components/PostShare";
-import { media } from "../../helpers/styleHelper";
 import "./post.scss";
 
 import Header from "../../components/Header";
@@ -75,12 +74,9 @@ export const query = graphql`
 
 const Container = styled.div`
   max-width: 1200px;
-
-  ${media.pc`
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-  `}
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 `;
 
 const PostContainer = styled.div`

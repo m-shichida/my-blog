@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import TopTags from "../components/TopTags";
 import PostCard from "../components/PostCard";
 import Footer from "../components/Footer";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 const IndexPage = ({ data }: { data: any }) => {
   return (
@@ -67,14 +68,26 @@ const SCTagsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 20px;
+  ${mediaTablet`
+  max-width: 768px;
+  `}
+  ${mediaPhone`
+  max-width: 320px;
+  `}
 `;
 
 const SCPostContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  max-width: 1230px;
+  width: 1230px;
   margin: 0 auto;
   margin-top: 8px;
+  ${mediaTablet`
+    max-width: 768px;
+  `}
+  ${mediaPhone`
+    max-width: 320px;
+  `}
 `;
 
 export default IndexPage;

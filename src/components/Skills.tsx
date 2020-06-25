@@ -3,7 +3,7 @@ import rehypeReact from "rehype-react";
 import styled from "styled-components";
 import { Segment, Header as Title } from "semantic-ui-react";
 
-import { colors, media } from "../helpers/styleHelper";
+import { colors } from "../helpers/styleHelper";
 
 type Props = {
   skills: {
@@ -59,12 +59,6 @@ const Content = styled.pre`
   color: ${colors.gray};
   font-size: 1rem;
   line-height: 1.6rem;
-  ${media.tablet`
-    font-size: 1.6rem;
-  `}
-  ${media.phone`
-    font-size: 1.4rem;
-  `}
 `;
 
 const renderAst = new rehypeReact({

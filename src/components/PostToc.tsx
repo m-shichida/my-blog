@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { colors, media } from "../helpers/styleHelper";
+import { colors } from "../helpers/styleHelper";
 
 type Props = {
   toc: string;
@@ -48,13 +48,6 @@ const TocList = styled.section`
       border-bottom: 2px solid ${colors.gray};
     }
   }
-
-  ${media.phone`
-    display: none;
-  `}
-  ${media.tablet`
-    display: none;
-  `}
 `;
 
 export default PostToc;
