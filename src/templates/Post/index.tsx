@@ -7,11 +7,10 @@ import { Label, Header as Title } from "semantic-ui-react";
 import PostToc from "../../components/PostToc";
 import SEO from "../../components/seo";
 import PostShare from "../../components/PostShare";
-import { media } from "../../helpers/styleHelper";
 import "./post.scss";
 
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Post = ({ data }: { data: any }) => {
   const post = data.contentfulPost;
@@ -21,12 +20,12 @@ const Post = ({ data }: { data: any }) => {
   const image = `https:${post.titleImage.file.url}`;
 
   return (
-    <>
+    <SCWrapper>
       <SEO title={post.title} url={url} image={image} />
       <Header />
       <Container>
         <PostContainer>
-          <Title as="h1">{post.title}</Title>
+          <SCTitle as="h1">{post.title}</SCTitle>
           <SCTags>
             {post.tags.map((tag: string, i: number) => {
               return (
@@ -46,8 +45,7 @@ const Post = ({ data }: { data: any }) => {
         </PostContainer>
         <PostToc toc={toc} />
       </Container>
-      <Footer />
-    </>
+    </SCWrapper>
   );
 };
 
@@ -73,19 +71,43 @@ export const query = graphql`
   }
 `;
 
+const SCWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+`;
+
 const Container = styled.div`
   max-width: 1200px;
-
-  ${media.pc`
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  ${mediaTablet`
+    max-width: 752px;
+  `}
+  ${mediaPhone`
+    max-width: 304px;
   `}
 `;
 
 const PostContainer = styled.div`
   max-width: 800px;
   padding-top: 24px;
+  ${mediaTablet`
+    max-width: 752px;
+  `}
+  ${mediaPhone`
+    max-width: 304px;
+  `}
+`;
+
+const SCTitle = styled(Title)`
+  ${mediaTablet`
+    font-size: 1.4rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.2rem;
+  `}
 `;
 
 const SCCreatedAt = styled(Label)``;

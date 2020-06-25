@@ -3,7 +3,8 @@ import rehypeReact from "rehype-react";
 import styled from "styled-components";
 import { Segment, Header as Title } from "semantic-ui-react";
 
-import { colors, media } from "../helpers/styleHelper";
+import { colors } from "../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 type Props = {
   skills: {
@@ -18,7 +19,7 @@ const Skills = (props: Props) => {
   return (
     <SCContainer>
       <Segment>
-        <Title as="h2">スキル</Title>
+        <SCTitle as="h2">スキル</SCTitle>
         {skills.map((skill, i) => (
           <SCSkill key={i}>
             <SCHeader>
@@ -38,8 +39,20 @@ const SCContainer = styled.div`
   margin-top: 8px;
 `;
 
+const SCTitle = styled(Title)`
+  ${mediaTablet`
+    font-size: 1.4rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.4rem;
+  `}
+`;
+
 const SCSkill = styled.div`
   margin-top: 16px;
+  ${mediaPhone`
+    margin-top: 8px;
+  `}
 `;
 
 const SCHeader = styled.div`
@@ -59,12 +72,6 @@ const Content = styled.pre`
   color: ${colors.gray};
   font-size: 1rem;
   line-height: 1.6rem;
-  ${media.tablet`
-    font-size: 1.6rem;
-  `}
-  ${media.phone`
-    font-size: 1.4rem;
-  `}
 `;
 
 const renderAst = new rehypeReact({

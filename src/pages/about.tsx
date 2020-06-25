@@ -1,5 +1,6 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
+import styled from "styled-components";
 import { graphql } from "gatsby";
 
 import Header from "../components/Header";
@@ -8,7 +9,6 @@ import Profile from "../components/Profile";
 import CompanyExperience from "../components/CompanyExperience";
 import Skills from "../components/Skills";
 import Learnings from "../components/Learnings";
-import Footer from "../components/Footer";
 
 const Blog = ({ data }: { data: any }) => {
   const companies = data.allContentfulCompanyExperience.edges.map(
@@ -33,15 +33,14 @@ const Blog = ({ data }: { data: any }) => {
   );
 
   return (
-    <>
+    <SCWrapper>
       <Header />
       <Github />
       <Profile />
       <CompanyExperience companies={companies} />
       <Skills skills={skills} />
       <Learnings learnings={learnings} />
-      <Footer />
-    </>
+    </SCWrapper>
   );
 };
 
@@ -85,6 +84,12 @@ export const query = graphql`
       }
     }
   }
+`;
+
+const SCWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
 `;
 
 export default Blog;

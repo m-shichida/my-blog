@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Card, Image, Label } from "semantic-ui-react";
 import { Link } from "gatsby";
 
-import { media, colors } from "../helpers/styleHelper";
+import { colors } from "../helpers/styleHelper";
+import { mediaTablet } from "../helpers/styleHelper";
 
 type Props = {
   slug: string;
@@ -40,20 +41,7 @@ const PostCard = (props: Props) => {
 
 const SCCard = styled(Card)`
   background-color: ${colors.white};
-  width: 240px;
   height: 330px;
-
-  ${media.phone`
-    min-height: 65vh;
-    width: 90vw;
-    margin: 8px auto;
-  `}
-  ${media.tablet`
-    width: 364px;
-    &:nth-child(even) {
-      margin: 0 0 8px 0;
-    }
-  `}
 `;
 
 const SCCardContainer = styled.div`
@@ -61,7 +49,7 @@ const SCCardContainer = styled.div`
 `;
 
 const SCImage = styled(Image)`
-  max-height: 290px;
+  width: 290px;
 `;
 
 const SCCardTitle = styled(Card.Header)`

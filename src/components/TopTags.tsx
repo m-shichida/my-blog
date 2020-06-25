@@ -22,7 +22,7 @@ const TopTags = (props: Props) => {
             as={Link}
             tag
             key={i}
-            style={{ marginLeft: "20px" }}
+            style={{ margin: "8px 0 0 20px" }}
             to={`/tags/${tag.fieldValue}`}
           >
             {tag.fieldValue}

@@ -5,6 +5,7 @@ import { Item, Segment, Icon, List, Image } from "semantic-ui-react";
 import ProfileImage from "../images/profile_image.jpg";
 import Qitta from "../images/qiita.png";
 import { colors } from "../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 const Profile = () => {
   return (
@@ -68,6 +69,9 @@ const SCContainer = styled.div`
   max-width: 830px;
   margin: 0 auto;
   margin-top: 8px;
+  ${mediaPhone`
+    margin-top: 0;
+  `}
 `;
 
 const SCQiitaIcon = styled(Image)`
