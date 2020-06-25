@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import TopTags from "../../components/TopTags";
 import PostCard from "../../components/PostCard";
 import Footer from "../../components/Footer";
+import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {
   const { tag } = pageContext;
@@ -71,6 +72,12 @@ const SCTagsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 20px;
+  ${mediaTablet`
+    max-width: 768px;
+  `}
+  ${mediaPhone`
+    max-width: 320px;
+  `}
 `;
 
 const SCPostContainer = styled.div`
@@ -79,6 +86,12 @@ const SCPostContainer = styled.div`
   max-width: 1230px;
   margin: 0 auto;
   margin-top: 8px;
+  ${mediaTablet`
+    max-width: 768px;
+  `}
+  ${mediaPhone`
+    max-width: 320px;
+  `}
 `;
 
 export default Tags;

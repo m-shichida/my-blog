@@ -69,10 +69,10 @@ const SCTagsContainer = styled.div`
   margin: 0 auto;
   margin-top: 20px;
   ${mediaTablet`
-  max-width: 768px;
+    max-width: 768px;
   `}
   ${mediaPhone`
-  max-width: 320px;
+    max-width: 320px;
   `}
 `;
 

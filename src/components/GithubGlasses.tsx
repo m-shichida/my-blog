@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 const GithubGlasses = () => {
   return (
@@ -21,6 +22,12 @@ const SCGithubLink = styled.a`
   margin: 16px 0;
   padding-left: 40px;
   text-align: center;
+  ${mediaTablet`
+    display: none;
+  `}
+  ${mediaPhone`
+    display: none;
+  `}
 `;
 
 export default GithubGlasses;

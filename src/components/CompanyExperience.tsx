@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Segment, Header as Title } from "semantic-ui-react";
 
 import { colors } from "../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 type Props = {
   companies: {
@@ -19,7 +20,7 @@ const CompanyExperience = (props: Props) => {
   return (
     <SCContainer>
       <Segment>
-        <Title as="h2">職歴</Title>
+        <SCTitle as="h2">職歴</SCTitle>
         {companies.map((company, i) => (
           <SCCompany key={i}>
             <SCHeader>
@@ -42,21 +43,50 @@ const SCContainer = styled.div`
   margin-top: 8px;
 `;
 
+const SCTitle = styled(Title)`
+  ${mediaTablet`
+    font-size: 1.4rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.4rem;
+  `}
+`;
+
 const SCCompany = styled.div`
   margin-top: 16px;
+  ${mediaPhone`
+    margin-top: 8px;
+  `}
 `;
 
 const SCHeader = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${mediaPhone`
+    display: block;
+  `}
 `;
 
 const SCName = styled.h3`
   margin: 0;
+  ${mediaTablet`
+    font-size: 1rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.2rem;
+  `}
 `;
 
 const SCPeriod = styled.h3`
   margin: 0;
+  ${mediaTablet`
+    font-size: 1rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.2rem;
+    margin-top: 4px;
+  `}
 `;
 
 const SCDescription = styled.div`

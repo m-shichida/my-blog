@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Segment, Header as Title } from "semantic-ui-react";
 
 import { colors } from "../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
 
 type Props = {
   learnings: {
@@ -18,7 +19,7 @@ const Learnings = (props: Props) => {
   return (
     <SCContainer>
       <Segment>
-        <Title as="h2">勉強中</Title>
+        <SCTitle as="h2">勉強中</SCTitle>
         {learnings.map((learn, i) => (
           <SCSkill key={i}>
             <SCHeader>
@@ -40,6 +41,18 @@ const SCContainer = styled.div`
 
 const SCSkill = styled.div`
   margin-top: 16px;
+  ${mediaPhone`
+    margin-top: 8px;
+  `}
+`;
+
+const SCTitle = styled(Title)`
+  ${mediaTablet`
+    font-size: 1.4rem;
+  `}
+  ${mediaPhone`
+    font-size: 1.4rem;
+  `}
 `;
 
 const SCHeader = styled.div`
