@@ -10,7 +10,6 @@ import PostShare from "../../components/PostShare";
 import "./post.scss";
 
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Post = ({ data }: { data: any }) => {
@@ -21,7 +20,7 @@ const Post = ({ data }: { data: any }) => {
   const image = `https:${post.titleImage.file.url}`;
 
   return (
-    <>
+    <SCWrapper>
       <SEO title={post.title} url={url} image={image} />
       <Header />
       <Container>
@@ -46,8 +45,7 @@ const Post = ({ data }: { data: any }) => {
         </PostContainer>
         <PostToc toc={toc} />
       </Container>
-      <Footer />
-    </>
+    </SCWrapper>
   );
 };
 
@@ -71,6 +69,12 @@ export const query = graphql`
       slug
     }
   }
+`;
+
+const SCWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
 `;
 
 const Container = styled.div`

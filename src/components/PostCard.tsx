@@ -4,6 +4,7 @@ import { Card, Image, Label } from "semantic-ui-react";
 import { Link } from "gatsby";
 
 import { colors } from "../helpers/styleHelper";
+import { mediaTablet } from "../helpers/styleHelper";
 
 type Props = {
   slug: string;

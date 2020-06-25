@@ -7,7 +7,6 @@ import SEO from "../../components/seo"; // <SEO />
 import Header from "../../components/Header";
 import TopTags from "../../components/TopTags";
 import PostCard from "../../components/PostCard";
-import Footer from "../../components/Footer";
 import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {
@@ -17,7 +16,7 @@ const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {
   );
 
   return (
-    <>
+    <SCWrapper>
       <Header />
       <SCTagsContainer>
         <TopTags tags={data.allContentfulPost.group} />
@@ -36,8 +35,7 @@ const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {
           ))
         )}
       </SCPostContainer>
-      <Footer />
-    </>
+    </SCWrapper>
   );
 };
 
@@ -66,6 +64,12 @@ export const pageQuery = graphql`
       }
     }
   }
+`;
+
+const SCWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
 `;
 
 const SCTagsContainer = styled.div`
