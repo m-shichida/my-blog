@@ -34,7 +34,7 @@ const Skills = (props: Props) => {
 };
 
 const SCContainer = styled.div`
-  max-width: 830px;
+  width: 830px;
   margin: 0 auto;
   margin-top: 8px;
 `;

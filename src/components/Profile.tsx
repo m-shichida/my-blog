@@ -23,7 +23,7 @@ const Profile = () => {
                 <p>閲覧ありがとうございます。</p>
                 <p>2019年7月より大阪にてWEBエンジニアとして働いています。</p>
                 <p>
-                  ほぼメモに近いですが、日々自分が学んだことを可視化しています。
+                  メンターも始めました。
                 </p>
               </Item.Description>
               <Item.Extra>
@@ -66,7 +66,7 @@ const Profile = () => {
 };
 
 const SCContainer = styled.div`
-  max-width: 830px;
+  width: 830px;
   margin: 0 auto;
   margin-top: 8px;
   ${mediaPhone`
