@@ -20,10 +20,9 @@ const Profile = () => {
               <Item.Meta>名前: 七田将嗣</Item.Meta>
               <Item.Meta>出身地: 福岡県</Item.Meta>
               <Item.Description>
-                <p>閲覧ありがとうございます。</p>
-                <p>2019年7月より大阪にてWEBエンジニアとして働いています。</p>
                 <p>
-                  メンターも始めました。
+                  2019年よりWEBエンジニアとして働いています。<br />
+                  業務ではRuby/Railsを使っています。React/TypeScript勉強中
                 </p>
               </Item.Description>
               <Item.Extra>
