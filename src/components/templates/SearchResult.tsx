@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 
 import SEO from "../../components/seo"; // <SEO />
-import Header from "../../components/Header";
+import Header from "../../components/organisms/Header";
 import TopTags from "../../components/TopTags";
-import PostCard from "../../components/PostCard";
+import PostCard from "../../components/organisms/PostCard";
 import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {

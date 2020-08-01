@@ -2,8 +2,10 @@ const path = require("path");
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve(`./src/templates/Post/index.tsx`);
-  const tagTemplate = path.resolve("./src/templates/Tags/index.tsx");
+  const postTemplate = path.resolve(`./src/components/templates/Post.tsx`);
+  const tagTemplate = path.resolve(
+    "./src/components/templates/SearchResult.tsx"
+  );
   const result = await graphql(`
     {
       allContentfulPost {

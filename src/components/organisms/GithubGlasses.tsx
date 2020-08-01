@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const GithubGlasses = () => {
   return (
