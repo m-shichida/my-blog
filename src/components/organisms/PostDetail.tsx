@@ -32,14 +32,14 @@ const PostDetail = ({ post }: { post: any }) => {
 const SCContainer = styled.div`
   background-color: #ffffff;
   width: 800px;
-  padding: 16px;
+  padding: 24px;
   margin-bottom: 24px;
   border-radius: 4px;
 `;
 
 const SCPostImage = styled.img`
   display: block;
-  width: 760px;
+  width: 752px;
   margin: 0 auto;
 `;
 
