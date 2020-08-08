@@ -33,6 +33,8 @@ const SCContainer = styled.div`
   background-color: #ffffff;
   width: 800px;
   padding: 16px;
+  margin-bottom: 24px;
+  border-radius: 4px;
 `;
 
 const SCPostImage = styled.img`
