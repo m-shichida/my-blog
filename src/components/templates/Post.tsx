@@ -1,44 +1,35 @@
 import React from "react";
-import rehypeReact from "rehype-react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 
-import PostToc from "../../components/PostToc";
+import Header from "../organisms/Header";
+import PostToc from "../organisms/PostToc";
 import SEO from "../../components/seo";
-import PostShare from "../../components/PostShare";
-import "../../helpers/postContent.scss";
-
-import Header from "../../components/organisms/Header";
-import Title from "../../components/atoms/Text/Title";
-import Tag from "../../components/atoms/Label/Tag";
-import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
+import PostDetail from "../organisms/PostDetail";
 
 const Post = ({ data }: { data: any }) => {
   const post = data.contentfulPost;
-  const contentHtml = post.content.childMarkdownRemark.htmlAst;
   const toc = post.content.childMarkdownRemark.tableOfContents;
   const url = `https://shicchi-blog.com/blog/${post.slug}`;
   const image = `https:${post.titleImage.file.url}`;
 
   return (
-    <div>
+    <div style={{ background: "#f3f3f3" }}>
       <SEO title={post.title} url={url} image={image} />
       <Header />
-      <div>
-        <div>
-          <Title text={post.title} />
-          {post.tags.map((text: string, i: number) => (
-            <Tag text={text} />
-          ))}
-          <Tag text={post.createdAt} />
-          <div className="blog-content">{renderAst(contentHtml)}</div>
-          <PostShare title={post.title} url={url} />
-        </div>
+      <SCPostContenainer>
+        <PostDetail post={post} />
         <PostToc toc={toc} />
-      </div>
+      </SCPostContenainer>
     </div>
   );
 };
+
+const SCPostContenainer = styled.div`
+  display: flex;
+  width: 1080px;
+  margin: 0 auto;
+`;
 
 export const query = graphql`
   query($slug: String!) {
@@ -61,14 +52,5 @@ export const query = graphql`
     }
   }
 `;
-
-const Content = styled.pre``;
-
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: {
-    p: Content,
-  },
-}).Compiler;
 
 export default Post;

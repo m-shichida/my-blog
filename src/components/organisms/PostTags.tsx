@@ -4,6 +4,7 @@ import { Segment } from "semantic-ui-react";
 
 import Heading from "../atoms/Text/Heading";
 import Tag from "../atoms/Label/Tag";
+import { colors } from "../../helpers/styleHelper";
 
 const PostTags = ({
   tags,
@@ -13,7 +14,7 @@ const PostTags = ({
   return (
     <SCSegment style={{ marginTop: "8px" }}>
       <div style={{ textAlign: "center" }}>
-        <Heading text="記事を探す" />
+        <Heading text="記事を探す" color={colors.black} />
       </div>
       <div style={{ marginTop: "8px" }}>
         {tags.map((tag, i) => (

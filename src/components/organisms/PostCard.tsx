@@ -4,6 +4,7 @@ import { Card, Image } from "semantic-ui-react";
 import { Link } from "gatsby";
 
 import Heading from "../atoms/Text/Heading";
+import { colors } from "../../helpers/styleHelper";
 
 const PostCard = ({
   slug,
@@ -23,7 +24,7 @@ const PostCard = ({
         <Card.Content>
           <Card.Header>
             <Link to={`/blog/${slug}`}>
-              <Heading text={title} />
+              <Heading text={title} color={colors.black} />
             </Link>
           </Card.Header>
         </Card.Content>

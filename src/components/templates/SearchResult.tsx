@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 
 import SEO from "../../components/seo"; // <SEO />
 import Header from "../../components/organisms/Header";
-import TopTags from "../../components/TopTags";
+import PostTags from "../../components/organisms/PostTags";
 import PostCard from "../../components/organisms/PostCard";
 import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
@@ -19,7 +19,7 @@ const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {
     <SCWrapper>
       <Header />
       <SCTagsContainer>
-        <TopTags tags={data.allContentfulPost.group} />
+        <PostTags tags={data.allContentfulPost.group} />
       </SCTagsContainer>
       <SCPostContainer>
         {posts.map((data: any, _i: number) =>

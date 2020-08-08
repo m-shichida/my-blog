@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { colors } from "../helpers/styleHelper";
-import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
+import { colors } from "../../helpers/styleHelper";
+import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 type Props = {
   toc: string;
@@ -23,6 +23,8 @@ const PostToc = (props: Props) => {
 };
 
 const SCContainer = styled.article`
+  width: 280px;
+
   ${mediaTablet`
     display: none;
   `}
@@ -35,7 +37,7 @@ const TocList = styled.section`
   top: 0;
   position: sticky;
   position: -webkit-sticky;
-  padding: 24px 0 0 24px;
+  padding: 24px 0 0 8px;
 
   p {
     margin: 0;
