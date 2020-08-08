@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "../organisms/Header";
 import PostTags from "../organisms/PostTags";
 import PostCard from "../organisms/PostCard";
+import Profile from "../organisms/Profile";
 
 const Index = ({
   tags,
@@ -21,18 +22,21 @@ const Index = ({
     <>
       <Header />
       <SCContainer>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <SCCardWrapper>
+            {posts.map((post, i) => (
+              <PostCard
+                key={i}
+                slug={post.slug}
+                titleImage={post.titleImage}
+                title={post.title}
+                createdAt={post.createdAt}
+              />
+            ))}
+          </SCCardWrapper>
+          <Profile />
+        </div>
         <PostTags tags={tags} />
-        <SCCardWrapper>
-          {posts.map((post, i) => (
-            <PostCard
-              key={i}
-              slug={post.slug}
-              titleImage={post.titleImage}
-              title={post.title}
-              createdAt={post.createdAt}
-            />
-          ))}
-        </SCCardWrapper>
       </SCContainer>
     </>
   );
@@ -44,21 +48,15 @@ const SCContainer = styled.div`
 `;
 
 const SCCardWrapper = styled.div`
+  width: 808px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 16px;
 
-  &:before {
-    content: "";
-    display: block;
-    width: 25%;
-    order: 1;
-  }
   &:after {
     content: "";
     display: block;
-    width: 24%;
+    width: 30%;
   }
 `;
 

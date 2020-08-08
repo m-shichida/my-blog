@@ -2,6 +2,7 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import { graphql } from "gatsby";
 
+import SEO from "../components/seo";
 import IndexTemplate from "../components/templates/Index";
 
 const Index = ({ data }: { data: any }) => {
@@ -12,7 +13,12 @@ const Index = ({ data }: { data: any }) => {
     createdAt: data.node.createdAt,
   }));
   const tags = data.allContentfulPost.group;
-  return <IndexTemplate tags={tags} posts={posts} />;
+  return (
+    <>
+      <SEO title="Shicchi's blog" />
+      <IndexTemplate tags={tags} posts={posts} />
+    </>
+  );
 };
 
 export const query = graphql`

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "../organisms/Header";
 import GithubGlasses from "../organisms/GithubGlasses";
 import Profile from "../organisms/Profile";
+import CompanyExperience from "../CompanyExperience";
 
 const About = () => {
   return (

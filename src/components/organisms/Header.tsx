@@ -14,7 +14,7 @@ const Header = () => {
         <List horizontal>
           <List.Item>
             <Link to="/">
-              <Title text="Shicchi's Tech Blog" />
+              <Title text="Shicchi's Blog" />
             </Link>
           </List.Item>
           <List.Item>
