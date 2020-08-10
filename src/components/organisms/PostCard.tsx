@@ -18,7 +18,7 @@ const PostCard = ({
   createdAt: string;
 }) => {
   return (
-    <div style={{ marginTop: "8px" }}>
+    <div className="post-card">
       <SCCard>
         <SCImage src={titleImage} />
         <Card.Content>

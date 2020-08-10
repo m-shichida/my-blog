@@ -26,7 +26,7 @@ const PostTags = ({
 };
 
 const SCSegment = styled(Segment)`
-  margin: 8px 0 !important;
+  margin-top: 8px !important;
 `;
 
 export default PostTags;

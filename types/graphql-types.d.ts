@@ -342,16 +342,16 @@ export type ContentfulCompanyExperience = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  companyName?: Maybe<Scalars['String']>,
-  companyPeriod?: Maybe<Scalars['String']>,
-  companyDescription?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
+  name?: Maybe<Scalars['String']>,
+  period?: Maybe<Scalars['String']>,
+  description?: Maybe<ContentfulCompanyExperienceDescriptionTextNode>,
   spaceId?: Maybe<Scalars['String']>,
   contentful_id?: Maybe<Scalars['String']>,
   createdAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
   sys?: Maybe<ContentfulCompanyExperienceSys>,
   node_locale?: Maybe<Scalars['String']>,
-  childContentfulCompanyExperienceCompanyDescriptionTextNode?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
+  childContentfulCompanyExperienceDescriptionTextNode?: Maybe<ContentfulCompanyExperienceDescriptionTextNode>,
 };
 
 
@@ -370,43 +370,64 @@ export type ContentfulCompanyExperienceUpdatedAtArgs = {
   locale?: Maybe<Scalars['String']>
 };
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNode = Node & {
+export type ContentfulCompanyExperienceConnection = {
+  totalCount: Scalars['Int'],
+  edges: Array<ContentfulCompanyExperienceEdge>,
+  nodes: Array<ContentfulCompanyExperience>,
+  pageInfo: PageInfo,
+  distinct: Array<Scalars['String']>,
+  group: Array<ContentfulCompanyExperienceGroupConnection>,
+};
+
+
+export type ContentfulCompanyExperienceConnectionDistinctArgs = {
+  field: ContentfulCompanyExperienceFieldsEnum
+};
+
+
+export type ContentfulCompanyExperienceConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
+  field: ContentfulCompanyExperienceFieldsEnum
+};
+
+export type ContentfulCompanyExperienceDescriptionTextNode = Node & {
   id: Scalars['ID'],
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  companyDescription?: Maybe<Scalars['String']>,
+  description?: Maybe<Scalars['String']>,
   childMarkdownRemark?: Maybe<MarkdownRemark>,
 };
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeConnection = {
+export type ContentfulCompanyExperienceDescriptionTextNodeConnection = {
   totalCount: Scalars['Int'],
-  edges: Array<ContentfulCompanyExperienceCompanyDescriptionTextNodeEdge>,
-  nodes: Array<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
+  edges: Array<ContentfulCompanyExperienceDescriptionTextNodeEdge>,
+  nodes: Array<ContentfulCompanyExperienceDescriptionTextNode>,
   pageInfo: PageInfo,
   distinct: Array<Scalars['String']>,
-  group: Array<ContentfulCompanyExperienceCompanyDescriptionTextNodeGroupConnection>,
+  group: Array<ContentfulCompanyExperienceDescriptionTextNodeGroupConnection>,
 };
 
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeConnectionDistinctArgs = {
-  field: ContentfulCompanyExperienceCompanyDescriptionTextNodeFieldsEnum
+export type ContentfulCompanyExperienceDescriptionTextNodeConnectionDistinctArgs = {
+  field: ContentfulCompanyExperienceDescriptionTextNodeFieldsEnum
 };
 
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeConnectionGroupArgs = {
+export type ContentfulCompanyExperienceDescriptionTextNodeConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>,
-  field: ContentfulCompanyExperienceCompanyDescriptionTextNodeFieldsEnum
+  field: ContentfulCompanyExperienceDescriptionTextNodeFieldsEnum
 };
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeEdge = {
-  next?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
-  node: ContentfulCompanyExperienceCompanyDescriptionTextNode,
-  previous?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
+export type ContentfulCompanyExperienceDescriptionTextNodeEdge = {
+  next?: Maybe<ContentfulCompanyExperienceDescriptionTextNode>,
+  node: ContentfulCompanyExperienceDescriptionTextNode,
+  previous?: Maybe<ContentfulCompanyExperienceDescriptionTextNode>,
 };
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeFieldsEnum = 
+export type ContentfulCompanyExperienceDescriptionTextNodeFieldsEnum = 
   'id' |
   'parent___id' |
   'parent___parent___id' |
@@ -493,7 +514,7 @@ export type ContentfulCompanyExperienceCompanyDescriptionTextNodeFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'companyDescription' |
+  'description' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
   'childMarkdownRemark___excerpt' |
@@ -547,48 +568,27 @@ export type ContentfulCompanyExperienceCompanyDescriptionTextNodeFieldsEnum =
   'childMarkdownRemark___internal___owner' |
   'childMarkdownRemark___internal___type';
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeFilterInput = {
+export type ContentfulCompanyExperienceDescriptionTextNodeFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  companyDescription?: Maybe<StringQueryOperatorInput>,
+  description?: Maybe<StringQueryOperatorInput>,
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
 };
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeGroupConnection = {
+export type ContentfulCompanyExperienceDescriptionTextNodeGroupConnection = {
   totalCount: Scalars['Int'],
-  edges: Array<ContentfulCompanyExperienceCompanyDescriptionTextNodeEdge>,
-  nodes: Array<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
+  edges: Array<ContentfulCompanyExperienceDescriptionTextNodeEdge>,
+  nodes: Array<ContentfulCompanyExperienceDescriptionTextNode>,
   pageInfo: PageInfo,
   field: Scalars['String'],
   fieldValue?: Maybe<Scalars['String']>,
 };
 
-export type ContentfulCompanyExperienceCompanyDescriptionTextNodeSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeFieldsEnum>>>,
+export type ContentfulCompanyExperienceDescriptionTextNodeSortInput = {
+  fields?: Maybe<Array<Maybe<ContentfulCompanyExperienceDescriptionTextNodeFieldsEnum>>>,
   order?: Maybe<Array<Maybe<SortOrderEnum>>>,
-};
-
-export type ContentfulCompanyExperienceConnection = {
-  totalCount: Scalars['Int'],
-  edges: Array<ContentfulCompanyExperienceEdge>,
-  nodes: Array<ContentfulCompanyExperience>,
-  pageInfo: PageInfo,
-  distinct: Array<Scalars['String']>,
-  group: Array<ContentfulCompanyExperienceGroupConnection>,
-};
-
-
-export type ContentfulCompanyExperienceConnectionDistinctArgs = {
-  field: ContentfulCompanyExperienceFieldsEnum
-};
-
-
-export type ContentfulCompanyExperienceConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>,
-  limit?: Maybe<Scalars['Int']>,
-  field: ContentfulCompanyExperienceFieldsEnum
 };
 
 export type ContentfulCompanyExperienceEdge = {
@@ -684,75 +684,75 @@ export type ContentfulCompanyExperienceFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'companyName' |
-  'companyPeriod' |
-  'companyDescription___id' |
-  'companyDescription___parent___id' |
-  'companyDescription___parent___parent___id' |
-  'companyDescription___parent___parent___children' |
-  'companyDescription___parent___children' |
-  'companyDescription___parent___children___id' |
-  'companyDescription___parent___children___children' |
-  'companyDescription___parent___internal___content' |
-  'companyDescription___parent___internal___contentDigest' |
-  'companyDescription___parent___internal___description' |
-  'companyDescription___parent___internal___fieldOwners' |
-  'companyDescription___parent___internal___ignoreType' |
-  'companyDescription___parent___internal___mediaType' |
-  'companyDescription___parent___internal___owner' |
-  'companyDescription___parent___internal___type' |
-  'companyDescription___children' |
-  'companyDescription___children___id' |
-  'companyDescription___children___parent___id' |
-  'companyDescription___children___parent___children' |
-  'companyDescription___children___children' |
-  'companyDescription___children___children___id' |
-  'companyDescription___children___children___children' |
-  'companyDescription___children___internal___content' |
-  'companyDescription___children___internal___contentDigest' |
-  'companyDescription___children___internal___description' |
-  'companyDescription___children___internal___fieldOwners' |
-  'companyDescription___children___internal___ignoreType' |
-  'companyDescription___children___internal___mediaType' |
-  'companyDescription___children___internal___owner' |
-  'companyDescription___children___internal___type' |
-  'companyDescription___internal___content' |
-  'companyDescription___internal___contentDigest' |
-  'companyDescription___internal___description' |
-  'companyDescription___internal___fieldOwners' |
-  'companyDescription___internal___ignoreType' |
-  'companyDescription___internal___mediaType' |
-  'companyDescription___internal___owner' |
-  'companyDescription___internal___type' |
-  'companyDescription___companyDescription' |
-  'companyDescription___childMarkdownRemark___id' |
-  'companyDescription___childMarkdownRemark___frontmatter___title' |
-  'companyDescription___childMarkdownRemark___excerpt' |
-  'companyDescription___childMarkdownRemark___rawMarkdownBody' |
-  'companyDescription___childMarkdownRemark___html' |
-  'companyDescription___childMarkdownRemark___htmlAst' |
-  'companyDescription___childMarkdownRemark___excerptAst' |
-  'companyDescription___childMarkdownRemark___headings' |
-  'companyDescription___childMarkdownRemark___headings___value' |
-  'companyDescription___childMarkdownRemark___headings___depth' |
-  'companyDescription___childMarkdownRemark___timeToRead' |
-  'companyDescription___childMarkdownRemark___tableOfContents' |
-  'companyDescription___childMarkdownRemark___wordCount___paragraphs' |
-  'companyDescription___childMarkdownRemark___wordCount___sentences' |
-  'companyDescription___childMarkdownRemark___wordCount___words' |
-  'companyDescription___childMarkdownRemark___parent___id' |
-  'companyDescription___childMarkdownRemark___parent___children' |
-  'companyDescription___childMarkdownRemark___children' |
-  'companyDescription___childMarkdownRemark___children___id' |
-  'companyDescription___childMarkdownRemark___children___children' |
-  'companyDescription___childMarkdownRemark___internal___content' |
-  'companyDescription___childMarkdownRemark___internal___contentDigest' |
-  'companyDescription___childMarkdownRemark___internal___description' |
-  'companyDescription___childMarkdownRemark___internal___fieldOwners' |
-  'companyDescription___childMarkdownRemark___internal___ignoreType' |
-  'companyDescription___childMarkdownRemark___internal___mediaType' |
-  'companyDescription___childMarkdownRemark___internal___owner' |
-  'companyDescription___childMarkdownRemark___internal___type' |
+  'name' |
+  'period' |
+  'description___id' |
+  'description___parent___id' |
+  'description___parent___parent___id' |
+  'description___parent___parent___children' |
+  'description___parent___children' |
+  'description___parent___children___id' |
+  'description___parent___children___children' |
+  'description___parent___internal___content' |
+  'description___parent___internal___contentDigest' |
+  'description___parent___internal___description' |
+  'description___parent___internal___fieldOwners' |
+  'description___parent___internal___ignoreType' |
+  'description___parent___internal___mediaType' |
+  'description___parent___internal___owner' |
+  'description___parent___internal___type' |
+  'description___children' |
+  'description___children___id' |
+  'description___children___parent___id' |
+  'description___children___parent___children' |
+  'description___children___children' |
+  'description___children___children___id' |
+  'description___children___children___children' |
+  'description___children___internal___content' |
+  'description___children___internal___contentDigest' |
+  'description___children___internal___description' |
+  'description___children___internal___fieldOwners' |
+  'description___children___internal___ignoreType' |
+  'description___children___internal___mediaType' |
+  'description___children___internal___owner' |
+  'description___children___internal___type' |
+  'description___internal___content' |
+  'description___internal___contentDigest' |
+  'description___internal___description' |
+  'description___internal___fieldOwners' |
+  'description___internal___ignoreType' |
+  'description___internal___mediaType' |
+  'description___internal___owner' |
+  'description___internal___type' |
+  'description___description' |
+  'description___childMarkdownRemark___id' |
+  'description___childMarkdownRemark___frontmatter___title' |
+  'description___childMarkdownRemark___excerpt' |
+  'description___childMarkdownRemark___rawMarkdownBody' |
+  'description___childMarkdownRemark___html' |
+  'description___childMarkdownRemark___htmlAst' |
+  'description___childMarkdownRemark___excerptAst' |
+  'description___childMarkdownRemark___headings' |
+  'description___childMarkdownRemark___headings___value' |
+  'description___childMarkdownRemark___headings___depth' |
+  'description___childMarkdownRemark___timeToRead' |
+  'description___childMarkdownRemark___tableOfContents' |
+  'description___childMarkdownRemark___wordCount___paragraphs' |
+  'description___childMarkdownRemark___wordCount___sentences' |
+  'description___childMarkdownRemark___wordCount___words' |
+  'description___childMarkdownRemark___parent___id' |
+  'description___childMarkdownRemark___parent___children' |
+  'description___childMarkdownRemark___children' |
+  'description___childMarkdownRemark___children___id' |
+  'description___childMarkdownRemark___children___children' |
+  'description___childMarkdownRemark___internal___content' |
+  'description___childMarkdownRemark___internal___contentDigest' |
+  'description___childMarkdownRemark___internal___description' |
+  'description___childMarkdownRemark___internal___fieldOwners' |
+  'description___childMarkdownRemark___internal___ignoreType' |
+  'description___childMarkdownRemark___internal___mediaType' |
+  'description___childMarkdownRemark___internal___owner' |
+  'description___childMarkdownRemark___internal___type' |
   'spaceId' |
   'contentful_id' |
   'createdAt' |
@@ -763,89 +763,89 @@ export type ContentfulCompanyExperienceFieldsEnum =
   'sys___contentType___sys___id' |
   'sys___contentType___sys___contentful_id' |
   'node_locale' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___parent___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___parent___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___children___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___children___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___content' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___contentDigest' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___description' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___fieldOwners' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___ignoreType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___mediaType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___owner' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___parent___internal___type' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___parent___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___parent___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___children___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___children___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___content' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___contentDigest' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___description' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___fieldOwners' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___ignoreType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___mediaType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___owner' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___children___internal___type' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___content' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___contentDigest' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___description' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___fieldOwners' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___ignoreType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___mediaType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___owner' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___internal___type' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___companyDescription' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___frontmatter___title' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___excerpt' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___rawMarkdownBody' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___html' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___htmlAst' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___excerptAst' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___headings' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___headings___value' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___headings___depth' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___timeToRead' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___tableOfContents' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___wordCount___paragraphs' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___wordCount___sentences' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___wordCount___words' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___parent___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___parent___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___children___id' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___children___children' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___content' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___contentDigest' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___description' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___fieldOwners' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___ignoreType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___mediaType' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___owner' |
-  'childContentfulCompanyExperienceCompanyDescriptionTextNode___childMarkdownRemark___internal___type';
+  'childContentfulCompanyExperienceDescriptionTextNode___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___parent___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___parent___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___children___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___children___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___content' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___contentDigest' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___description' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___fieldOwners' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___ignoreType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___mediaType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___owner' |
+  'childContentfulCompanyExperienceDescriptionTextNode___parent___internal___type' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___parent___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___parent___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___children___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___children___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___content' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___contentDigest' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___description' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___fieldOwners' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___ignoreType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___mediaType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___owner' |
+  'childContentfulCompanyExperienceDescriptionTextNode___children___internal___type' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___content' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___contentDigest' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___description' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___fieldOwners' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___ignoreType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___mediaType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___owner' |
+  'childContentfulCompanyExperienceDescriptionTextNode___internal___type' |
+  'childContentfulCompanyExperienceDescriptionTextNode___description' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___frontmatter___title' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___excerpt' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___rawMarkdownBody' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___html' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___htmlAst' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___excerptAst' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___headings' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___headings___value' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___headings___depth' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___timeToRead' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___tableOfContents' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___wordCount___paragraphs' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___wordCount___sentences' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___wordCount___words' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___parent___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___parent___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___children___id' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___children___children' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___content' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___contentDigest' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___description' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___fieldOwners' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___ignoreType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___mediaType' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___owner' |
+  'childContentfulCompanyExperienceDescriptionTextNode___childMarkdownRemark___internal___type';
 
 export type ContentfulCompanyExperienceFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  companyName?: Maybe<StringQueryOperatorInput>,
-  companyPeriod?: Maybe<StringQueryOperatorInput>,
-  companyDescription?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeFilterInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  period?: Maybe<StringQueryOperatorInput>,
+  description?: Maybe<ContentfulCompanyExperienceDescriptionTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   sys?: Maybe<ContentfulCompanyExperienceSysFilterInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
-  childContentfulCompanyExperienceCompanyDescriptionTextNode?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeFilterInput>,
+  childContentfulCompanyExperienceDescriptionTextNode?: Maybe<ContentfulCompanyExperienceDescriptionTextNodeFilterInput>,
 };
 
 export type ContentfulCompanyExperienceGroupConnection = {
@@ -1116,7 +1116,7 @@ export type ContentfulLearningLanguage = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  language?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
   description?: Maybe<ContentfulLearningLanguageDescriptionTextNode>,
   spaceId?: Maybe<Scalars['String']>,
   contentful_id?: Maybe<Scalars['String']>,
@@ -1457,7 +1457,7 @@ export type ContentfulLearningLanguageFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'language' |
+  'name' |
   'description___id' |
   'description___parent___id' |
   'description___parent___parent___id' |
@@ -1608,7 +1608,7 @@ export type ContentfulLearningLanguageFilterInput = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  language?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<ContentfulLearningLanguageDescriptionTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
@@ -2382,7 +2382,7 @@ export type ContentfulWorkExperience = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  language?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
   description?: Maybe<ContentfulWorkExperienceDescriptionTextNode>,
   spaceId?: Maybe<Scalars['String']>,
   contentful_id?: Maybe<Scalars['String']>,
@@ -2723,7 +2723,7 @@ export type ContentfulWorkExperienceFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'language' |
+  'name' |
   'description___id' |
   'description___parent___id' |
   'description___parent___parent___id' |
@@ -2874,7 +2874,7 @@ export type ContentfulWorkExperienceFilterInput = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  language?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<ContentfulWorkExperienceDescriptionTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
@@ -4526,8 +4526,8 @@ export type Query = {
   allContentfulWorkExperienceDescriptionTextNode: ContentfulWorkExperienceDescriptionTextNodeConnection,
   contentfulWorkExperience?: Maybe<ContentfulWorkExperience>,
   allContentfulWorkExperience: ContentfulWorkExperienceConnection,
-  contentfulCompanyExperienceCompanyDescriptionTextNode?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNode>,
-  allContentfulCompanyExperienceCompanyDescriptionTextNode: ContentfulCompanyExperienceCompanyDescriptionTextNodeConnection,
+  contentfulCompanyExperienceDescriptionTextNode?: Maybe<ContentfulCompanyExperienceDescriptionTextNode>,
+  allContentfulCompanyExperienceDescriptionTextNode: ContentfulCompanyExperienceDescriptionTextNodeConnection,
   contentfulCompanyExperience?: Maybe<ContentfulCompanyExperience>,
   allContentfulCompanyExperience: ContentfulCompanyExperienceConnection,
   contentfulPostContentTextNode?: Maybe<ContentfulPostContentTextNode>,
@@ -4788,7 +4788,7 @@ export type QueryContentfulLearningLanguageArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  language?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<ContentfulLearningLanguageDescriptionTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
@@ -4831,7 +4831,7 @@ export type QueryContentfulWorkExperienceArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  language?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<ContentfulWorkExperienceDescriptionTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
@@ -4851,19 +4851,19 @@ export type QueryAllContentfulWorkExperienceArgs = {
 };
 
 
-export type QueryContentfulCompanyExperienceCompanyDescriptionTextNodeArgs = {
+export type QueryContentfulCompanyExperienceDescriptionTextNodeArgs = {
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  companyDescription?: Maybe<StringQueryOperatorInput>,
+  description?: Maybe<StringQueryOperatorInput>,
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
 };
 
 
-export type QueryAllContentfulCompanyExperienceCompanyDescriptionTextNodeArgs = {
-  filter?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeFilterInput>,
-  sort?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeSortInput>,
+export type QueryAllContentfulCompanyExperienceDescriptionTextNodeArgs = {
+  filter?: Maybe<ContentfulCompanyExperienceDescriptionTextNodeFilterInput>,
+  sort?: Maybe<ContentfulCompanyExperienceDescriptionTextNodeSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -4874,16 +4874,16 @@ export type QueryContentfulCompanyExperienceArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  companyName?: Maybe<StringQueryOperatorInput>,
-  companyPeriod?: Maybe<StringQueryOperatorInput>,
-  companyDescription?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeFilterInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  period?: Maybe<StringQueryOperatorInput>,
+  description?: Maybe<ContentfulCompanyExperienceDescriptionTextNodeFilterInput>,
   spaceId?: Maybe<StringQueryOperatorInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   sys?: Maybe<ContentfulCompanyExperienceSysFilterInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
-  childContentfulCompanyExperienceCompanyDescriptionTextNode?: Maybe<ContentfulCompanyExperienceCompanyDescriptionTextNodeFilterInput>
+  childContentfulCompanyExperienceDescriptionTextNode?: Maybe<ContentfulCompanyExperienceDescriptionTextNodeFilterInput>
 };
 
 
@@ -5996,7 +5996,21 @@ export type Unnamed_2_Query = { allContentfulPost: { group: Array<(
 export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_3_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
+export type Unnamed_3_Query = { allContentfulWorkExperience: { edges: Array<{ node: (
+        Pick<ContentfulWorkExperience, 'name'>
+        & { description: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
+      ) }> }, allContentfulLearningLanguage: { edges: Array<{ node: (
+        Pick<ContentfulLearningLanguage, 'name'>
+        & { description: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
+      ) }> }, allContentfulCompanyExperience: { edges: Array<{ node: (
+        Pick<ContentfulCompanyExperience, 'name' | 'period'>
+        & { description: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
+      ) }> } };
+
+export type Unnamed_4_QueryVariables = {};
+
+
+export type Unnamed_4_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
         Pick<ContentfulPost, 'createdAt' | 'slug' | 'title' | 'tags'>
         & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<(
           Pick<ContentfulPostContentTextNode, 'content'>

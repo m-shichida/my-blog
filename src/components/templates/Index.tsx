@@ -45,6 +45,8 @@ const Index = ({
 const SCContainer = styled.div`
   width: 1080px;
   margin: 0 auto;
+  padding-top: 8px;
+  padding-bottom: 32px;
 `;
 
 const SCCardWrapper = styled.div`
@@ -57,6 +59,10 @@ const SCCardWrapper = styled.div`
     content: "";
     display: block;
     width: 30%;
+  }
+
+  .post-card:nth-child(n + 4) {
+    margin-top: 8px;
   }
 `;
 
