@@ -1,14 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Item,
-  Segment,
-  Icon,
-  List,
-  Image,
-  Card,
-  Button,
-} from "semantic-ui-react";
+import { Icon, List, Image, Card } from "semantic-ui-react";
 
 import ProfileImage from "../../images/profile_image.png";
 import Qitta from "../../images/qiita.png";
@@ -17,11 +9,11 @@ import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 
 const Profile = () => {
   return (
-    <div style={{ marginTop: "8px" }}>
+    <div>
       <Card style={{ width: "264px" }}>
         <Card.Content>
           <Card.Header>プロフィール</Card.Header>
-          <List horizontal>
+          <List horizontal style={{ margin: "0" }}>
             <List.Item>
               <Image style={{ width: "120px" }} src={ProfileImage} />
             </List.Item>
