@@ -6,7 +6,7 @@ import Header from "../organisms/Header";
 import GithubGlasses from "../organisms/GithubGlasses";
 import Profile from "../organisms/Profile";
 import ExperienceCard from "../organisms/ExperienceCard";
-import { mediaPc } from "../../helpers/styleHelper";
+import { mediaPc, mediaTabletL } from "../../helpers/styleHelper";
 
 const About = ({
   companies,
@@ -34,7 +34,7 @@ const About = ({
         <GithubGlasses />
         <SCExpericenceContainer>
           <Profile />
-          <List style={{ margin: "0" }}>
+          <SCList>
             <List.Item>
               <ExperienceCard title="職歴" experiences={companies} />
             </List.Item>
@@ -44,7 +44,7 @@ const About = ({
             <List.Item>
               <ExperienceCard title="勉強中言語" experiences={learnings} />
             </List.Item>
-          </List>
+          </SCList>
         </SCExpericenceContainer>
       </SCContainer>
     </>
@@ -52,18 +52,31 @@ const About = ({
 };
 
 const SCContainer = styled.div`
+  padding-bottom: 16px;
+
+  ${mediaTabletL`
+    padding: 0 8px 8px 8px;
+  `}
   ${mediaPc`
     width: 1080px;
     margin: 0 auto;
   `}
-
-  padding-bottom: 32px;
 `;
 
 const SCExpericenceContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+  ${mediaPc`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  `}
+`;
+
+const SCList = styled(List)`
+  margin-top: 8px !important;
+
+  ${mediaPc`
+    margin-top: 0px !important;
+  `}
 `;
 
 export default About;
