@@ -18,5 +18,5 @@ export const colors = {
   black: "#191919",
   gray: "#999999",
   lightGray: "#EEEEEE",
-  blue: "#2D7BFF",
+  blue: "rgb(29, 161, 242)",
 };
