@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Header } from "semantic-ui-react";
 
-import { colors, mediaTablet, mediaPhone } from "../../../helpers/styleHelper";
+import { colors, mediaTabletL, mediaPhone } from "../../../helpers/styleHelper";
 
 const Title = ({ text, color }: { text: string; color?: string }) => {
   return (
@@ -13,7 +13,7 @@ const Title = ({ text, color }: { text: string; color?: string }) => {
 };
 
 const SCHeader = styled(Header)`
-  ${mediaTablet`
+  ${mediaTabletL`
     font-size: 1.8rem;
   `}
   ${mediaPhone`

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { colors } from "../../helpers/styleHelper";
-import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
+import { mediaTabletL, mediaPhone } from "../../helpers/styleHelper";
 
 type Props = {
   toc: string;
@@ -23,7 +23,7 @@ const PostToc = ({ toc }: { toc: string }) => {
 const SCContainer = styled.article`
   width: 280px;
 
-  ${mediaTablet`
+  ${mediaTabletL`
     display: none;
   `}
   ${mediaPhone`

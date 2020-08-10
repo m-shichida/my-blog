@@ -6,12 +6,7 @@ import Title from "../atoms/Text/Title";
 import Tag from "../atoms/Label/Tag";
 import Label from "../atoms/Label/Label";
 import PostShare from "../molecules/ShareButtons";
-import {
-  mediaPc,
-  mediaTablet,
-  mediaPhone,
-  colors,
-} from "../../helpers/styleHelper";
+import { mediaPc, mediaTabletL, colors } from "../../helpers/styleHelper";
 import "../../helpers/postContent.scss";
 
 const PostDetail = ({ post }: { post: any }) => {
@@ -43,7 +38,7 @@ const SCContainer = styled.div`
     width: 800px;
     padding: 24px;
   `}
-  ${mediaTablet`
+  ${mediaTabletL`
     padding: 16px;
   `}
 `;

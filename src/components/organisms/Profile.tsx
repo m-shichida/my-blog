@@ -5,12 +5,12 @@ import { Icon, List, Image, Card } from "semantic-ui-react";
 import ProfileImage from "../../images/profile_image.png";
 import Qitta from "../../images/qiita.png";
 import { colors } from "../../helpers/styleHelper";
-import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
+import { mediaPc, mediaTabletL } from "../../helpers/styleHelper";
 
 const Profile = () => {
   return (
-    <div>
-      <Card style={{ width: "264px" }}>
+    <SCContainer>
+      <SCCard>
         <Card.Content>
           <Card.Header>プロフィール</Card.Header>
           <List horizontal style={{ margin: "0" }}>
@@ -42,10 +42,25 @@ const Profile = () => {
             業務ではRuby/Railsを使用。React/TypeScript勉強中
           </Card.Description>
         </Card.Content>
-      </Card>
-    </div>
+      </SCCard>
+    </SCContainer>
   );
 };
+
+const SCContainer = styled.div`
+  ${mediaTabletL`
+    margin-top: 8px;
+  `}
+`;
+
+const SCCard = styled(Card)`
+  ${mediaPc`
+    width: 264px !important;
+  `}
+  ${mediaTabletL`
+    width: 100% !important;
+  `}
+`;
 
 const SCQiitaIcon = styled(Image)`
   width: 27px;

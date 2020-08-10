@@ -5,7 +5,7 @@ import { Segment } from "semantic-ui-react";
 
 import Title from "../atoms/Text/Heading";
 import { colors } from "../../helpers/styleHelper";
-import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
+import { mediaPhone } from "../../helpers/styleHelper";
 
 const CompanyExperience = ({
   title,

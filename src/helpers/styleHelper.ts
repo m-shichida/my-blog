@@ -1,14 +1,16 @@
 import { generateMedia } from "styled-media-query";
 
 const customMedia = generateMedia({
-  pc: "1025px",
-  tablet: "1024px",
-  phone: "767px",
+  lg: "1025px",
+  md: "1024px",
+  sm: "968px",
+  xs: "767px",
 });
 
-export const mediaPc = customMedia.greaterThan("pc");
-export const mediaTablet = customMedia.lessThan("tablet");
-export const mediaPhone = customMedia.lessThan("phone");
+export const mediaPc = customMedia.greaterThan("lg");
+export const mediaTabletL = customMedia.lessThan("md");
+export const mediaTablet = customMedia.lessThan("sm");
+export const mediaPhone = customMedia.lessThan("xs");
 
 export const colors = {
   mainColor: "#607D8B",

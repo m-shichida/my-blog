@@ -5,6 +5,12 @@ import Header from "../organisms/Header";
 import PostTags from "../organisms/PostTags";
 import PostCard from "../organisms/PostCard";
 import Profile from "../organisms/Profile";
+import {
+  mediaPc,
+  mediaTabletL,
+  mediaTablet,
+  mediaPhone,
+} from "../../helpers/styleHelper";
 
 const Index = ({
   tags,
@@ -22,7 +28,7 @@ const Index = ({
     <>
       <Header />
       <SCContainer>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <SCContentWrapper>
           <SCCardWrapper>
             {posts.map((post, i) => (
               <PostCard
@@ -35,7 +41,7 @@ const Index = ({
             ))}
           </SCCardWrapper>
           <Profile />
-        </div>
+        </SCContentWrapper>
         <PostTags tags={tags} />
       </SCContainer>
     </>
@@ -43,14 +49,25 @@ const Index = ({
 };
 
 const SCContainer = styled.div`
-  width: 1080px;
-  margin: 0 auto;
-  padding-top: 8px;
-  padding-bottom: 32px;
+  ${mediaTabletL`
+    padding: 8px;
+  `}
+  ${mediaPc`
+    width: 1080px;
+    margin: 0 auto;
+    padding-top: 8px;
+    padding-bottom: 32px;
+  `}
+`;
+
+const SCContentWrapper = styled.div`
+  ${mediaPc`
+    display: flex;
+    justify-content: space-between;
+  `}
 `;
 
 const SCCardWrapper = styled.div`
-  width: 808px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -61,9 +78,38 @@ const SCCardWrapper = styled.div`
     width: 30%;
   }
 
-  .post-card:nth-child(n + 4) {
-    margin-top: 8px;
-  }
+  ${mediaPc`
+    width: 808px;
+    .post-card:nth-child(n + 4) {
+      margin-top: 8px;
+    }
+  `}
+  ${mediaTabletL`
+    .post-card:nth-child(n + 5) {
+      margin-top: 8px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 50%;
+    }
+  `}
+  ${mediaTablet`
+    .post-card:nth-child(n + 4) {
+      margin-top: 8px;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 50%;
+    }
+  `}
+  ${mediaPhone`
+    justify-content: space-around;
+    .post-card:nth-child(n + 3) {
+      margin-top: 8px;
+    }
+  `}
 `;
 
 export default Index;

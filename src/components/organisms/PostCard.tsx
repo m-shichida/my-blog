@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 
 import Heading from "../atoms/Text/Heading";
 import { colors } from "../../helpers/styleHelper";
+import { mediaPc, mediaTabletL, mediaPhone } from "../../helpers/styleHelper";
 
 const PostCard = ({
   slug,
@@ -18,7 +19,7 @@ const PostCard = ({
   createdAt: string;
 }) => {
   return (
-    <div className="post-card">
+    <span className="post-card">
       <SCCard>
         <SCImage src={titleImage} />
         <Card.Content>
@@ -32,14 +33,22 @@ const PostCard = ({
           <Card.Meta>{createdAt}</Card.Meta>
         </Card.Content>
       </SCCard>
-    </div>
+    </span>
   );
 };
 
 const SCCard = styled(Card)`
-  margin-top: 8px;
-  width: 264px !important;
   height: 272px !important;
+
+  ${mediaPc`
+    width: 264px !important;
+    `}
+  ${mediaTabletL`
+    width: 245px !important;
+  `}
+  ${mediaPhone`
+    width: 168px !important;
+  `}
 `;
 
 const SCImage = styled(Image)`
