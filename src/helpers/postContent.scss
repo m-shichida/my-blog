@@ -65,7 +65,7 @@
   pre.line-numbers {
     margin: 16px 0;
     line-height: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     @include breakpoint('phone') {
       font-size: 1rem;
       line-height: 1.6rem;
@@ -89,7 +89,7 @@
     margin-top: 16px;
     margin-bottom: -1.6rem;
     padding: 12px 8px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 0.2;
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
     font-weight: 600;

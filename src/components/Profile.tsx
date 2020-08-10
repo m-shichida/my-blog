@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Item, Segment, Icon, List, Image } from "semantic-ui-react";
 
-import ProfileImage from "../images/profile_image.jpg";
+import ProfileImage from "../images/profile_image.png";
 import Qitta from "../images/qiita.png";
 import { colors } from "../helpers/styleHelper";
 import { mediaTablet, mediaPhone } from "../helpers/styleHelper";
@@ -21,7 +21,8 @@ const Profile = () => {
               <Item.Meta>出身地: 福岡県</Item.Meta>
               <Item.Description>
                 <p>
-                  2019年よりWEBエンジニアとして働いています。<br />
+                  2019年よりWEBエンジニアとして働いています。
+                  <br />
                   業務ではRuby/Railsを使っています。React/TypeScript勉強中
                 </p>
               </Item.Description>

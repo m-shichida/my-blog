@@ -9,14 +9,7 @@ import {
   LinkedinIcon,
 } from "react-share";
 
-type Props = {
-  title: string;
-  url: string;
-};
-
-const PostShare = (props: Props) => {
-  const { title, url } = props;
-
+const PostShare = ({ title, url }: { title: string; url: string }) => {
   return (
     <Container>
       <SCTwitter title={title} via={"shicchi7913"} url={url}>

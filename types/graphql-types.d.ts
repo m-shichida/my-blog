@@ -5972,48 +5972,34 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
-export type Unnamed_1_QueryVariables = {};
-
-
-export type Unnamed_1_Query = { allContentfulWorkExperience: { edges: Array<{ node: (
-        Pick<ContentfulWorkExperience, 'language'>
-        & { description: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
-      ) }> }, allContentfulLearningLanguage: { edges: Array<{ node: (
-        Pick<ContentfulLearningLanguage, 'language'>
-        & { description: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
-      ) }> }, allContentfulCompanyExperience: { edges: Array<{ node: (
-        Pick<ContentfulCompanyExperience, 'companyName' | 'companyPeriod'>
-        & { companyDescription: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
-      ) }> } };
-
-export type Unnamed_2_QueryVariables = {};
-
-
-export type Unnamed_2_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
-        Pick<ContentfulPost, 'createdAt' | 'slug' | 'title' | 'tags'>
-        & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<(
-          Pick<ContentfulPostContentTextNode, 'content'>
-          & { childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }
-        )> }
-      ) }> } };
-
-export type Unnamed_3_QueryVariables = {
+export type Unnamed_1_QueryVariables = {
   slug: Scalars['String']
 };
 
 
-export type Unnamed_3_Query = { contentfulPost: Maybe<(
+export type Unnamed_1_Query = { contentfulPost: Maybe<(
     Pick<ContentfulPost, 'title' | 'createdAt' | 'tags' | 'slug'>
     & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'htmlAst' | 'tableOfContents'>> }> }
   )> };
 
-export type Unnamed_4_QueryVariables = {};
+export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_4_Query = { allContentfulPost: { group: Array<(
+export type Unnamed_2_Query = { allContentfulPost: { group: Array<(
       Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>
       & { nodes: Array<(
         Pick<ContentfulPost, 'slug' | 'createdAt' | 'tags' | 'title'>
         & { content: Maybe<{ childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }> }
       )> }
     )> } };
+
+export type Unnamed_3_QueryVariables = {};
+
+
+export type Unnamed_3_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
+        Pick<ContentfulPost, 'createdAt' | 'slug' | 'title' | 'tags'>
+        & { titleImage: Maybe<{ file: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content: Maybe<(
+          Pick<ContentfulPostContentTextNode, 'content'>
+          & { childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }
+        )> }
+      ) }> } };

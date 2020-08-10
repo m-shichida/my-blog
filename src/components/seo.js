@@ -1,15 +1,8 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import ProfileImage from "../images/profile_image.jpg";
+import ProfileImage from "../images/profile_image.png";
 
 function SEO({ lang, meta, title, url, image }) {
   const { site } = useStaticQuery(
@@ -25,7 +18,7 @@ function SEO({ lang, meta, title, url, image }) {
     `
   );
 
-  const metaUrl = url || "https://shicchi-blog.com/";
+  const metaUrl = url || "shicchi-blog";
   const metaTitle = title || site.siteMetadata.title;
   // const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || ProfileImage;
