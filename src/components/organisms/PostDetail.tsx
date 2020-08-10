@@ -6,7 +6,12 @@ import Title from "../atoms/Text/Title";
 import Tag from "../atoms/Label/Tag";
 import Label from "../atoms/Label/Label";
 import PostShare from "../molecules/ShareButtons";
-import { mediaTablet, mediaPhone, colors } from "../../helpers/styleHelper";
+import {
+  mediaPc,
+  mediaTablet,
+  mediaPhone,
+  colors,
+} from "../../helpers/styleHelper";
 import "../../helpers/postContent.scss";
 
 const PostDetail = ({ post }: { post: any }) => {
@@ -31,16 +36,26 @@ const PostDetail = ({ post }: { post: any }) => {
 
 const SCContainer = styled.div`
   background-color: #ffffff;
-  width: 800px;
-  padding: 24px;
-  margin-bottom: 24px;
   border-radius: 4px;
+  padding: 8px;
+
+  ${mediaPc`
+    width: 800px;
+    padding: 24px;
+  `}
+  ${mediaTablet`
+    padding: 16px;
+  `}
 `;
 
 const SCPostImage = styled.img`
   display: block;
-  width: 752px;
   margin: 0 auto;
+  width: 98%;
+
+  ${mediaPc`
+    width: 752px;
+  `}
 `;
 
 const Content = styled.pre``;

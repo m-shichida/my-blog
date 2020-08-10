@@ -6,6 +6,7 @@ import Header from "../organisms/Header";
 import PostToc from "../organisms/PostToc";
 import SEO from "../../components/seo";
 import PostDetail from "../organisms/PostDetail";
+import { mediaPc } from "../../helpers/styleHelper";
 
 const Post = ({ data }: { data: any }) => {
   const post = data.contentfulPost;
@@ -17,18 +18,20 @@ const Post = ({ data }: { data: any }) => {
     <div style={{ background: "#f3f3f3" }}>
       <SEO title={post.title} url={url} image={image} />
       <Header />
-      <SCPostContenainer>
+      <SCPostContainer>
         <PostDetail post={post} />
         <PostToc toc={toc} />
-      </SCPostContenainer>
+      </SCPostContainer>
     </div>
   );
 };
 
-const SCPostContenainer = styled.div`
-  display: flex;
-  width: 1080px;
-  margin: 0 auto;
+const SCPostContainer = styled.div`
+  ${mediaPc`
+    display: flex;
+    width: 1080px;
+    margin: 0 auto;
+  `}
 `;
 
 export const query = graphql`

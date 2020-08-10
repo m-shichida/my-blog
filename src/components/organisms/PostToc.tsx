@@ -8,9 +8,7 @@ type Props = {
   toc: string;
 };
 
-const PostToc = (props: Props) => {
-  const { toc } = props;
-
+const PostToc = ({ toc }: { toc: string }) => {
   return (
     <SCContainer>
       <TocList
@@ -55,7 +53,8 @@ const TocList = styled.section`
   a {
     color: ${colors.gray};
     &:hover {
-      border-bottom: 2px solid ${colors.gray};
+      color: ${colors.gray};
+      border-bottom: 1px solid ${colors.gray};
     }
   }
 `;

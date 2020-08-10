@@ -1,12 +1,12 @@
 import { generateMedia } from "styled-media-query";
 
 const customMedia = generateMedia({
-  pc: "1440px",
+  pc: "1025px",
   tablet: "1024px",
   phone: "767px",
 });
 
-export const mediaPc = customMedia.lessThan("pc");
+export const mediaPc = customMedia.greaterThan("pc");
 export const mediaTablet = customMedia.lessThan("tablet");
 export const mediaPhone = customMedia.lessThan("phone");
 

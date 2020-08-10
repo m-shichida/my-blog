@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 import Title from "../atoms/Text/Title";
 import SubTitle from "../atoms/Text/SubTitle";
 import { colors } from "../../helpers/styleHelper";
+import { mediaPc } from "../../helpers/styleHelper";
 
 const Header = () => {
   return (
@@ -30,12 +31,14 @@ const Header = () => {
 
 const SCHeader = styled.header`
   background-color: ${colors.black};
-  padding: 8px 0;
+  padding: 8px;
 `;
 
 const SCContainer = styled.div`
-  width: 1080px;
-  margin: 0 auto;
+  ${mediaPc`
+    width: 1080px;
+    margin: 0 auto;
+  `}
 `;
 
 export default Header;

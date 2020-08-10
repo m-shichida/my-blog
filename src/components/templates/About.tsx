@@ -6,6 +6,7 @@ import Header from "../organisms/Header";
 import GithubGlasses from "../organisms/GithubGlasses";
 import Profile from "../organisms/Profile";
 import ExperienceCard from "../organisms/ExperienceCard";
+import { mediaPc } from "../../helpers/styleHelper";
 
 const About = ({
   companies,
@@ -51,8 +52,11 @@ const About = ({
 };
 
 const SCContainer = styled.div`
-  max-width: 1080px;
-  margin: 0 auto;
+  ${mediaPc`
+    width: 1080px;
+    margin: 0 auto;
+  `}
+
   padding-bottom: 32px;
 `;
 
