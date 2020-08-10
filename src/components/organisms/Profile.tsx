@@ -1,8 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Item, Segment, Icon, List, Image } from "semantic-ui-react";
+import {
+  Item,
+  Segment,
+  Icon,
+  List,
+  Image,
+  Card,
+  Button,
+} from "semantic-ui-react";
 
-import ProfileImage from "../../images/profile_image.jpg";
+import ProfileImage from "../../images/profile_image.png";
 import Qitta from "../../images/qiita.png";
 import { colors } from "../../helpers/styleHelper";
 import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
@@ -10,53 +18,42 @@ import { mediaTablet, mediaPhone } from "../../helpers/styleHelper";
 const Profile = () => {
   return (
     <div style={{ marginTop: "8px" }}>
-      <SCSegment>
-        <Item.Group>
-          <Item>
-            <Item.Image src={ProfileImage} size="tiny" />
-            <Item.Content>
-              <Item.Header as="h3">プロフィール</Item.Header>
-              <Item.Meta>しっちー</Item.Meta>
-              <Item.Description>
-                <p>
-                  2019年よりWEBエンジニアとして働いています。
-                  <br />
-                  業務ではRuby/Railsを使っています。React/TypeScript勉強中
-                </p>
-              </Item.Description>
-              <Item.Extra>
-                <List horizontal>
-                  <List.Item>
-                    <a
-                      href="https://qiita.com/shicchi7913"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <SCQiitaIcon src={Qitta} avatar />
-                    </a>
-                  </List.Item>
-                  <List.Item>
-                    <a
-                      href="https://twitter.com/shicchi7913"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <SCIcon name="twitter" size="big" />
-                    </a>
-                  </List.Item>
-                </List>
-              </Item.Extra>
-            </Item.Content>
-          </Item>
-        </Item.Group>
-      </SCSegment>
+      <Card style={{ width: "264px" }}>
+        <Card.Content>
+          <Card.Header>プロフィール</Card.Header>
+          <List horizontal>
+            <List.Item>
+              <Image style={{ width: "120px" }} src={ProfileImage} />
+            </List.Item>
+            <List.Item style={{ verticalAlign: "-30px" }}>
+              <a
+                href="https://qiita.com/shicchi7913"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SCQiitaIcon src={Qitta} />
+              </a>
+            </List.Item>
+            <List.Item style={{ marginLeft: "4px", verticalAlign: "-31px" }}>
+              <a
+                href="https://twitter.com/shicchi7913"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SCIcon name="twitter" size="big" />
+              </a>
+            </List.Item>
+          </List>
+          <Card.Description>
+            新卒では営業職でしたが、転職を経て2019年よりWEBエンジニアとして働いています。
+            <br />
+            業務ではRuby/Railsを使用。React/TypeScript勉強中
+          </Card.Description>
+        </Card.Content>
+      </Card>
     </div>
   );
 };
-
-const SCSegment = styled(Segment)`
-  width: 264px;
-`;
 
 const SCQiitaIcon = styled(Image)`
   width: 27px;
@@ -64,6 +61,7 @@ const SCQiitaIcon = styled(Image)`
 `;
 
 const SCIcon = styled(Icon)`
+  color: ${colors.blue};
   background-color: ${colors.white};
 `;
 

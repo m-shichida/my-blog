@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import ProfileImage from "../images/profile_image.jpg";
+import ProfileImage from "../images/profile_image.png";
 
 function SEO({ lang, meta, title, url, image }) {
   const { site } = useStaticQuery(
