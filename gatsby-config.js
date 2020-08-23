@@ -72,6 +72,12 @@ module.exports = {
         fileName: `types/graphql-types.d.ts`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: process.env.googleAdsenceID,
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
