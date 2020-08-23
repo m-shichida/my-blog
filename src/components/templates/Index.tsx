@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Adsense from "../GoogleAdsense";
+// import Adsense from "../GoogleAdsense";
 import Header from "../organisms/Header";
 import PostTags from "../organisms/PostTags";
 import PostCard from "../organisms/PostCard";
@@ -42,7 +42,7 @@ const Index = ({
             ))}
           </SCCardWrapper>
           <Profile />
-          <Adsense />
+          {/* <Adsense /> */}
         </SCContentWrapper>
         <PostTags tags={tags} />
       </SCContainer>
