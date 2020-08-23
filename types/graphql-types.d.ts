@@ -5534,6 +5534,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___showLineNumbers' |
   'pluginCreator___pluginOptions___trackingId' |
   'pluginCreator___pluginOptions___fileName' |
+  'pluginCreator___pluginOptions___publisherId' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -5746,6 +5747,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___showLineNumbers' |
   'pluginOptions___trackingId' |
   'pluginOptions___fileName' |
+  'pluginOptions___publisherId' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -5877,6 +5879,7 @@ export type SitePluginPluginOptions = {
   showLineNumbers?: Maybe<Scalars['Boolean']>,
   trackingId?: Maybe<Scalars['String']>,
   fileName?: Maybe<Scalars['String']>,
+  publisherId?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -5896,6 +5899,7 @@ export type SitePluginPluginOptionsFilterInput = {
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
   trackingId?: Maybe<StringQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
+  publisherId?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
