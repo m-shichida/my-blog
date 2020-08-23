@@ -1,7 +1,7 @@
 import React from "react";
 import AdSense from "react-adsense";
 
-import { mediaPc } from "../../helpers/styleHelper";
+import { mediaPc } from "../helpers/styleHelper";
 
 const Adsense = () => (
   <div>
