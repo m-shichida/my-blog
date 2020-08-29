@@ -55,7 +55,7 @@ const SCContainer = styled.div`
 
 const SCCard = styled(Card)`
   ${mediaPc`
-    width: 258px !important;
+    width: 264px !important;
   `}
   ${mediaTabletL`
     width: 100% !important;
