@@ -47,7 +47,7 @@ const SCCard = styled(Card)`
     width: 245px !important;
   `}
   ${mediaPhone`
-    width: 168px !important;
+    width: 176px !important;
   `}
 `;
 

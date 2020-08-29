@@ -107,7 +107,7 @@ const SCCardWrapper = styled.div`
     }
   `}
   ${mediaPhone`
-    justify-content: space-around;
+    justify-content: space-between;
     .post-card:nth-child(n + 3) {
       margin-top: 8px;
     }
