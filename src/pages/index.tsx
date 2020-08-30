@@ -23,7 +23,7 @@ const Index = ({ data }: { data: any }) => {
 
 export const query = graphql`
   {
-    allContentfulPost {
+    allContentfulPost(sort: { fields: createdAt, order: DESC }) {
       group(field: tags) {
         fieldValue
         totalCount

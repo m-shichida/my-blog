@@ -117,7 +117,7 @@ const SCCardWrapper = styled.div`
 
 export const pageQuery = graphql`
   query {
-    allContentfulPost {
+    allContentfulPost(sort: {fields: createdAt, order: DESC}) {
       group(field: tags) {
         fieldValue
         totalCount
