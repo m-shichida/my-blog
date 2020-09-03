@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql } from "gatsby";
 
 import Header from "../organisms/Header";
 import PostToc from "../organisms/PostToc";
@@ -8,19 +7,29 @@ import SEO from "../../components/seo";
 import PostDetail from "../organisms/PostDetail";
 import { mediaPc } from "../../helpers/styleHelper";
 
-const Post = ({ data }: { data: any }) => {
-  const post = data.contentfulPost;
-  const toc = post.content.childMarkdownRemark.tableOfContents;
-  const url = `https://shicchi-blog.com/blog/${post.slug}`;
-  const image = `https:${post.titleImage.file.url}`;
+const Post = ({
+  pageContext,
+}: {
+  pageContext: {
+    titleImage: string;
+    title: string;
+    content: string;
+    tableOfContents: string;
+    slug: string;
+    tags: string[];
+    createdAt: string;
+  };
+}) => {
+  const { titleImage, title, tableOfContents, slug } = pageContext;
+  const url = `https://shicchi-blog.com/blog/${slug}`;
 
   return (
     <div style={{ background: "#f3f3f3" }}>
-      <SEO title={post.title} url={url} image={image} />
+      <SEO title={title} url={url} image={titleImage} />
       <Header />
       <SCPostContainer>
-        <PostDetail post={post} />
-        <PostToc toc={toc} />
+        <PostDetail pageContext={pageContext} />
+        <PostToc toc={tableOfContents} />
       </SCPostContainer>
     </div>
   );
@@ -32,28 +41,6 @@ const SCPostContainer = styled.div`
     width: 1080px;
     margin: 0 auto;
   `}
-`;
-
-export const query = graphql`
-  query($slug: String!) {
-    contentfulPost(slug: { eq: $slug }) {
-      title
-      titleImage {
-        file {
-          url
-        }
-      }
-      createdAt(formatString: "YYYY/MM/DD")
-      content {
-        childMarkdownRemark {
-          htmlAst
-          tableOfContents(absolute: false)
-        }
-      }
-      tags
-      slug
-    }
-  }
 `;
 
 export default Post;

@@ -15,9 +15,11 @@ const Title = ({ text, color }: { text: string; color?: string }) => {
 const SCHeader = styled(Header)`
   ${mediaTabletL`
     font-size: 1.8rem;
+    line-height: 3.6rem;
   `}
   ${mediaPhone`
     font-size: 1.4rem;
+    line-height: 2rem;
   `}
 `;
 

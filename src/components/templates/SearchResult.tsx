@@ -1,7 +1,6 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import styled from "styled-components";
-import { graphql } from "gatsby";
 
 import SEO from "../../components/seo"; // <SEO />
 import Header from "../../components/organisms/Header";
@@ -15,20 +14,28 @@ import {
   mediaPhone,
 } from "../../helpers/styleHelper";
 
-const Tags = ({ pageContext, data }: { data: any; pageContext: any }) => {
-  const tags = data.allContentfulPost.group;
-  const posts = data.allContentfulPost.group
-    .filter((post: any) => post.fieldValue === pageContext.tag)[0]
-    .nodes.map((data: any) => ({
-      slug: data.slug,
-      titleImage: data.titleImage.file.url,
-      title: data.title,
-      createdAt: data.createdAt,
-    }));
+const Tags = ({
+  pageContext,
+}: {
+  pageContext: {
+    tags: { fieldValue: string; totalCount: number }[];
+    tag: string;
+    posts: {
+      titleImage: string;
+      title: string;
+      content: string;
+      tableOfContents: string;
+      slug: string;
+      tags: string[];
+      createdAt: string;
+    }[];
+  };
+}) => {
+  const { tags, tag, posts } = pageContext;
 
   return (
     <>
-      <SEO title={`検索結果: ${pageContext.tag.fieldValue}`} />
+      <SEO title={`検索結果: ${tag}`} />
       <Header />
       <SCContainer>
         <SCContentWrapper>
@@ -113,33 +120,6 @@ const SCCardWrapper = styled.div`
       margin-top: 8px;
     }
   `}
-`;
-
-export const pageQuery = graphql`
-  query {
-    allContentfulPost(sort: {fields: createdAt, order: DESC}) {
-      group(field: tags) {
-        fieldValue
-        totalCount
-        nodes {
-          content {
-            childMarkdownRemark {
-              html
-            }
-          }
-          slug
-          createdAt(formatString: "YYYY/MM/DD")
-          tags
-          title
-          titleImage {
-            file {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
 `;
 
 export default Tags;

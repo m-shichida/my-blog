@@ -77,7 +77,7 @@ const SCCardWrapper = styled.div`
   &:after {
     content: "";
     display: block;
-    width: 30%;
+    width: 33%;
   }
 
   ${mediaPc`
