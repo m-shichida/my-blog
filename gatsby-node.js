@@ -8,14 +8,44 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
   const result = await graphql(`
     {
-      allContentfulPost {
-        edges {
-          node {
-            slug
-          }
-        }
+      allContentfulPost(sort: { order: DESC, fields: createdAt }) {
         group(field: tags) {
           fieldValue
+          totalCount
+          nodes {
+            content {
+              childMarkdownRemark {
+                html
+                tableOfContents(absolute: false)
+              }
+            }
+            slug
+            createdAt(formatString: "YYYY/MM/DD")
+            tags
+            title
+            titleImage {
+              file {
+                url
+              }
+            }
+          }
+        }
+        nodes {
+          titleImage {
+            file {
+              url
+            }
+          }
+          title
+          content {
+            childMarkdownRemark {
+              htmlAst
+              tableOfContents(absolute: false)
+            }
+          }
+          slug
+          tags
+          createdAt(formatString: "YYYY/MM/DD")
         }
       }
     }
@@ -26,24 +56,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  const posts = result.data.allContentfulPost.edges;
+  const posts = result.data.allContentfulPost.nodes;
   posts.forEach((post) => {
     createPage({
-      path: `/blog/${post.node.slug}`,
+      path: `/blog/${post.slug}`,
       component: postTemplate,
       context: {
-        slug: post.node.slug,
+        slug: post.slug,
+        titleImage: post.titleImage.file.url,
+        title: post.title,
+        content: post.content.childMarkdownRemark.htmlAst,
+        tableOfContents: post.content.childMarkdownRemark.tableOfContents,
+        tags: post.tags,
+        createdAt: post.createdAt,
       },
     });
   });
 
-  const tags = result.data.allContentfulPost.group;
-  tags.forEach((tag) => {
+  const results = result.data.allContentfulPost.group;
+  results.forEach((result) => {
     createPage({
-      path: `/tags/${tag.fieldValue}/`,
+      path: `/tags/${result.fieldValue}/`,
       component: tagTemplate,
       context: {
-        tag: tag.fieldValue,
+        tags: results,
+        tag: result.fieldValue,
+        posts: result.nodes.map((post) => ({
+          slug: post.slug,
+          titleImage: post.titleImage.file.url,
+          title: post.title,
+          content: post.content.childMarkdownRemark.htmlAst,
+          tableOfContents: post.content.childMarkdownRemark.tableOfContents,
+          tags: post.tags,
+          createdAt: post.createdAt,
+        })),
       },
     });
   });

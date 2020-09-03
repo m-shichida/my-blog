@@ -6,7 +6,6 @@ import SEO from "../components/seo";
 import AbountTemplate from "../components/templates/About";
 
 const About = ({ data }: { data: any }) => {
-  console.log(data);
   const companies = data.allContentfulCompanyExperience.edges.map(
     (company: any, _i: number) => ({
       name: company.node.name,

@@ -11,57 +11,6 @@
 }
 
 .blog-content {
-  color: #000;
-
-  h1 {
-    font-size: 1.2rem;
-    @include breakpoint('pc') {
-      font-size: 1.8rem;
-    }
-  }
-
-  h2 {
-    font-size: 1rem;
-    @include breakpoint('pc') {
-      font-size: 1.6rem;
-    }
-  }
-
-  h3 {
-    font-size: 1rem;
-    @include breakpoint('pc') {
-      font-size: 1.6rem;
-    }
-  }
-
-  h1, h2, h3 {
-    border-bottom: 1px solid #999999;
-    padding: 4px 0;
-    margin: 8px 0;
-  }
-
-  h4, h5 {
-    font-size: 1rem;
-    @include breakpoint('pc') {
-      font-size: 1.4rem;
-    }
-  }
-
-  h1, h2, h3, h4, h5 {
-    font-weight: bold;
-    padding-left: 4px;
-  }
-
-  // 文章全体
-  pre {
-    font-size: 1rem;
-    line-height: 2rem;
-    @include breakpoint('pc') {
-      font-size: 1rem;
-      line-height: 2rem;
-    }
-  }
-
   // コード
   pre.line-numbers {
     margin: 16px 0;

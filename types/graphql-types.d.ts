@@ -4739,8 +4739,6 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5075,8 +5073,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -5280,8 +5276,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -5374,8 +5368,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5433,12 +5425,282 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   slug?: Maybe<Scalars['String']>;
+  titleImage?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  content?: Maybe<SitePageContextContent>;
+  tableOfContents?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['String']>;
   tag?: Maybe<Scalars['String']>;
+  posts?: Maybe<Array<Maybe<SitePageContextPosts>>>;
+};
+
+export type SitePageContextContent = {
+  type?: Maybe<Scalars['String']>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildren>>>;
+  data?: Maybe<SitePageContextContentData>;
+};
+
+export type SitePageContextContentChildren = {
+  type?: Maybe<Scalars['String']>;
+  tagName?: Maybe<Scalars['String']>;
+  properties?: Maybe<SitePageContextContentChildrenProperties>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildrenChildren>>>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildren = {
+  type?: Maybe<Scalars['String']>;
+  tagName?: Maybe<Scalars['String']>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenProperties>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildrenChildrenChildren>>>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildrenChildren = {
+  type?: Maybe<Scalars['String']>;
+  tagName?: Maybe<Scalars['String']>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenProperties>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildrenChildrenChildrenChildren>>>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildren = {
+  type?: Maybe<Scalars['String']>;
+  tagName?: Maybe<Scalars['String']>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenProperties>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildren>>>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildren = {
+  type?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+  tagName?: Maybe<Scalars['String']>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenProperties>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildren>>>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildren = {
+  type?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+  tagName?: Maybe<Scalars['String']>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenProperties>;
+  children?: Maybe<Array<Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenChildren>>>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenChildren = {
+  type?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+  tagName?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenPropertiesFilterInput>;
+  children?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenChildrenFilterListInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenProperties = {
+  className?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenPropertiesFilterInput = {
+  className?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+  tagName?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenPropertiesFilterInput>;
+  children?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenChildrenFilterListInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenProperties = {
+  className?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenChildrenPropertiesFilterInput = {
+  className?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  tagName?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenPropertiesFilterInput>;
+  children?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenChildrenFilterListInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenProperties = {
+  fillRule?: Maybe<Scalars['String']>;
+  d?: Maybe<Scalars['String']>;
+  className?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenChildrenPropertiesFilterInput = {
+  fillRule?: Maybe<StringQueryOperatorInput>;
+  d?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  tagName?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenChildrenPropertiesFilterInput>;
+  children?: Maybe<SitePageContextContentChildrenChildrenChildrenChildrenFilterListInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenChildrenChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenProperties = {
+  ariaHidden?: Maybe<Scalars['String']>;
+  focusable?: Maybe<Scalars['String']>;
+  height?: Maybe<Scalars['String']>;
+  version?: Maybe<Scalars['String']>;
+  viewBox?: Maybe<Scalars['String']>;
+  width?: Maybe<Scalars['String']>;
+  className?: Maybe<Array<Maybe<Scalars['String']>>>;
+  style?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildrenChildrenPropertiesFilterInput = {
+  ariaHidden?: Maybe<StringQueryOperatorInput>;
+  focusable?: Maybe<StringQueryOperatorInput>;
+  height?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  viewBox?: Maybe<StringQueryOperatorInput>;
+  width?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  style?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  tagName?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<SitePageContextContentChildrenChildrenPropertiesFilterInput>;
+  children?: Maybe<SitePageContextContentChildrenChildrenChildrenFilterListInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenChildrenProperties = {
+  href?: Maybe<Scalars['String']>;
+  ariaLabel?: Maybe<Scalars['String']>;
+  className?: Maybe<Array<Maybe<Scalars['String']>>>;
+  src?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+  style?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenChildrenPropertiesFilterInput = {
+  href?: Maybe<StringQueryOperatorInput>;
+  ariaLabel?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+  style?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  tagName?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<SitePageContextContentChildrenPropertiesFilterInput>;
+  children?: Maybe<SitePageContextContentChildrenChildrenFilterListInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentChildrenFilterListInput = {
+  elemMatch?: Maybe<SitePageContextContentChildrenFilterInput>;
+};
+
+export type SitePageContextContentChildrenProperties = {
+  id?: Maybe<Scalars['String']>;
+  style?: Maybe<Scalars['String']>;
+  className?: Maybe<Array<Maybe<Scalars['String']>>>;
+  dataLanguage?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextContentChildrenPropertiesFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  style?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  dataLanguage?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextContentData = {
+  quirksMode?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePageContextContentDataFilterInput = {
+  quirksMode?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePageContextContentFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  children?: Maybe<SitePageContextContentChildrenFilterListInput>;
+  data?: Maybe<SitePageContextContentDataFilterInput>;
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
+  titleImage?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<SitePageContextContentFilterInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<StringQueryOperatorInput>;
   tag?: Maybe<StringQueryOperatorInput>;
+  posts?: Maybe<SitePageContextPostsFilterListInput>;
+};
+
+export type SitePageContextPosts = {
+  slug?: Maybe<Scalars['String']>;
+  titleImage?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  tableOfContents?: Maybe<Scalars['String']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  createdAt?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextPostsFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>;
+  titleImage?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  tags?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextPostsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextPostsFilterInput>;
 };
 
 export type SitePageEdge = {
@@ -5541,7 +5803,25 @@ export type SitePageFieldsEnum =
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
   | 'context___slug'
+  | 'context___titleImage'
+  | 'context___title'
+  | 'context___content___type'
+  | 'context___content___children'
+  | 'context___content___children___type'
+  | 'context___content___children___tagName'
+  | 'context___content___children___children'
+  | 'context___content___children___value'
+  | 'context___content___data___quirksMode'
+  | 'context___tableOfContents'
+  | 'context___createdAt'
   | 'context___tag'
+  | 'context___posts'
+  | 'context___posts___slug'
+  | 'context___posts___titleImage'
+  | 'context___posts___title'
+  | 'context___posts___tableOfContents'
+  | 'context___posts___tags'
+  | 'context___posts___createdAt'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -6067,31 +6347,10 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { contentfulPost?: Maybe<(
-    Pick<ContentfulPost, 'title' | 'createdAt' | 'tags' | 'slug'>
-    & { titleImage?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'htmlAst' | 'tableOfContents'>> }> }
-  )> };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { allContentfulPost: { group: Array<(
-      Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>
-      & { nodes: Array<(
-        Pick<ContentfulPost, 'slug' | 'createdAt' | 'tags' | 'title'>
-        & { content?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>> }>, titleImage?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }> }
-      )> }
-    )> } };
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_3_Query = { allContentfulWorkExperience: { edges: Array<{ node: (
+export type Unnamed_1_Query = { allContentfulWorkExperience: { edges: Array<{ node: (
         Pick<ContentfulWorkExperience, 'name'>
         & { description?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
       ) }> }, allContentfulLearningLanguage: { edges: Array<{ node: (
@@ -6102,10 +6361,10 @@ export type Unnamed_3_Query = { allContentfulWorkExperience: { edges: Array<{ no
         & { description?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
       ) }> } };
 
-export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_4_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
+export type Unnamed_2_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
         Pick<ContentfulPost, 'createdAt' | 'slug' | 'title' | 'tags'>
         & { titleImage?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content?: Maybe<(
           Pick<ContentfulPostContentTextNode, 'content'>
