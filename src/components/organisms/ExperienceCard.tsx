@@ -3,6 +3,7 @@ import rehypeReact from "rehype-react";
 import styled from "styled-components";
 import { Segment } from "semantic-ui-react";
 
+import List from "../atoms/MarkDown/List";
 import Title from "../atoms/Text/Heading";
 import { colors } from "../../helpers/styleHelper";
 import { mediaPhone } from "../../helpers/styleHelper";
@@ -58,13 +59,14 @@ const SCDescription = styled.div``;
 const Content = styled.pre`
   color: ${colors.gray};
   font-size: 1rem;
-  line-height: 1.6rem;
+  line-height: 1.8rem;
 `;
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     p: Content,
+    li: List,
   },
 }).Compiler;
 
