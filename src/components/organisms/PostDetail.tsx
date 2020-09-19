@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Heading1 from "../atoms/MarkDown/Heading1";
 import Heading2 from "../atoms/MarkDown/Heading2";
+import Heading3 from "../atoms/MarkDown/Heading3";
 import Image from "../atoms/MarkDown/Image";
 import List from "../atoms/MarkDown/List";
 import Title from "../atoms/Text/Title";
@@ -92,9 +93,9 @@ const renderAst = new rehypeReact({
   components: {
     h1: Heading1,
     h2: Heading2,
-    h3: Heading2,
-    h4: Heading2,
-    h5: Heading2,
+    h3: Heading3,
+    h4: Heading3,
+    h5: Heading3,
     p: Content,
     img: Image,
     li: List,
