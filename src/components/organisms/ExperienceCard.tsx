@@ -1,14 +1,13 @@
 import React from "react";
 import rehypeReact from "rehype-react";
 import styled from "styled-components";
-import { Segment } from "semantic-ui-react";
+import { Segment, Header } from "semantic-ui-react";
 
 import List from "../atoms/MarkDown/List";
-import Title from "../atoms/Text/Heading";
-import { colors } from "../../helpers/styleHelper";
-import { mediaPhone } from "../../helpers/styleHelper";
+import Heading2 from "../atoms/MarkDown/Heading2";
+import { mediaTabletL, mediaPhone } from "../../helpers/styleHelper";
 
-const CompanyExperience = ({
+const ExperienceCard = ({
   title,
   experiences,
 }: {
@@ -22,16 +21,12 @@ const CompanyExperience = ({
   return (
     <SCContainer>
       <Segment>
-        <Title text={title} color={colors.black} />
+        <Title>{title}</Title>
         {experiences.map((experience, i) => (
           <React.Fragment key={i}>
             <SCHeader>
-              <Title text={experience.name} color={colors.black} />
-              {experience.period ? (
-                <Title text={experience.period} color={colors.black} />
-              ) : (
-                ""
-              )}
+              <Title>{experience.name}</Title>
+              {experience.period ? <Title>{experience.period}</Title> : ""}
             </SCHeader>
             <SCDescription>{renderAst(experience.description)}</SCDescription>
           </React.Fragment>
@@ -57,17 +52,31 @@ const SCHeader = styled.div`
 const SCDescription = styled.div``;
 
 const Content = styled.pre`
-  color: ${colors.gray};
   font-size: 1rem;
   line-height: 1.8rem;
+`;
+
+const Title = styled(Header)`
+  margin: 8px 0 !important;
+
+  ${mediaTabletL`
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  `}
+
+  ${mediaPhone`
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+  `}
 `;
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
+    h3: Heading2,
     p: Content,
     li: List,
   },
 }).Compiler;
 
-export default CompanyExperience;
+export default ExperienceCard;

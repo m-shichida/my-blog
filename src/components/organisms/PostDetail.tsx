@@ -71,7 +71,7 @@ const SCPostImage = styled.img`
 
 const Content = styled.pre`
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 2.8rem;
   color: #333333;
   font-family: -apple-system, "Segoe UI", "Helvetica Neue",
     "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif !important;
