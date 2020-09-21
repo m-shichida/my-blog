@@ -3,7 +3,7 @@ import "semantic-ui-css/semantic.min.css";
 import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
-import AbountTemplate from "../components/templates/About";
+import AboutTemplate from "../components/templates/About";
 
 const About = ({ data }: { data: any }) => {
   const companies = data.allContentfulCompanyExperience.edges.map(
@@ -11,12 +11,6 @@ const About = ({ data }: { data: any }) => {
       name: company.node.name,
       period: company.node.period,
       description: company.node.description.childMarkdownRemark.htmlAst,
-    })
-  );
-  const skills = data.allContentfulWorkExperience.edges.map(
-    (skill: any, _i: number) => ({
-      language: skill.node.name,
-      description: skill.node.description.childMarkdownRemark.htmlAst,
     })
   );
   const learnings = data.allContentfulLearningLanguage.edges.map(
@@ -29,29 +23,13 @@ const About = ({ data }: { data: any }) => {
   return (
     <>
       <SEO title="プロフィール" />
-      <AbountTemplate
-        companies={companies}
-        skills={skills}
-        learnings={learnings}
-      />
+      <AboutTemplate companies={companies} learnings={learnings} />
     </>
   );
 };
 
 export const query = graphql`
   {
-    allContentfulWorkExperience {
-      edges {
-        node {
-          name
-          description {
-            childMarkdownRemark {
-              htmlAst
-            }
-          }
-        }
-      }
-    }
     allContentfulLearningLanguage {
       edges {
         node {

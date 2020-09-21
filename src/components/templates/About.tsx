@@ -10,16 +10,11 @@ import { mediaPc, mediaTabletL } from "../../helpers/styleHelper";
 
 const About = ({
   companies,
-  skills,
   learnings,
 }: {
   companies: {
     name: string;
     period: string;
-    description: string;
-  }[];
-  skills: {
-    name: string;
     description: string;
   }[];
   learnings: {
@@ -37,9 +32,6 @@ const About = ({
           <SCList>
             <List.Item>
               <ExperienceCard title="職歴" experiences={companies} />
-            </List.Item>
-            <List.Item>
-              <ExperienceCard title="言語スキル" experiences={skills} />
             </List.Item>
             <List.Item>
               <ExperienceCard title="勉強中言語" experiences={learnings} />
