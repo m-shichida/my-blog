@@ -4989,6 +4989,7 @@ export type SitePageContextContentChildrenChildrenChildrenProperties = {
   version?: Maybe<Scalars['String']>;
   viewBox?: Maybe<Scalars['String']>;
   width?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
   className?: Maybe<Array<Maybe<Scalars['String']>>>;
   style?: Maybe<Scalars['String']>;
 };
@@ -5000,6 +5001,7 @@ export type SitePageContextContentChildrenChildrenChildrenPropertiesFilterInput 
   version?: Maybe<StringQueryOperatorInput>;
   viewBox?: Maybe<StringQueryOperatorInput>;
   width?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
   className?: Maybe<StringQueryOperatorInput>;
   style?: Maybe<StringQueryOperatorInput>;
 };
