@@ -4026,10 +4026,10 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  contentfulLearningLanguageDescriptionTextNode?: Maybe<ContentfulLearningLanguageDescriptionTextNode>;
-  allContentfulLearningLanguageDescriptionTextNode: ContentfulLearningLanguageDescriptionTextNodeConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
+  contentfulLearningLanguageDescriptionTextNode?: Maybe<ContentfulLearningLanguageDescriptionTextNode>;
+  allContentfulLearningLanguageDescriptionTextNode: ContentfulLearningLanguageDescriptionTextNodeConnection;
   contentfulLearningLanguage?: Maybe<ContentfulLearningLanguage>;
   allContentfulLearningLanguage: ContentfulLearningLanguageConnection;
   contentfulCompanyExperienceDescriptionTextNode?: Maybe<ContentfulCompanyExperienceDescriptionTextNode>;
@@ -4245,24 +4245,6 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
-export type QueryContentfulLearningLanguageDescriptionTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-
-export type QueryAllContentfulLearningLanguageDescriptionTextNodeArgs = {
-  filter?: Maybe<ContentfulLearningLanguageDescriptionTextNodeFilterInput>;
-  sort?: Maybe<ContentfulLearningLanguageDescriptionTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -4288,6 +4270,24 @@ export type QueryContentfulAssetArgs = {
 export type QueryAllContentfulAssetArgs = {
   filter?: Maybe<ContentfulAssetFilterInput>;
   sort?: Maybe<ContentfulAssetSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulLearningLanguageDescriptionTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
+};
+
+
+export type QueryAllContentfulLearningLanguageDescriptionTextNodeArgs = {
+  filter?: Maybe<ContentfulLearningLanguageDescriptionTextNodeFilterInput>;
+  sort?: Maybe<ContentfulLearningLanguageDescriptionTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -4989,9 +4989,9 @@ export type SitePageContextContentChildrenChildrenChildrenProperties = {
   version?: Maybe<Scalars['String']>;
   viewBox?: Maybe<Scalars['String']>;
   width?: Maybe<Scalars['String']>;
-  href?: Maybe<Scalars['String']>;
   className?: Maybe<Array<Maybe<Scalars['String']>>>;
   style?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextContentChildrenChildrenChildrenPropertiesFilterInput = {
@@ -5001,9 +5001,9 @@ export type SitePageContextContentChildrenChildrenChildrenPropertiesFilterInput 
   version?: Maybe<StringQueryOperatorInput>;
   viewBox?: Maybe<StringQueryOperatorInput>;
   width?: Maybe<StringQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
   className?: Maybe<StringQueryOperatorInput>;
   style?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextContentChildrenChildrenFilterInput = {
@@ -5022,18 +5022,18 @@ export type SitePageContextContentChildrenChildrenProperties = {
   href?: Maybe<Scalars['String']>;
   ariaLabel?: Maybe<Scalars['String']>;
   className?: Maybe<Array<Maybe<Scalars['String']>>>;
+  style?: Maybe<Scalars['String']>;
   src?: Maybe<Scalars['String']>;
   alt?: Maybe<Scalars['String']>;
-  style?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextContentChildrenChildrenPropertiesFilterInput = {
   href?: Maybe<StringQueryOperatorInput>;
   ariaLabel?: Maybe<StringQueryOperatorInput>;
   className?: Maybe<StringQueryOperatorInput>;
+  style?: Maybe<StringQueryOperatorInput>;
   src?: Maybe<StringQueryOperatorInput>;
   alt?: Maybe<StringQueryOperatorInput>;
-  style?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextContentChildrenFilterInput = {

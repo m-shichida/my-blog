@@ -1,17 +1,21 @@
 import React from "react";
 import AdSense from "react-adsense";
 
-import { mediaPc } from "../helpers/styleHelper";
+import { mediaPc, mediaPhone } from "../helpers/styleHelper";
 
 const Adsense = () => (
-  <div>
+  <div
+    style={{
+      width: mediaPc ? "260px" : "100%",
+      height: mediaPc ? "" : "150px",
+      margin: mediaPhone ? "0 auto" : "0",
+    }}
+  >
     <AdSense.Google
-      client={process.env.googleAdsenceID}
-      slot=""
-      style={{ width: mediaPc ? "258px" : "100%" }}
+      client="ca-pub-6943525600302796"
+      slot="5752167312"
       format="auto"
       responsive="true"
-      layoutKey="-gw-1+2a-9x+5c"
     />
   </div>
 );

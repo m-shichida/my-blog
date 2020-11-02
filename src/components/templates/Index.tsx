@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// import Adsense from "../GoogleAdsense";
+import Adsense from "../GoogleAdsense";
 import Header from "../organisms/Header";
 import PostTags from "../organisms/PostTags";
 import PostCard from "../organisms/PostCard";
@@ -41,8 +41,10 @@ const Index = ({
               />
             ))}
           </SCCardWrapper>
-          <Profile />
-          {/* <Adsense /> */}
+          <SCSidebarContainer>
+            <Profile />
+            <Adsense />
+          </SCSidebarContainer>
         </SCContentWrapper>
         <PostTags tags={tags} />
       </SCContainer>
@@ -111,6 +113,13 @@ const SCCardWrapper = styled.div`
     .post-card:nth-child(n + 3) {
       margin-top: 8px;
     }
+  `}
+`;
+
+const SCSidebarContainer = styled.div`
+  ${mediaPc`
+    display: flex;
+    flex-direction: column;
   `}
 `;
 
