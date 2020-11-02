@@ -12,10 +12,8 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <script
-          data-ad-client={process.env.googleAdsenceID}
           async
-          crossOrigin="true"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
         {props.headComponents}
       </head>
