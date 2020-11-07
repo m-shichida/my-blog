@@ -5,6 +5,7 @@ import Header from "../organisms/Header";
 import PostToc from "../organisms/PostToc";
 import SEO from "../../components/seo";
 import PostDetail from "../organisms/PostDetail";
+import GoogleAdsense from "../GoogleAdsense";
 import { mediaPc } from "../../helpers/styleHelper";
 
 const Post = ({
@@ -29,7 +30,10 @@ const Post = ({
       <Header />
       <SCPostContainer>
         <PostDetail pageContext={pageContext} />
-        <PostToc toc={tableOfContents} />
+        <div>
+          <PostToc toc={tableOfContents} />
+          <GoogleAdsense />
+        </div>
       </SCPostContainer>
     </div>
   );
