@@ -12,7 +12,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <script
-          crossOrigin="true"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
