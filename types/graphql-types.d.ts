@@ -4672,9 +4672,7 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum = 
   | 'buildTime'
-  | 'siteMetadata___siteUrl'
   | 'siteMetadata___title'
-  | 'siteMetadata___description'
   | 'siteMetadata___author'
   | 'port'
   | 'host'
@@ -5294,9 +5292,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___accessToken'
   | 'pluginCreator___pluginOptions___classPrefix'
   | 'pluginCreator___pluginOptions___showLineNumbers'
-  | 'pluginCreator___pluginOptions___trackingId'
   | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___publisherId'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -5512,9 +5508,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___accessToken'
   | 'pluginOptions___classPrefix'
   | 'pluginOptions___showLineNumbers'
-  | 'pluginOptions___trackingId'
   | 'pluginOptions___fileName'
-  | 'pluginOptions___publisherId'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -5649,9 +5643,7 @@ export type SitePluginPluginOptions = {
   accessToken?: Maybe<Scalars['String']>;
   classPrefix?: Maybe<Scalars['String']>;
   showLineNumbers?: Maybe<Scalars['Boolean']>;
-  trackingId?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
-  publisherId?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -5674,9 +5666,7 @@ export type SitePluginPluginOptionsFilterInput = {
   accessToken?: Maybe<StringQueryOperatorInput>;
   classPrefix?: Maybe<StringQueryOperatorInput>;
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
-  trackingId?: Maybe<StringQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
-  publisherId?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -5722,16 +5712,12 @@ export type SitePluginSortInput = {
 };
 
 export type SiteSiteMetadata = {
-  siteUrl?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
-  siteUrl?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
 };
 

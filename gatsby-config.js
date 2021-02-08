@@ -6,9 +6,7 @@ if (process.env.ENVIRONMENT !== "production") {
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://shicchi-blog.com`,
     title: `shicchi-techblog`,
-    description: `技術や業務についてなどをまとめたサイトです。`,
     author: `Shichida Masatsugu`,
   },
   plugins: [
@@ -61,21 +59,9 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: process.env.googleAnalyticsID,
-      },
-    },
-    {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {
         fileName: `types/graphql-types.d.ts`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: process.env.googleAdsenceID,
       },
     },
     `gatsby-plugin-styled-components`,
