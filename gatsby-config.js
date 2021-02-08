@@ -5,6 +5,12 @@ if (process.env.ENVIRONMENT !== "production") {
 }
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://github.com/m-shichida`,
+    title: `shicchi-techblog`,
+    description: `技術や業務についてなどをまとめたサイトです。`,
+    author: `Shichida Masatsugu`,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

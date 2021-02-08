@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { List } from "semantic-ui-react";
 import { Link } from "gatsby";
+import { Header as SubTitle } from "semantic-ui-react";
 
 import Title from "../atoms/Text/Title";
-import SubTitle from "../atoms/Text/SubTitle";
-import { colors } from "../../helpers/styleHelper";
-import { mediaPc } from "../../helpers/styleHelper";
+import { colors, mediaPc } from "../../helpers/styleHelper";
 
 const Header = () => {
   return (
@@ -19,9 +18,16 @@ const Header = () => {
             </Link>
           </List.Item>
           <List.Item>
-            <Link to="/about">
-              <SubTitle text="About" color={colors.white} />
-            </Link>
+            <SubTitle as="h2">
+              <a
+                href="https://m-shichida.github.io/resume/"
+                rel="noreferrer"
+                target="_blank"
+                style={{ color: colors.white }}
+              >
+                about
+              </a>
+            </SubTitle>
           </List.Item>
         </List>
       </SCContainer>

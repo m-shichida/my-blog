@@ -4178,6 +4178,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -4469,6 +4471,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -4668,8 +4672,12 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum = 
   | 'buildTime'
+  | 'siteMetadata___siteUrl'
   | 'siteMetadata___title'
+  | 'siteMetadata___description'
   | 'siteMetadata___author'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -4762,6 +4770,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5704,12 +5714,16 @@ export type SitePluginSortInput = {
 };
 
 export type SiteSiteMetadata = {
+  siteUrl?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
+  siteUrl?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -5734,18 +5748,7 @@ export type StringQueryOperatorInput = {
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { allContentfulLearningLanguage: { edges: Array<{ node: (
-        Pick<ContentfulLearningLanguage, 'name'>
-        & { description?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
-      ) }> }, allContentfulCompanyExperience: { edges: Array<{ node: (
-        Pick<ContentfulCompanyExperience, 'name' | 'period'>
-        & { description?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'htmlAst'>> }> }
-      ) }> } };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
+export type Unnamed_1_Query = { allContentfulPost: { group: Array<Pick<ContentfulPostGroupConnection, 'fieldValue' | 'totalCount'>>, edges: Array<{ node: (
         Pick<ContentfulPost, 'createdAt' | 'slug' | 'title' | 'tags'>
         & { titleImage?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>, content?: Maybe<(
           Pick<ContentfulPostContentTextNode, 'content'>
