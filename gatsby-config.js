@@ -5,10 +5,6 @@ if (process.env.ENVIRONMENT !== "production") {
 }
 
 module.exports = {
-  siteMetadata: {
-    title: `shicchi-techblog`,
-    author: `Shichida Masatsugu`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
