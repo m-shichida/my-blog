@@ -4,10 +4,6 @@ import styled from "styled-components";
 import { colors } from "../../helpers/styleHelper";
 import { mediaTabletL, mediaPhone } from "../../helpers/styleHelper";
 
-type Props = {
-  toc: string;
-};
-
 const PostToc = ({ toc }: { toc: string }) => {
   return (
     <SCContainer>
