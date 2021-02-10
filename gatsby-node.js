@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 tableOfContents(absolute: false)
               }
             }
-            slug
+            contentful_id
             createdAt(formatString: "YYYY/MM/DD")
             tags
             title
@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               url
             }
           }
+          contentful_id
           title
           content {
             childMarkdownRemark {
@@ -43,7 +44,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               tableOfContents(absolute: false)
             }
           }
-          slug
           tags
           createdAt(formatString: "YYYY/MM/DD")
         }
@@ -59,10 +59,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allContentfulPost.nodes;
   posts.forEach((post) => {
     createPage({
-      path: `/blog/${post.slug}`,
+      path: `/blog/${post.contentful_id}`,
       component: postTemplate,
       context: {
-        slug: post.slug,
+        contentful_id: post.contentful_id,
         titleImage: post.titleImage.file.url,
         title: post.title,
         content: post.content.childMarkdownRemark.htmlAst,
@@ -82,7 +82,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         tags: results,
         tag: result.fieldValue,
         posts: result.nodes.map((post) => ({
-          slug: post.slug,
+          contentful_id: post.contentful_id,
           titleImage: post.titleImage.file.url,
           title: post.title,
           content: post.content.childMarkdownRemark.htmlAst,

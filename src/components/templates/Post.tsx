@@ -15,13 +15,13 @@ const Post = ({
     title: string;
     content: string;
     tableOfContents: string;
-    slug: string;
+    contentful_id: string;
     tags: string[];
     createdAt: string;
   };
 }) => {
-  const { titleImage, title, tableOfContents, slug } = pageContext;
-  const url = `https://shicchi-blog.com/blog/${slug}`;
+  const { titleImage, title, tableOfContents, contentful_id } = pageContext;
+  const url = `https://shicchi-blog.com/blog/${contentful_id}`;
 
   return (
     <div style={{ background: "#f3f3f3" }}>

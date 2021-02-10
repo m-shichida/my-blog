@@ -8,12 +8,12 @@ import { colors } from "../../helpers/styleHelper";
 import { mediaPc, mediaTabletL, mediaPhone } from "../../helpers/styleHelper";
 
 const PostCard = ({
-  slug,
+  contentful_id,
   titleImage,
   title,
   createdAt,
 }: {
-  slug: string;
+  contentful_id: string;
   titleImage: string;
   title: string;
   createdAt: string;
@@ -24,7 +24,7 @@ const PostCard = ({
         <SCImage src={titleImage} />
         <Card.Content>
           <Card.Header>
-            <Link to={`/blog/${slug}`}>
+            <Link to={`/blog/${contentful_id}`}>
               <Heading text={title} color={colors.black} />
             </Link>
           </Card.Header>

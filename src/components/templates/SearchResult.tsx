@@ -25,7 +25,7 @@ const Tags = ({
       title: string;
       content: string;
       tableOfContents: string;
-      slug: string;
+      contentful_id: string;
       tags: string[];
       createdAt: string;
     }[];
@@ -43,7 +43,7 @@ const Tags = ({
             {posts.map((post: any, i: number) => (
               <PostCard
                 key={i}
-                slug={post.slug}
+                contentful_id={post.contentful_id}
                 titleImage={post.titleImage}
                 title={post.title}
                 createdAt={post.createdAt}

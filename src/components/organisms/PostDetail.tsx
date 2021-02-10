@@ -22,13 +22,13 @@ const PostDetail = ({
     title: string;
     content: string;
     tableOfContents: string;
-    slug: string;
+    contentful_id: string;
     tags: string[];
     createdAt: string;
   };
 }) => {
-  const { titleImage, title, slug, content, tags, createdAt } = pageContext;
-  const url = `https://shicchi-blog.com/blog/${slug}`;
+  const { titleImage, title, contentful_id, content, tags, createdAt } = pageContext;
+  const url = `https://shicchi-blog.com/blog/${contentful_id}`;
 
   return (
     <SCContainer>

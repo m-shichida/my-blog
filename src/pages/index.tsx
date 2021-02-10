@@ -2,12 +2,11 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import { graphql } from "gatsby";
 
-import SEO from "../components/seo";
 import IndexTemplate from "../components/templates/Index";
 
 const Index = ({ data }: { data: any }) => {
   const posts = data.allContentfulPost.edges.map((data: any) => ({
-    slug: data.node.slug,
+    contentful_id: data.node.contentful_id,
     titleImage: data.node.titleImage.file.url,
     title: data.node.title,
     createdAt: data.node.createdAt,
@@ -15,7 +14,6 @@ const Index = ({ data }: { data: any }) => {
   const tags = data.allContentfulPost.group;
   return (
     <>
-      <SEO title="Shicchi's blog" />
       <IndexTemplate tags={tags} posts={posts} />
     </>
   );
@@ -31,7 +29,7 @@ export const query = graphql`
       edges {
         node {
           createdAt(formatString: "YYYY/MM/DD")
-          slug
+          contentful_id
           title
           tags
           titleImage {

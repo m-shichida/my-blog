@@ -6,7 +6,7 @@ if (process.env.ENVIRONMENT !== "production") {
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://github.com/m-shichida`,
+    siteUrl: `https://my-blog-peach.vercel.app/`,
     title: `shicchi-techblog`,
     description: `技術や業務についてなどをまとめたサイトです。`,
     author: `Shichida Masatsugu`,

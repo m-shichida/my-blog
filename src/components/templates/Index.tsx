@@ -18,7 +18,7 @@ const Index = ({
 }: {
   tags: { fieldValue: string; totalCount: number }[];
   posts: {
-    slug: string;
+    contentful_id: string;
     titleImage: string;
     title: string;
     createdAt: string;
@@ -33,7 +33,7 @@ const Index = ({
             {posts.map((post, i) => (
               <PostCard
                 key={i}
-                slug={post.slug}
+                contentful_id={post.contentful_id}
                 titleImage={post.titleImage}
                 title={post.title}
                 createdAt={post.createdAt}
