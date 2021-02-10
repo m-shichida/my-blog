@@ -6,7 +6,7 @@ import { mediaPc } from "../../../helpers/styleHelper";
 const Heading1 = ({ children }: { children?: any }) => {
   return (
     // マークダウンでchildren[1]で送られてくる
-    <Text>{children[1]}</Text>
+    <Text id={children[1]}>{children[1]}</Text>
   );
 };
 
@@ -16,8 +16,8 @@ const Text = styled.h2`
   font-weight: bold;
   border-bottom: solid 3px #eeeeee;
   position: relative;
-  margin: 40px 0 !important;
-  padding-bottom: 16px;
+  margin: 20px 0 16px 0 !important;
+  padding: 20px 0 16px 0;
 
   &:after {
     content: "";

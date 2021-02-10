@@ -6,7 +6,7 @@ import { mediaPc } from "../../../helpers/styleHelper";
 const Heading1 = ({ children }: { children?: any }) => {
   return (
     // マークダウンでchildren[1]で送られてくる
-    <Text>{children[1]}</Text>
+    <Text id={children[1]}>{children[1]}</Text>
   );
 };
 
