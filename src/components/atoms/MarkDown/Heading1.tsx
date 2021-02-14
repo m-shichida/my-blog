@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 import { mediaPc } from "../../../helpers/styleHelper";
+import { ESCAPE_REGEX } from "../../../helpers/const";
 
 const Heading1 = ({ children }: { children?: any }) => {
   return (
     // マークダウンでchildren[1]で送られてくる
-    <Text id={children[1].toLowerCase().replace(/[/.]/g, "")}>
+    <Text id={children[1].toLowerCase().replace(ESCAPE_REGEX, "")}>
       {children[1]}
     </Text>
   );
